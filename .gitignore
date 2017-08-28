@@ -1,0 +1,11 @@
+*.log
+*.iml
+.idea
+tmp
+npm-debug.log
+/static
+/build
+/lib
+external_modules
+node_modules
+.yarn.lock
