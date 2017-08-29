@@ -73,6 +73,7 @@
   },
   "dependencies": {
     "@opuscapita/react-svg": "^1.0.4",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "react-motion": "0.5.1"
   }
 }

@@ -1,3 +1,20 @@
+.oc-navigation-bar-hover-overlay {
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.025;
+    z-index: -1;
+  }
+}
+
 .oc-navigation-bar {
   list-style: none;
   display: flex;
@@ -6,6 +23,8 @@
 }
 
 .oc-navigation-bar__top-level-item {
+  .oc-navigation-bar-hover-overlay;
+
   display: inline-flex;
   padding: 0;
   border-top: 2px solid #e5e5e5;
@@ -22,21 +41,6 @@
     background-color: #fff;
     opacity: 0.28;
     z-index: 1;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-  &:hover:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #000;
-    opacity: 0.025;
-    z-index: -1;
   }
 }
 
@@ -79,4 +83,27 @@
 
 .oc-navigation-bar__clickable-element--with-dropdown {
   padding-right: 2px;
+}
+
+.oc-navigation-bar__sub-items-container {
+  border-top: 1px solid #e5e5e5;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  overflow: hidden;
+  transform-origin: center top;
+  box-shadow: 0 2px 3px rgba(0,0,0, 0.25);
+}
+
+.oc-navigation-bar__sub-item {
+  .oc-navigation-bar-hover-overlay;
+  position: relative;
 }
