@@ -6,7 +6,14 @@ import NavigationBar from '../NavigationBar';
 
 const propTypes = {
   appName: Types.string,
+  activeItem: Types.number,
   alwaysAtTop: Types.bool,
+  logoSrc: Types.string,
+  logoHref: Types.string,
+  logoTitle: Types.string,
+  labelText: Types.string,
+  labelLinkText: Types.string,
+  labelLinkHref: Types.string,
   navigationItems: Types.arrayOf(Types.shape({
     label: Types.string,
     href: Types.string,
@@ -19,6 +26,13 @@ const propTypes = {
 const defaultProps = {
   appName: '',
   alwaysAtTop: false,
+  activeItem: null,
+  logoSrc: '',
+  logoTitle: '',
+  logoHref: '#',
+  labelText: '',
+  labelLinkText: '',
+  labelLinkHref: '#',
   navigationItems: []
 };
 
@@ -32,7 +46,14 @@ class Menu extends Component {
   render() {
     const {
       appName,
+      activeItem,
       alwaysAtTop,
+      logoSrc,
+      logoTitle,
+      logoHref,
+      labelText,
+      labelLinkText,
+      labelLinkHref,
       navigationItems
     } = this.props;
 
@@ -40,12 +61,12 @@ class Menu extends Component {
       <div className={`oc-menu ${alwaysAtTop ? 'oc-menu--at-top' : ''}`}>
         <div className="oc-menu__logo-container">
           <MenuLogo
-            logoSrc="http://test.jcatalog.com/oc-logo-rgb.svg"
-            logoTitle="OpusCapita"
-            logoHref="http://opuscapita.com"
-            labelText="powered by"
-            labelLinkText="OpusCapita"
-            labelLinkHref="http://opuscapita.com"
+            logoSrc={logoSrc}
+            logoTitle={logoTitle}
+            logoHref={logoHref}
+            labelText={labelText}
+            labelLinkText={labelLinkText}
+            labelLinkHref={labelLinkHref}
           />
         </div>
         <div className="oc-menu__middle-container">
@@ -53,7 +74,10 @@ class Menu extends Component {
             {appName}
           </div>
           <div className="oc-menu__navigation-bar">
-            <NavigationBar navigationItems={navigationItems} />
+            <NavigationBar
+              activeItem={activeItem}
+              navigationItems={navigationItems}
+            />
           </div>
         </div>
       </div>

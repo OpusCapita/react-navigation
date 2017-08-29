@@ -13,7 +13,8 @@ NavigationBar is
 
 ```
 <div style={{ position: 'relative' }}>
-<NavigationBar 
+<NavigationBar
+  activeItem={0}
   navigationItems={[
     { label: 'Dashboard', href: 'http://google.com' },
     { label: 'Supplier Application', href: 'http://google.com' },

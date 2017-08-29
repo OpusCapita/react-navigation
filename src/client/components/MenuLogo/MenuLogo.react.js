@@ -11,11 +11,12 @@ const propTypes = {
   labelLinkHref: Types.string
 };
 const defaultProps = {
-  logoSrc: 'https://patrickcoombe.com/wp-content/uploads/2015/09/new-google-logo-2015-1024x427.png',
+  logoSrc: '',
   logoTitle: '',
-  logoHref: 'google.com',
+  logoHref: '#',
   labelText: '',
-  labelLinkText: ''
+  labelLinkText: '',
+  labelLinkHref: '#'
 };
 
 export default

@@ -14,7 +14,14 @@ TopMenu is
 ```
 <Menu
   appName="Supplier Information Manager"
+  activeItem={0}
   alwaysAtTop={true}
+  logoSrc="http://pngimg.com/uploads/sony_logo/sony_logo_PNG7.png"
+  logoTitle="OpusCapita"
+  logoHref="http://sony.com"
+  labelText="powered by"
+  labelLinkText="OpusCapita"
+  labelLinkHref="http://opuscapita.com"
   navigationItems={[
     { label: 'Dashboard', href: 'http://google.com' },
     { label: 'Supplier Application', href: 'http://google.com' },

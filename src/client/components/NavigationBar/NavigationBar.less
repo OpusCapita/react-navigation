@@ -8,18 +8,21 @@
 .oc-navigation-bar__top-level-item {
   display: inline-flex;
   padding: 0;
-  border-top: 2px solid #e70;
-}
+  border-top: 2px solid #e5e5e5;
 
-.oc-navigation-bar__dropdown-icon {
-  padding: 0 4px 0 0;
-  display: inline-flex;
-  align-items: center;
-}
-
-.oc-navigation-bar__clickable-element-container {
-  display: inline-flex;
   position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    opacity: 0.28;
+    z-index: 1;
+  }
 
   &:hover {
     cursor: pointer;
@@ -32,14 +35,32 @@
     right: 0;
     bottom: 0;
     background-color: #000;
-    opacity: 0.04;
+    opacity: 0.025;
     z-index: -1;
   }
 }
 
-.oc-navigation-bar__clickable-element {
-  padding: 8px;
+.oc-navigation-bar__top-level-item--active {
+  border-top-color: #e70;
+  &:after {
+    opacity: 0;
+  }
+}
+
+.oc-navigation-bar__dropdown-icon {
+  padding: 0 4px 0 0;
   display: inline-flex;
+  align-items: center;
+}
+
+.oc-navigation-bar__clickable-element-container {
+  display: inline-flex;
+}
+
+.oc-navigation-bar__clickable-element {
+  padding: 8px 12px;
+  display: inline-flex;
+//  font-weight: bold;
   position: relative;
   background-color: transparent;
   white-space: nowrap;
@@ -57,5 +78,5 @@
 }
 
 .oc-navigation-bar__clickable-element--with-dropdown {
-  padding-right: 0;
+  padding-right: 2px;
 }
