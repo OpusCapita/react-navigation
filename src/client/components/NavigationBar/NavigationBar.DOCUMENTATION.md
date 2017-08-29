@@ -1,6 +1,6 @@
 ### Synopsis
 
-TopMenu is 
+NavigationBar is 
 *Write here a short introduction and/or overview that explains **what** component is.*
 
 ### Props Reference
@@ -12,9 +12,8 @@ TopMenu is
 ### Code Example
 
 ```
-<Menu
-  appName="Supplier Information Manager"
-  alwaysAtTop={true}
+<div style={{ position: 'relative' }}>
+<NavigationBar 
   navigationItems={[
     { label: 'Dashboard', href: 'http://google.com' },
     { label: 'Supplier Application', href: 'http://google.com' },
@@ -50,11 +49,12 @@ TopMenu is
     }
   ]}
 />
+</div>
 ```
 
 ### Component Name
 
-Menu
+NavigationBar
 
 ### License
 

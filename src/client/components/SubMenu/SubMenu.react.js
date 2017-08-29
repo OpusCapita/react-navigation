@@ -1,8 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import './SubMenu.less';
 
-const propTypes = {};
-const defaultProps = {};
+const propTypes = {
+
+};
+const defaultProps = {
+
+};
 
 export default
 class SubMenu extends Component {
@@ -13,7 +17,8 @@ class SubMenu extends Component {
 
   render() {
     return (
-      <div className="sub-menu">
+      <div className="oc-sub-menu">
+
       </div>
     );
   }

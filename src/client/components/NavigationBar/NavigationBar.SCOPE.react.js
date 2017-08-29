@@ -8,7 +8,7 @@ import { showroomScopeDecorator } from '@opuscapita/react-showroom-client';
 
 @showroomScopeDecorator
 export default
-class MenuScope extends Component {
+class NavigationBarScope extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -23,9 +23,9 @@ class MenuScope extends Component {
   }
 }
 
-MenuScope.contextTypes = {
+NavigationBarScope.contextTypes = {
   i18n: PropTypes.object
 };
-MenuScope.childContextTypes = {
+NavigationBarScope.childContextTypes = {
   i18n: PropTypes.object
 };

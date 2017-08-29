@@ -1,2 +1,32 @@
 .oc-menu {
+  display: flex;
+  box-shadow: 0 2px 3px rgba(0,0,0, 0.25);
+  background-color: #fff;
 }
+
+.oc-menu--at-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.oc-menu__middle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 24px;
+}
+
+.oc-menu__app-name {
+  display: flex;
+  flex: 1;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+// TMP-styles
+//.component-renderer__element-container-outer {
