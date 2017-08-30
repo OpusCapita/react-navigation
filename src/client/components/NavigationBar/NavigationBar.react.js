@@ -33,6 +33,33 @@ class NavigationBar extends Component {
     this.state = {
       openedItem: null
     };
+
+    this.handleBodyClick = this.handleBodyClick.bind(this);
+    this.handleBodyKeyDown = this.handleBodyKeyDown.bind(this);
+  }
+
+  componentDidMount() {
+    document.body.addEventListener('click', this.handleBodyClick);
+    document.body.addEventListener('keydown', this.handleBodyKeyDown);
+  }
+
+  componentWillUnmount() {
+    document.body.removeEventListener('click', this.handleBodyClick);
+    document.body.removeEventListener('keydown', this.handleBodyKeyDown);
+  }
+
+  handleBodyClick(event) {
+    let clickedOutside = !this.containerRef.contains(event.target);
+
+    if (clickedOutside) {
+      this.setState({ openedItem: null });
+    }
+  }
+
+  handleBodyKeyDown(event) {
+    if (event.which === 9 || event.which === 27) { // TAB or ESC key
+      this.setState({ openedItem: null });
+    }
   }
 
   handleTopLevelItemClick = (key) => {
@@ -109,8 +136,8 @@ class NavigationBar extends Component {
             <ul
               className="oc-navigation-bar__sub-items-container"
               style={{
-                // opacity: interpolatedStyle.x > 0.5 ? interpolatedStyle.x : interpolatedStyle.x * 2,
-                zIndex: isOpened ? '1' : '-1'
+                opacity: interpolatedStyle.x,
+                pointerEvents: isOpened ? 'auto' : 'none'
               }}
             >
               {navigationItem.subItems.map((subItem, i) => this.renderSubLevelItem(subItem, i))}
@@ -138,7 +165,10 @@ class NavigationBar extends Component {
   renderSubLevelItem = (subItem, key) => {
     console.log('subItem', subItem);
     return (
-      <li className="oc-navigation-bar__sub-item">
+      <li
+        key={key}
+        className="oc-navigation-bar__sub-item"
+      >
         {this.renderClickableElement(subItem, key)}
       </li>
     );
@@ -154,7 +184,10 @@ class NavigationBar extends Component {
     );
 
     return (
-      <ul className="oc-navigation-bar">
+      <ul
+        ref={ref => (this.containerRef = ref)}
+        className="oc-navigation-bar"
+      >
         {navigationItemsElement}
       </ul>
     );

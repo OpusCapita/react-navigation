@@ -19,7 +19,7 @@ TopMenu is
   logoSrc="http://pngimg.com/uploads/sony_logo/sony_logo_PNG7.png"
   logoTitle="OpusCapita"
   logoHref="http://sony.com"
-  labelText="powered by"
+  labelText="powered by "
   labelLinkText="OpusCapita"
   labelLinkHref="http://opuscapita.com"
   navigationItems={[
