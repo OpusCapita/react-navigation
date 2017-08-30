@@ -124,8 +124,8 @@ class NavigationBar extends Component {
       <li
         key={key}
         className={`
-              oc-navigation-bar__top-level-item
-              ${isActive ? 'oc-navigation-bar__top-level-item--active' : ''}
+          oc-navigation-bar__top-level-item
+          ${isActive ? 'oc-navigation-bar__top-level-item--active' : ''}
         `}
         onClick={() => this.handleTopLevelItemClick(key)}
         >

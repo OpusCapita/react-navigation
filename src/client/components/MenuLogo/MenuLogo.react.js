@@ -49,7 +49,7 @@ class MenuLogo extends PureComponent {
         <div className="oc-menu-logo__label">
           <span className="oc-menu-logo__label-text">
             {labelText}
-          </span>&nbsp;
+          </span>
           <a
             target="_blank"
             className="oc-menu-logo__label-link"
