@@ -64,12 +64,10 @@ class NavigationBar extends Component {
   }
 
   showTopLevelItem = (key) => {
-    console.log('show');
     this.setState({ openedItem: key, animationEnded: false });
   }
 
   hideTopLevelItem = () => {
-    console.log('hide');
     this.setState({ openedItem: null, animationEnded: false });
   }
 
@@ -82,7 +80,6 @@ class NavigationBar extends Component {
   }
 
   handleAnimationEnd = () => {
-    // console.log('animationEnd');
     this.setState({ animationEnded: true });
   }
 
@@ -185,7 +182,6 @@ class NavigationBar extends Component {
   }
 
   renderSubLevelItem = (subItem, key) => {
-    // console.log('subItem', subItem);
     return (
       <li
         key={key}
@@ -204,7 +200,7 @@ class NavigationBar extends Component {
     const navigationItemsElement = navigationItems.map(
       (navigationItem, i) => this.renderTopLevelItem(navigationItem, i)
     );
-    console.log(this.state);
+
     return (
       <ul
         ref={ref => (this.containerRef = ref)}
