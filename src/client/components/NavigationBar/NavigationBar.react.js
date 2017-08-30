@@ -171,6 +171,7 @@ class NavigationBar extends Component {
         className={`
           oc-navigation-bar__top-level-item
           ${isActive ? 'oc-navigation-bar__top-level-item--active' : ''}
+          ${isOpened ? 'oc-navigation-bar__top-level-item--opened' : ''}
         `}
         onClick={() => this.handleTopLevelItemClick(key)}
         >

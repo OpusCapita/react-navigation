@@ -1,9 +1,9 @@
-.oc-navigation-bar-hover-overlay {
-  &:hover {
+.oc-navigation-bar-overlay {
+  & {
     cursor: pointer;
   }
 
-  &:hover:after {
+  &:after {
     content: '';
     position: absolute;
     top: 0;
@@ -25,12 +25,14 @@
 }
 
 .oc-navigation-bar__top-level-item {
-  .oc-navigation-bar-hover-overlay;
-
   display: inline-flex;
   padding: 0;
   border-top: 2px solid #e5e5e5;
   position: relative;
+
+  &:hover {
+    .oc-navigation-bar-overlay;
+  }
 
   &:after {
     content: '';
@@ -43,6 +45,10 @@
     opacity: 0.28;
     z-index: 1;
   }
+}
+
+.oc-navigation-bar__top-level-item--opened {
+  .oc-navigation-bar-overlay;
 }
 
 .oc-navigation-bar__top-level-item--active {
@@ -105,6 +111,9 @@
 }
 
 .oc-navigation-bar__sub-item {
-  .oc-navigation-bar-hover-overlay;
   position: relative;
+
+  &:hover {
+    .oc-navigation-bar-overlay;
+  }
 }
