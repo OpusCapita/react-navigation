@@ -56,6 +56,40 @@ TopMenu is
       ]
     }
   ]}
+  iconsBarItems={[
+    (
+      <MenuIcon 
+        onClick={() => console.log('click!')}
+        svg={_scope.getIcon('search')}
+      />
+    ), (
+      <MenuIcon 
+        onClick={() => console.log('click!')}
+        svg={_scope.getIcon('shopping_cart')}
+        supTitle="42"
+      />
+    ), (
+      <MenuIcon 
+        onClick={() => console.log('click!')}
+        svg={_scope.getIcon('apps')}
+      />
+    ), (
+      <MenuIcon 
+        onClick={() => console.log('click!')}
+        svg={_scope.getIcon('person')}
+      >
+        <div>Hello</div>
+      </MenuIcon>
+    ),
+    (
+      <MenuIcon 
+        onClick={() => console.log('click!')}
+        svg={_scope.getIcon('settings')}
+      >
+        <div>Hello</div>
+      </MenuIcon>
+    )
+  ]}
 />
 ```
 

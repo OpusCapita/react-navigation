@@ -1,5 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, Children } from 'react';
+import Types from 'prop-types';
 import './MenuIconsBar.less';
+
 
 const propTypes = {};
 const defaultProps = {};
@@ -12,8 +14,17 @@ class MenuIconsBar extends Component {
   }
 
   render() {
+    const { children } = this.props;
+
+    const childrenElement = Children.toArray(children).map(child => (
+      <div className="oc-menu-icons-bar__child">
+        {child}
+      </div>
+    ));
+
     return (
-      <div className="menu-icons-bar">
+      <div className="oc-menu-icons-bar">
+        {childrenElement}
       </div>
     );
   }

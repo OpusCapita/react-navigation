@@ -145,8 +145,7 @@ class NavigationBar extends Component {
         <Motion
           defaultStyle={{ x: isOpened ? 1 : 0, y: isOpened ? 100 : 0 }}
           style={{
-            x: isOpened ? spring(1, springPreset) : spring(0, springPreset),
-            y: isOpened ? spring(100, springPreset) : spring(0, springPreset)
+            x: isOpened ? spring(1, springPreset) : spring(0, springPreset)
           }}
           onRest={this.handleAnimationEnd}
         >

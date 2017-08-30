@@ -12,7 +12,25 @@ MenuIconsBar is
 ### Code Example
 
 ```
-<MenuIconsBar />
+<MenuIconsBar>
+  <MenuIcon 
+    onClick={() => console.log('click!')}
+    svg={_scope.getIcon('apps')}
+  />
+  
+  <MenuIcon 
+    onClick={() => console.log('click!')}
+    svg={_scope.getIcon('shopping_cart')}
+    supTitle="42"
+  />
+  
+  <MenuIcon 
+    onClick={() => console.log('click!')}
+    svg={_scope.getIcon('person')}
+  >
+    <div>Hello</div>
+  </MenuIcon>
+</MenuIconsBar>
 ```
 
 ### Component Name

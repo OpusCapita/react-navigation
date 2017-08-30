@@ -3,6 +3,7 @@ import Types from 'prop-types';
 import './Menu.less';
 import MenuLogo from '../MenuLogo';
 import NavigationBar from '../NavigationBar';
+import MenuIconsBar from '../MenuIconsBar';
 
 const propTypes = {
   appName: Types.string,
@@ -21,7 +22,8 @@ const propTypes = {
       label: Types.string,
       href: Types.string
     }))
-  }))
+  })),
+  iconsBarItems: Types.arrayOf(Types.node)
 };
 const defaultProps = {
   appName: '',
@@ -33,7 +35,8 @@ const defaultProps = {
   labelText: '',
   labelLinkText: '',
   labelLinkHref: '#',
-  navigationItems: []
+  navigationItems: [],
+  iconsBarItems: []
 };
 
 export default
@@ -54,7 +57,8 @@ class Menu extends Component {
       labelText,
       labelLinkText,
       labelLinkHref,
-      navigationItems
+      navigationItems,
+      iconsBarItems
     } = this.props;
 
     return (
@@ -79,6 +83,11 @@ class Menu extends Component {
               navigationItems={navigationItems}
             />
           </div>
+        </div>
+        <div className="oc-menu__icons-bar-container">
+          <MenuIconsBar>
+            {iconsBarItems}
+          </MenuIconsBar>
         </div>
       </div>
     );
