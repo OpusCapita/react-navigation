@@ -9,16 +9,16 @@
   font-weight: bold;
   border-radius: 8px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -4px;
+  right: 0px;
   white-space: nowrap;
   padding: 1px 4px;
   min-width: 2.8ch;
   justify-content: center;
   background-color: #dd2515;
+  pointer-events: none;
   color: #fff;
   z-index: 20;
-  transform: translate(12%, -25%);
 }
 
 .oc-menu-icon__dropdown-icon {
@@ -39,4 +39,15 @@
 
 .oc-menu-icon__button--with-dropdown {
   padding-right: 24px !important;
+}
+
+
+// XXX Remove it if @opuscapita/react-buttons will be replaced
+.oc-menu-icon > button:hover:before,
+.oc-menu-icon > button:focus:before {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.oc-menu-icon > button:focus:after {
+  display: none;
 }

@@ -71,20 +71,24 @@ TopMenu is
     ), (
       <MenuIcon 
         onClick={() => console.log('click!')}
+        svg={_scope.getIcon('list')}
+      />
+    ), (
+      <MenuIcon 
+        onClick={() => console.log('click!')}
         svg={_scope.getIcon('apps')}
       />
     ), (
       <MenuIcon 
         onClick={() => console.log('click!')}
-        svg={_scope.getIcon('person')}
-      >
-        <div>Hello</div>
-      </MenuIcon>
+        svg={_scope.getIcon('notifications')}
+        supTitle="7"
+      />
     ),
     (
       <MenuIcon 
         onClick={() => console.log('click!')}
-        svg={_scope.getIcon('settings')}
+        svg={_scope.getIcon('person')}
       >
         <div>Hello</div>
       </MenuIcon>
