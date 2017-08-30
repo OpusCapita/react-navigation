@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuIcon.less';
-import Button from '@opuscapita/react-buttons/lib/Button';
+import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
 import SVG from '@opuscapita/react-svg/lib/SVG';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 
@@ -10,6 +10,7 @@ const propTypes = {
   color: Types.string,
   svg: Types.string,
   supTitle: Types.string,
+  title: Types.string,
   hideDropdownArrow: Types.bool
 };
 const defaultProps = {
@@ -17,6 +18,7 @@ const defaultProps = {
   color: '#333',
   svg: '',
   supTitle: '',
+  title: '',
   hideDropdownArrow: false
 };
 
@@ -79,10 +81,13 @@ class MenuIcon extends Component {
       color,
       svg,
       supTitle,
+      title,
       hideDropdownArrow,
       onClick,
       children
     } = this.props;
+
+    const { isOpened } = this.state;
 
     const supTitleElement = supTitle ? (
       <div className="oc-menu-icon__sup-title">
@@ -104,7 +109,7 @@ class MenuIcon extends Component {
         onClick={this.handleClick}
         style={{ backgroundColor: bgColor }}
       >
-        <Button
+        <TitledButton
           className={`
             oc-menu-icon__button
             ${showDropdownArrow ? 'oc-menu-icon__button--with-dropdown' : ''}
@@ -114,6 +119,7 @@ class MenuIcon extends Component {
           color={color}
           svg={svg}
           svgSize="24px"
+          title={isOpened ? '' : title}
         />
         {supTitleElement}
         {dropdownArrowElement}
