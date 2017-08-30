@@ -28,6 +28,7 @@
     "@opuscapita/npm-scripts": "1.0.8",
     "@opuscapita/react-showroom-client": "^1.2.10",
     "@opuscapita/react-showroom-server": "^1.2.0",
+    "@opuscapita/styles": "^1.0.2",
     "autoprefixer": "^6.7.6",
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
@@ -74,6 +75,7 @@
   "dependencies": {
     "@opuscapita/react-buttons": "^1.0.14",
     "@opuscapita/react-svg": "^1.0.4",
+    "@opuscapita/svg-icons": "^1.0.9",
     "prop-types": "^15.5.10",
     "react-motion": "0.5.1"
   }

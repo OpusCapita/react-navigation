@@ -37,6 +37,7 @@ let serverOptions = {
 
 app.use(compression());
 app.use(require('webpack-dev-middleware')(compiler, serverOptions));
+app.use('/styles', express.static(path.join(__dirname, '../node_modules/@opuscapita/styles/dist/npm')));
 
 app.get('/', function(req, res) {
   res.sendFile(path.normalize(__dirname + '/index.html'));
