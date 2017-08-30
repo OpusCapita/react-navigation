@@ -31,7 +31,8 @@ class NavigationBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      openedItem: null
+      openedItem: null,
+      animationEnded: true
     };
 
     this.handleBodyClick = this.handleBodyClick.bind(this);
@@ -52,18 +53,37 @@ class NavigationBar extends Component {
     let clickedOutside = !this.containerRef.contains(event.target);
 
     if (clickedOutside) {
-      this.setState({ openedItem: null });
+      this.hideTopLevelItem();
     }
   }
 
   handleBodyKeyDown(event) {
     if (event.which === 9 || event.which === 27) { // TAB or ESC key
-      this.setState({ openedItem: null });
+      this.hideTopLevelItem();
     }
   }
 
+  showTopLevelItem = (key) => {
+    console.log('show');
+    this.setState({ openedItem: key, animationEnded: false });
+  }
+
+  hideTopLevelItem = () => {
+    console.log('hide');
+    this.setState({ openedItem: null, animationEnded: false });
+  }
+
   handleTopLevelItemClick = (key) => {
-    this.setState({ openedItem: this.state.openedItem === key ? null : key });
+    if (this.state.openedItem === key) {
+      this.hideTopLevelItem();
+    } else {
+      this.showTopLevelItem(key);
+    }
+  }
+
+  handleAnimationEnd = () => {
+    // console.log('animationEnd');
+    this.setState({ animationEnded: true });
   }
 
   renderClickableElement = (item, key, className) => {
@@ -131,13 +151,15 @@ class NavigationBar extends Component {
             x: isOpened ? spring(1, springPreset) : spring(0, springPreset),
             y: isOpened ? spring(100, springPreset) : spring(0, springPreset)
           }}
+          onRest={this.handleAnimationEnd}
         >
           {interpolatedStyle => (
             <ul
               className="oc-navigation-bar__sub-items-container"
               style={{
                 opacity: interpolatedStyle.x,
-                pointerEvents: isOpened ? 'auto' : 'none'
+                pointerEvents: isOpened ? 'auto' : 'none',
+                height: isOpened ? 'auto' : (this.state.animationEnded ? '0' : 'auto')
               }}
             >
               {navigationItem.subItems.map((subItem, i) => this.renderSubLevelItem(subItem, i))}
@@ -163,7 +185,7 @@ class NavigationBar extends Component {
   }
 
   renderSubLevelItem = (subItem, key) => {
-    console.log('subItem', subItem);
+    // console.log('subItem', subItem);
     return (
       <li
         key={key}
@@ -182,7 +204,7 @@ class NavigationBar extends Component {
     const navigationItemsElement = navigationItems.map(
       (navigationItem, i) => this.renderTopLevelItem(navigationItem, i)
     );
-
+    console.log(this.state);
     return (
       <ul
         ref={ref => (this.containerRef = ref)}

@@ -2,6 +2,7 @@
   &:hover {
     cursor: pointer;
   }
+
   &:hover:after {
     content: '';
     position: absolute;
@@ -20,6 +21,7 @@
   display: flex;
   padding: 0;
   margin: 0;
+  user-select: none;
 }
 
 .oc-navigation-bar__top-level-item {
@@ -28,7 +30,6 @@
   display: inline-flex;
   padding: 0;
   border-top: 2px solid #e5e5e5;
-
   position: relative;
 
   &:after {
