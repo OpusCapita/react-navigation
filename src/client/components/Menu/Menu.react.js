@@ -34,7 +34,8 @@ const propTypes = {
     navColor: Types.string,
     navBorderColor: Types.string,
     navActiveBorderColor: Types.string,
-    isNavHoverOverlayDark: Types.bool
+    isNavHoverOverlayDark: Types.bool,
+    isMenuIconHoverOverlayDark: Types.bool
   })
 };
 const defaultProps = {
@@ -59,7 +60,8 @@ const defaultProps = {
     navColor: 'inherit',
     navBorderColor: '#e5e5e5',
     navActiveBorderColor: '#ec6608',
-    isNavHoverOverlayDark: false
+    isNavHoverOverlayDark: false,
+    isMenuIconHoverOverlayDark: true
   }
 };
 

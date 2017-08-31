@@ -14,7 +14,8 @@ const propTypes = {
   theme: Types.shape({
     color: Types.string,
     menuIconNotificationBgColor: Types.string,
-    menuIconNotificationColor: Types.string
+    menuIconNotificationColor: Types.string,
+    isMenuIconHoverOverlayDark: Types.bool
   })
 };
 const defaultProps = {
@@ -25,7 +26,8 @@ const defaultProps = {
   theme: {
     color: '#333',
     menuIconNotificationColor: '#fff',
-    menuIconNotificationBgColor: '#dd2515'
+    menuIconNotificationBgColor: '#dd2515',
+    isMenuIconHoverOverlayDark: true
   }
 };
 
@@ -137,6 +139,7 @@ class MenuIcon extends Component {
             oc-menu-icon__button
             ${showDropdownArrow ? 'oc-menu-icon__button--with-dropdown' : ''}
             ${supTitle ? 'oc-menu-icon__button--with-suptitle' : ''}
+            ${theme.isMenuIconHoverOverlayDark ? 'oc-menu-icon__button--dark-overlay' : 'oc-menu-icon__button--light-overlay'}
           `}
           bgColor="transparent"
           color={theme.color}
