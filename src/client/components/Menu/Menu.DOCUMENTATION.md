@@ -19,23 +19,23 @@ TopMenu is
   theme={_scope.state.themes.dark}
   logoSrc={_scope.state.logos.dark}
   logoTitle="OpusCapita"
-  logoHref="http://sony.com"
+  logoHref="http://opuscapita.com"
   labelText="powered by "
   labelLinkText="OpusCapita"
   labelLinkHref="http://opuscapita.com"
   navigationItems={[
-    { label: 'Dashboard', href: 'http://google.com' },
-    { label: 'Supplier Application', href: 'http://google.com' },
+    { label: 'Dashboard', href: 'http://opuscapita.com' },
+    { label: 'Supplier Application', href: 'http://opuscapita.com' },
     {
       label: 'Responsibilities',
       subItems: [
         { 
           label: 'Supplier Responsibility Editor', 
-          href: 'http://google.com'
+          href: 'http://opuscapita.com'
         },
         { 
           label: 'Classification Group Responsibility Editor', 
-          href: 'http://google.com'
+          href: 'http://opuscapita.com'
         }
       ]
     },
@@ -44,15 +44,15 @@ TopMenu is
       subItems: [
         { 
           label: 'Supplier Status Report', 
-          href: 'http://google.com'
+          href: 'http://opuscapita.com'
         },
         { 
           label: 'Supplier Feedback',
-          href: 'http://google.com'
+          href: 'http://opuscapita.com'
         },
         { 
           label: 'Supplier Rating', 
-          href: 'http://google.com'
+          href: 'http://opuscapita.com'
         }
       ]
     }
