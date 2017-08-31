@@ -44,7 +44,7 @@ class MenuScope extends Component {
           navBgColor: 'transparent',
           navColor: '#333',
           menuIconNotificationColor: '#fff',
-          menuIconNotificationBgColor: '#dd2515',
+          menuIconNotificationBgColor: '#ec6608',
           navBorderColor: '#e5e5e5',
           navActiveBorderColor: '#ec6608',
           isNavHoverOverlayDark: false
