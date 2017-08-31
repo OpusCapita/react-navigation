@@ -9,6 +9,7 @@ cp -R www/index.html .gh-pages-tmp &&
 
 git checkout gh-pages &&
 git ls-files | grep -v -e "\(^\.gitignore$\|^\.gitattributes$\|^\.gh-pages-tmp$\)" | xargs rm -rf &&
+rm -rf ./styles &&
 mv .gh-pages-tmp/* . &&
 rm -rf .gh-pages-tmp &&
 git add . &&
