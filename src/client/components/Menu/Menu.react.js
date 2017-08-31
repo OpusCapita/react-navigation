@@ -23,7 +23,8 @@ const propTypes = {
       href: Types.string
     }))
   })),
-  iconsBarItems: Types.arrayOf(Types.node)
+  iconsBarItems: Types.arrayOf(Types.node),
+  containerElement: Types.object
 };
 const defaultProps = {
   appName: '',
@@ -36,14 +37,35 @@ const defaultProps = {
   labelLinkText: '',
   labelLinkHref: '#',
   navigationItems: [],
-  iconsBarItems: []
+  iconsBarItems: [],
+  containerElement: window
 };
 
 export default
 class Menu extends Component {
   constructor(props) {
     super(props);
-    this.state = { };
+    this.state = {
+      containerScrolled: false
+    };
+
+    this.handleContainerScroll = this.handleContainerScroll.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.containerElement.addEventListener('scroll', this.handleContainerScroll);
+  }
+
+  componentWillUnmount() {
+    this.props.containerElement.removeEventListener('scroll', this.handleContainerScroll);
+  }
+
+  handleContainerScroll(e) {
+    if (this.props.containerElement.scrollY) {
+      this.setState({ containerScrolled: true });
+    } else {
+      this.setState({ containerScrolled: false });
+    }
   }
 
   render() {
@@ -61,8 +83,16 @@ class Menu extends Component {
       iconsBarItems
     } = this.props;
 
+    const { containerScrolled } = this.state;
+
     return (
-      <div className={`oc-menu ${alwaysAtTop ? 'oc-menu--at-top' : ''}`}>
+      <div
+        className={`
+          oc-menu
+          ${alwaysAtTop ? 'oc-menu--at-top' : ''}
+          ${containerScrolled ? 'oc-menu--scrolled' : ''}
+        `}
+      >
         <div className="oc-menu__logo-container">
           <MenuLogo
             logoSrc={logoSrc}
