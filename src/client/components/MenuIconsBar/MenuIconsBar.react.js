@@ -16,8 +16,8 @@ class MenuIconsBar extends Component {
   render() {
     const { children } = this.props;
 
-    const childrenElement = Children.toArray(children).map(child => (
-      <div className="oc-menu-icons-bar__child">
+    const childrenElement = Children.toArray(children).map((child, i) => (
+      <div key={i} className="oc-menu-icons-bar__child">
         {child}
       </div>
     ));
