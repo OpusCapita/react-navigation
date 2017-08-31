@@ -6,20 +6,26 @@ import SVG from '@opuscapita/react-svg/lib/SVG';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 
 const propTypes = {
-  bgColor: Types.string,
-  color: Types.string,
   svg: Types.string,
   supTitle: Types.string,
   title: Types.string,
-  hideDropdownArrow: Types.bool
+  hideDropdownArrow: Types.bool,
+  theme: Types.shape({
+    color: Types.string,
+    menuIconNotificationBgColor: Types.string,
+    menuIconNotificationColor: Types.string
+  })
 };
 const defaultProps = {
-  bgColor: '#fff',
-  color: '#333',
   svg: '',
   supTitle: '',
   title: '',
-  hideDropdownArrow: false
+  hideDropdownArrow: false,
+  theme: {
+    color: '#333',
+    menuIconNotificationColor: '#fff',
+    menuIconNotificationBgColor: '#dd2515'
+  }
 };
 
 export default
@@ -84,7 +90,8 @@ class MenuIcon extends Component {
       title,
       hideDropdownArrow,
       onClick,
-      children
+      children,
+      theme
     } = this.props;
 
     const { isOpened } = this.state;
@@ -98,7 +105,7 @@ class MenuIcon extends Component {
     const showDropdownArrow = (children && !hideDropdownArrow);
     const dropdownArrowElement =  showDropdownArrow ? (
       <div className="oc-menu-icon__dropdown-icon">
-        <SVG svg={dropdownSVG} />
+        <SVG svg={dropdownSVG} style={{ fill: theme.color }} />
       </div>
     ) : null;
 
@@ -107,7 +114,6 @@ class MenuIcon extends Component {
         ref={ref => (this.containerRef = ref)}
         className="oc-menu-icon"
         onClick={this.handleClick}
-        style={{ backgroundColor: bgColor }}
       >
         <TitledButton
           className={`
@@ -116,7 +122,7 @@ class MenuIcon extends Component {
             ${supTitle ? 'oc-menu-icon__button--with-suptitle' : ''}
           `}
           bgColor="transparent"
-          color={color}
+          color={theme.color}
           svg={svg}
           svgSize="24px"
           title={isOpened ? '' : title}

@@ -16,12 +16,26 @@ const propTypes = {
       href: Types.string,
       onClick: Types.func
     }))
-  }))
+  })),
+  theme: Types.shape({
+    navBgColor: Types.string,
+    navColor: Types.string,
+    navBorderColor: Types.string,
+    navActiveBorderColor: Types.string,
+    isNavHoverOverlayDark: Types.bool
+  })
 };
 const defaultProps = {
   openedItem: null,
   activeItem: null,
-  navigationItems: []
+  navigationItems: [],
+  theme: {
+    navBgColor: 'transparent',
+    navColor: 'inherit',
+    navBorderColor: '#e5e5e5',
+    navActiveBorderColor: '#ec6608',
+    isNavHoverOverlayDark: false
+  }
 };
 
 const springPreset = presets.stiff;
@@ -88,7 +102,7 @@ class NavigationBar extends Component {
 
     let dropdownIcon = item.subItems ? (
       <div className="oc-navigation-bar__dropdown-icon">
-        <SVG svg={dropdownSVG} />
+        <SVG svg={dropdownSVG} style={{ fill: this.props.theme.navColor}} />
       </div>
     ) : null;
 
@@ -172,9 +186,13 @@ class NavigationBar extends Component {
           oc-navigation-bar__top-level-item
           ${isActive ? 'oc-navigation-bar__top-level-item--active' : ''}
           ${isOpened ? 'oc-navigation-bar__top-level-item--opened' : ''}
+          ${this.props.theme.isNavHoverOverlayDark ? 'oc-navigation-bar__top-level-item--dark-overlay' : 'oc-navigation-bar__top-level-item--light-overlay'}
         `}
         onClick={() => this.handleTopLevelItemClick(key)}
-        >
+        style={{
+          borderTopColor: isActive ? this.props.theme.navActiveBorderColor : this.props.theme.navBorderColor
+        }}
+      >
         {clickableItem}
         {subItems}
       </li>
@@ -194,7 +212,8 @@ class NavigationBar extends Component {
 
   render() {
     let {
-      navigationItems
+      navigationItems,
+      theme
     } = this.props;
 
     const navigationItemsElement = navigationItems.map(
@@ -205,6 +224,10 @@ class NavigationBar extends Component {
       <ul
         ref={ref => (this.containerRef = ref)}
         className="oc-navigation-bar"
+        style={{
+          backgroundColor: theme.navBgColor,
+          color: theme.navColor
+        }}
       >
         {navigationItemsElement}
       </ul>

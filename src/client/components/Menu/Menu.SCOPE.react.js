@@ -23,7 +23,36 @@ export default
 class MenuScope extends Component {
   constructor(props) {
     super(props);
-    this.state = { icons };
+    this.state = {
+      icons,
+      themes: {
+        dark: {
+          bgColor: '#3b4a56',
+          color: '#fff',
+          navBgColor: '#67707c',
+          navColor: '#fff',
+          menuIconNotificationColor: '#dd2515',
+          navBorderColor: '#fff',
+          navActiveBorderColor: '#ec6608',
+          navOverlay: 'dark',
+          isNavHoverOverlayDark: true
+        },
+        light: {
+          bgColor: '#fff',
+          color: '#333',
+          navBgColor: 'transparent',
+          navColor: '#333',
+          menuIconNotificationColor: '#dd2515',
+          navBorderColor: '#e5e5e5',
+          navActiveBorderColor: '#ec6608',
+          isNavHoverOverlayDark: false
+        }
+      },
+      logos: {
+        dark: 'https://develop.businessnetwork.opuscapita.com/invoice/static/img/oc-logo-white.svg',
+        light: 'http://test.jcatalog.com/oc-logo-rgb.svg'
+      }
+    };
   }
 
   getIcon(name) {

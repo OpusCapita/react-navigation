@@ -2,7 +2,18 @@
   display: flex;
   background-color: #fff;
   height: 78px;
-  border-bottom: 1px solid #e5e5e5;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #000;
+    opacity: 0.22;
+  }
 }
 
 .oc-menu--at-top {

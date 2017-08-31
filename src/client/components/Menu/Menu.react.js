@@ -24,7 +24,17 @@ const propTypes = {
     }))
   })),
   iconsBarItems: Types.arrayOf(Types.node),
-  containerElement: Types.object
+  containerElement: Types.object,
+  theme: Types.shape({
+    bgColor: Types.string,
+    color: Types.string,
+    menuIconNotificationColor: Types.string,
+    navBgColor: Types.string,
+    navColor: Types.string,
+    navBorderColor: Types.string,
+    navActiveBorderColor: Types.string,
+    isNavHoverOverlayDark: Types.bool
+  })
 };
 const defaultProps = {
   appName: '',
@@ -38,7 +48,17 @@ const defaultProps = {
   labelLinkHref: '#',
   navigationItems: [],
   iconsBarItems: [],
-  containerElement: window
+  containerElement: window,
+  theme: {
+    bgColor: '#fff',
+    color: '#333',
+    menuIconNotificationColor: '#dd2515',
+    navBgColor: 'transparent',
+    navColor: 'inherit',
+    navBorderColor: '#e5e5e5',
+    navActiveBorderColor: '#ec6608',
+    isNavHoverOverlayDark: false
+  }
 };
 
 export default
@@ -80,7 +100,8 @@ class Menu extends Component {
       labelLinkText,
       labelLinkHref,
       navigationItems,
-      iconsBarItems
+      iconsBarItems,
+      theme
     } = this.props;
 
     const { containerScrolled } = this.state;
@@ -92,6 +113,10 @@ class Menu extends Component {
           ${alwaysAtTop ? 'oc-menu--at-top' : ''}
           ${containerScrolled ? 'oc-menu--scrolled' : ''}
         `}
+        style={{
+          backgroundColor: theme.bgColor,
+          color: theme.color
+        }}
       >
         <div className="oc-menu__logo-container">
           <MenuLogo
@@ -111,11 +136,12 @@ class Menu extends Component {
             <NavigationBar
               activeItem={activeItem}
               navigationItems={navigationItems}
+              theme={theme}
             />
           </div>
         </div>
         <div className="oc-menu__icons-bar-container">
-          <MenuIconsBar>
+          <MenuIconsBar theme={theme}>
             {iconsBarItems}
           </MenuIconsBar>
         </div>

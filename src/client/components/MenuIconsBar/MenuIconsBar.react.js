@@ -3,8 +3,18 @@ import Types from 'prop-types';
 import './MenuIconsBar.less';
 
 
-const propTypes = {};
-const defaultProps = {};
+const propTypes = {
+  theme: Types.shape({
+    color: Types.string,
+    menuIconNotificationColor: Types.string
+  })
+};
+const defaultProps = {
+  theme: {
+    color: '#333',
+    menuIconNotificationColor: '#dd2515'
+  }
+};
 
 export default
 class MenuIconsBar extends Component {
@@ -14,11 +24,11 @@ class MenuIconsBar extends Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, theme } = this.props;
 
     const childrenElement = Children.toArray(children).map((child, i) => (
       <div key={i} className="oc-menu-icons-bar__child">
-        {child}
+        {({ ...child, props: { ...child.props, theme } })}
       </div>
     ));
 

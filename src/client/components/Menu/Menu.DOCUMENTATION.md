@@ -16,7 +16,8 @@ TopMenu is
   appName="Supplier Information Manager"
   activeItem={0}
   alwaysAtTop={true}
-  logoSrc="http://pngimg.com/uploads/sony_logo/sony_logo_PNG7.png"
+  theme={_scope.state.themes.dark}
+  logoSrc={_scope.state.logos.dark}
   logoTitle="OpusCapita"
   logoHref="http://sony.com"
   labelText="powered by "
