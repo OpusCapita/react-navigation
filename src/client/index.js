@@ -1,6 +1,6 @@
 // Here should be CommonJS component exports.
 
-modules.exports = {
+module.exports = {
   Menu: require('./components/Menu').default,
   MenuIcon: require('./components/MenuIcon').default,
   MenuIconsBar: require('./components/MenuIconsBar').default,
