@@ -31,8 +31,9 @@ class MenuScope extends Component {
           color: '#fff',
           navBgColor: '#67707c',
           navColor: '#fff',
-          menuIconNotificationColor: '#dd2515',
-          navBorderColor: '#fff',
+          menuIconNotificationColor: '#fff',
+          menuIconNotificationBgColor: '#ec6608',
+          navBorderColor: 'transparent',
           navActiveBorderColor: '#ec6608',
           navOverlay: 'dark',
           isNavHoverOverlayDark: true
@@ -42,7 +43,8 @@ class MenuScope extends Component {
           color: '#333',
           navBgColor: 'transparent',
           navColor: '#333',
-          menuIconNotificationColor: '#dd2515',
+          menuIconNotificationColor: '#fff',
+          menuIconNotificationBgColor: '#dd2515',
           navBorderColor: '#e5e5e5',
           navActiveBorderColor: '#ec6608',
           isNavHoverOverlayDark: false

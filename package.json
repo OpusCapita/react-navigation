@@ -78,6 +78,7 @@
     "@opuscapita/react-buttons": "^1.0.14",
     "@opuscapita/react-svg": "^1.0.4",
     "@opuscapita/svg-icons": "^1.0.9",
+    "lodash": "4.17.4",
     "prop-types": "^15.5.10",
     "react-motion": "0.5.1"
   },

@@ -3,6 +3,7 @@ import Types from 'prop-types';
 import './MenuIcon.less';
 import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
 import SVG from '@opuscapita/react-svg/lib/SVG';
+import isEqual from 'lodash/isEqual';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 
 const propTypes = {
@@ -47,6 +48,16 @@ class MenuIcon extends Component {
   componentWillUnmount() {
     document.body.removeEventListener('click', this.handleBodyClick);
     document.body.removeEventListener('keydown', this.handleBodyKeyDown);
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return (
+      this.props.svg !== nextProps.svg ||
+      this.props.supTitle !== nextProps.supTitle ||
+      this.props.title !== nextProps.title ||
+      this.props.hideDropdownArrow !== nextProps.hideDropdownArrow ||
+      !isEqual(this.props.theme, nextProps.theme)
+   );
   }
 
   handleBodyClick(event) {
@@ -97,7 +108,13 @@ class MenuIcon extends Component {
     const { isOpened } = this.state;
 
     const supTitleElement = supTitle ? (
-      <div className="oc-menu-icon__sup-title">
+      <div
+        className="oc-menu-icon__sup-title"
+        style={{
+          backgroundColor: theme.menuIconNotificationBgColor,
+          color: theme.menuIconNotificationColor
+        }}
+      >
         {supTitle}
       </div>
     ) : null;
@@ -108,7 +125,7 @@ class MenuIcon extends Component {
         <SVG svg={dropdownSVG} style={{ fill: theme.color }} />
       </div>
     ) : null;
-
+    console.log(theme);
     return (
       <div
         ref={ref => (this.containerRef = ref)}

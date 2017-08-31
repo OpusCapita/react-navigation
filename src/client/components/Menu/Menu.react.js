@@ -28,6 +28,7 @@ const propTypes = {
   theme: Types.shape({
     bgColor: Types.string,
     color: Types.string,
+    menuIconNotificationBgColor: Types.string,
     menuIconNotificationColor: Types.string,
     navBgColor: Types.string,
     navColor: Types.string,
@@ -52,7 +53,8 @@ const defaultProps = {
   theme: {
     bgColor: '#fff',
     color: '#333',
-    menuIconNotificationColor: '#dd2515',
+    menuIconNotificationBgColor: '#dd2515',
+    menuIconNotificationColor: '#fff',
     navBgColor: 'transparent',
     navColor: 'inherit',
     navBorderColor: '#e5e5e5',
