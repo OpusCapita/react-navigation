@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuIcon.less';
+import themePropTypes from '../theme/theme-prop-types';
+import opuscapitaLightTheme from '../theme/opuscapita-light';
 import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
 import SVG from '@opuscapita/react-svg/lib/SVG';
 import isEqual from 'lodash/isEqual';
@@ -11,24 +13,14 @@ const propTypes = {
   supTitle: Types.string,
   title: Types.string,
   hideDropdownArrow: Types.bool,
-  theme: Types.shape({
-    color: Types.string,
-    menuIconNotificationBgColor: Types.string,
-    menuIconNotificationColor: Types.string,
-    isMenuIconHoverOverlayDark: Types.bool
-  })
+  theme: themePropTypes
 };
 const defaultProps = {
   svg: '',
   supTitle: '',
   title: '',
   hideDropdownArrow: false,
-  theme: {
-    color: '#333',
-    menuIconNotificationColor: '#fff',
-    menuIconNotificationBgColor: '#dd2515',
-    isMenuIconHoverOverlayDark: true
-  }
+  theme: opuscapitaLightTheme
 };
 
 export default

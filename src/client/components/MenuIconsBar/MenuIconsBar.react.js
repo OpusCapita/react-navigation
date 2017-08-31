@@ -1,19 +1,14 @@
 import React, { Component, Children } from 'react';
 import Types from 'prop-types';
 import './MenuIconsBar.less';
-
+import themePropTypes from '../theme/theme-prop-types';
+import opuscapitaLightTheme from '../theme/opuscapita-light';
 
 const propTypes = {
-  theme: Types.shape({
-    color: Types.string,
-    menuIconNotificationColor: Types.string
-  })
+  theme: themePropTypes
 };
 const defaultProps = {
-  theme: {
-    color: '#333',
-    menuIconNotificationColor: '#dd2515'
-  }
+  theme: opuscapitaLightTheme
 };
 
 export default

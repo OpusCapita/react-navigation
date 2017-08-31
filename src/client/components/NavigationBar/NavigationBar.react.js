@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './NavigationBar.less';
+import themePropTypes from '../theme/theme-prop-types';
+import opuscapitaLightTheme from '../theme/opuscapita-light';
 import { spring, presets, Motion } from 'react-motion';
 import SVG from '@opuscapita/react-svg/lib/SVG';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
@@ -17,25 +19,13 @@ const propTypes = {
       onClick: Types.func
     }))
   })),
-  theme: Types.shape({
-    navBgColor: Types.string,
-    navColor: Types.string,
-    navBorderColor: Types.string,
-    navActiveBorderColor: Types.string,
-    isNavHoverOverlayDark: Types.bool
-  })
+  theme: themePropTypes
 };
 const defaultProps = {
   openedItem: null,
   activeItem: null,
   navigationItems: [],
-  theme: {
-    navBgColor: 'transparent',
-    navColor: 'inherit',
-    navBorderColor: '#e5e5e5',
-    navActiveBorderColor: '#ec6608',
-    isNavHoverOverlayDark: false
-  }
+  theme: opuscapitaLightTheme
 };
 
 const springPreset = presets.stiff;
@@ -99,10 +89,16 @@ class NavigationBar extends Component {
 
   renderClickableElement = (item, key, className) => {
     const { href, label, subItems, onClick } = item;
+    const isActive = this.props.activeItem === key;
 
     let dropdownIcon = item.subItems ? (
       <div className="oc-navigation-bar__dropdown-icon">
-        <SVG svg={dropdownSVG} style={{ fill: this.props.theme.navColor}} />
+        <SVG
+          svg={dropdownSVG}
+          style={{
+            fill: isActive ? this.props.theme.navActiveColor : this.props.theme.navColor
+          }}
+        />
       </div>
     ) : null;
 
@@ -190,7 +186,9 @@ class NavigationBar extends Component {
         `}
         onClick={() => this.handleTopLevelItemClick(key)}
         style={{
-          borderTopColor: isActive ? this.props.theme.navActiveBorderColor : this.props.theme.navBorderColor
+          borderTopColor: isActive ? this.props.theme.navActiveBorderColor : this.props.theme.navBorderColor,
+          color: isActive ? this.props.theme.navActiveColor : 'inherit',
+          backgroundColor: isActive ? this.props.theme.navActiveBgColor : 'inherit'
         }}
       >
         {clickableItem}

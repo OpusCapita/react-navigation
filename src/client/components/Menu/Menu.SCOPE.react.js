@@ -6,6 +6,8 @@
 import React, { Component, PropTypes } from 'react';
 import { showroomScopeDecorator } from '@opuscapita/react-showroom-client';
 import MenuIcon from '../MenuIcon';
+import opuscapitaDarkTheme from '../theme/opuscapita-dark';
+import opuscapitaLightTheme from '../theme/opuscapita-light';
 
 window.MenuIcon = MenuIcon;
 
@@ -26,31 +28,8 @@ class MenuScope extends Component {
     this.state = {
       icons,
       themes: {
-        dark: {
-          bgColor: '#3b4a56',
-          color: '#fff',
-          navBgColor: '#67707c',
-          navColor: '#fff',
-          menuIconNotificationColor: '#fff',
-          menuIconNotificationBgColor: '#ec6608',
-          navBorderColor: 'transparent',
-          navActiveBorderColor: '#ec6608',
-          navOverlay: 'dark',
-          isNavHoverOverlayDark: true,
-          isMenuIconHoverOverlayDark: false
-        },
-        light: {
-          bgColor: '#fff',
-          color: '#333',
-          navBgColor: 'transparent',
-          navColor: '#333',
-          menuIconNotificationColor: '#fff',
-          menuIconNotificationBgColor: '#ec6608',
-          navBorderColor: '#e5e5e5',
-          navActiveBorderColor: '#ec6608',
-          isNavHoverOverlayDark: false,
-          isMenuIconHoverOverlayDark: true
-        }
+        opuscapitaDark: opuscapitaDarkTheme,
+        opuscapitaLight: opuscapitaLightTheme
       },
       logos: {
         dark: 'https://develop.businessnetwork.opuscapita.com/invoice/static/img/oc-logo-white.svg',

@@ -16,7 +16,7 @@ TopMenu is
   appName="Supplier Information Manager"
   activeItem={0}
   alwaysAtTop={true}
-  theme={_scope.state.themes.dark}
+  theme={_scope.state.themes.opuscapitaDark}
   logoSrc={_scope.state.logos.dark}
   logoTitle="OpusCapita"
   logoHref="http://opuscapita.com"

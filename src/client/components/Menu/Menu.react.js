@@ -4,6 +4,8 @@ import './Menu.less';
 import MenuLogo from '../MenuLogo';
 import NavigationBar from '../NavigationBar';
 import MenuIconsBar from '../MenuIconsBar';
+import themePropTypes from '../theme/theme-prop-types';
+import opuscapitaLightTheme from '../theme/opuscapita-light';
 
 const propTypes = {
   appName: Types.string,
@@ -25,18 +27,7 @@ const propTypes = {
   })),
   iconsBarItems: Types.arrayOf(Types.node),
   containerElement: Types.object,
-  theme: Types.shape({
-    bgColor: Types.string,
-    color: Types.string,
-    menuIconNotificationBgColor: Types.string,
-    menuIconNotificationColor: Types.string,
-    navBgColor: Types.string,
-    navColor: Types.string,
-    navBorderColor: Types.string,
-    navActiveBorderColor: Types.string,
-    isNavHoverOverlayDark: Types.bool,
-    isMenuIconHoverOverlayDark: Types.bool
-  })
+  theme: themePropTypes
 };
 const defaultProps = {
   appName: '',
@@ -51,18 +42,7 @@ const defaultProps = {
   navigationItems: [],
   iconsBarItems: [],
   containerElement: window,
-  theme: {
-    bgColor: '#fff',
-    color: '#333',
-    menuIconNotificationBgColor: '#dd2515',
-    menuIconNotificationColor: '#fff',
-    navBgColor: 'transparent',
-    navColor: 'inherit',
-    navBorderColor: '#e5e5e5',
-    navActiveBorderColor: '#ec6608',
-    isNavHoverOverlayDark: false,
-    isMenuIconHoverOverlayDark: true
-  }
+  theme: opuscapitaLightTheme
 };
 
 export default
