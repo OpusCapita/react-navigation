@@ -1,5 +1,5 @@
 {
-  "name": "react-menu",
+  "name": "@opuscapita/react-navigation",
   "version": "0.0.1",
   "description": "Start write new project with no effort.",
   "scripts": {
@@ -11,15 +11,17 @@
     "start": "node www/index",
     "test": "mocha --compilers js:babel-core/register --require ignore-styles --require ./test/setup.js --recursive src/**/*.spec.js"
   },
-  "author": {
-    "name": "kirill",
-    "email": "kirill.volkovich@jcatalog.com"
-  },
   "main": "lib/index.js",
   "files": [
     "lib",
     "README.md"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "repository": "OpusCapita/react-navigation",
   "peerDependencies": {
     "react": "15.4.2",
     "react-dom": "15.4.2"
@@ -78,5 +80,12 @@
     "@opuscapita/svg-icons": "^1.0.9",
     "prop-types": "^15.5.10",
     "react-motion": "0.5.1"
-  }
+  },
+  "keywords": [
+    "react",
+    "menu",
+    "top-menu",
+    "navigation",
+    "react-component"
+  ]
 }
