@@ -158,7 +158,7 @@ class MenuIcon extends Component {
         </Motion>
       );
     }
-    console.log('chil', childrenElement);
+
     return (
       <div
         ref={ref => (this.containerRef = ref)}

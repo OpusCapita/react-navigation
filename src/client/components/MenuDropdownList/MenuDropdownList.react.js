@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import Types from 'prop-types';
 import './MenuDropdownList.less';
 
 const propTypes = {};
@@ -13,7 +14,7 @@ class MenuDropdownList extends Component {
 
   render() {
     return (
-      <div className="menu-dropdown-list">
+      <div className="oc-menu-dropdown-list">
       </div>
     );
   }
