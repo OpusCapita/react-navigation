@@ -38,10 +38,9 @@
 .oc-navigation-bar__top-level-item {
   display: inline-flex;
   padding: 0;
-  border-bottom: 2px solid #e5e5e5;
+  border-bottom: 4px solid #e5e5e5;
   position: relative;
   font-weight: bold;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
 
   &:hover {
     .oc-navigation-bar-overlay;
@@ -67,11 +66,7 @@
 }
 
 .oc-navigation-bar__top-level-item--active {
-  border-bottom-color: #ec6608;
 
-  &:after {
-    opacity: 0;
-  }
 }
 
 .oc-navigation-bar__dropdown-icon {
@@ -117,13 +112,12 @@
   padding: 0;
   margin: 0;
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   background-color: #fff;
   overflow: hidden;
   transform: translate(0, 100%);
   box-shadow: 0 2px 3px rgba(0,0,0, 0.25);
-  text-shadow: none;
 }
 
 .oc-navigation-bar__sub-item {
