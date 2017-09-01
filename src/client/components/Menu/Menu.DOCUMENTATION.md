@@ -97,7 +97,23 @@ TopMenu is
         svg={_scope.getIcon('person')}
         title="Account settings"
       >
-        <div>Hello</div>
+        <div
+          style={{
+            padding: '12px',
+            whiteSpace: 'nowrap'
+          }}
+        >
+          <h5>Menu Icon Dropdown</h5>
+          <ul>
+            <li>Dropdown Item 0</li>
+            <li>Dropdown Item 1</li>
+            <li>Dropdown Item 2</li>
+            <li>Dropdown Item 3</li>
+            <li>Dropdown Item 4</li>
+            <li>Dropdown Item 5</li>
+            <li>Dropdown Item 6</li>
+          </ul>
+        </div>
       </MenuIcon>
     )
   ]}

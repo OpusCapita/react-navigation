@@ -3,6 +3,7 @@ import Types from 'prop-types';
 import './MenuIcon.less';
 import themePropTypes from '../theme/theme-prop-types';
 import opuscapitaLightTheme from '../theme/opuscapita-light';
+import { spring, presets, Motion } from 'react-motion';
 import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
 import SVG from '@opuscapita/react-svg/lib/SVG';
 import isEqual from 'lodash/isEqual';
@@ -23,12 +24,15 @@ const defaultProps = {
   theme: opuscapitaLightTheme
 };
 
+const springPreset = presets.stiff;
+
 export default
 class MenuIcon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpened: false
+      isOpened: false,
+      animationEnded: false
     };
     this.handleBodyClick = this.handleBodyClick.bind(this);
     this.handleBodyKeyDown = this.handleBodyKeyDown.bind(this);
@@ -44,12 +48,14 @@ class MenuIcon extends Component {
     document.body.removeEventListener('keydown', this.handleBodyKeyDown);
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps, nextState) {
     return (
       this.props.svg !== nextProps.svg ||
       this.props.supTitle !== nextProps.supTitle ||
       this.props.title !== nextProps.title ||
       this.props.hideDropdownArrow !== nextProps.hideDropdownArrow ||
+      this.state.isOpened !== nextState.isOpened ||
+      this.state.animationEnded !== nextState.animationEnded ||
       !isEqual(this.props.theme, nextProps.theme)
    );
   }
@@ -68,12 +74,12 @@ class MenuIcon extends Component {
     }
   }
 
-  showChildren = (key) => {
-    this.setState({ openedItem: key, animationEnded: false });
+  showChildren = () => {
+    this.setState({ isOpened: true });
   }
 
   hideChildren = () => {
-    this.setState({ openedItem: null, animationEnded: false });
+    this.setState({ isOpened: false });
   }
 
   handleClick = () => {
@@ -84,6 +90,10 @@ class MenuIcon extends Component {
     }
 
     this.props.onClick();
+  }
+
+  handleAnimationEnd = () => {
+    this.setState({ animationEnded: true });
   }
 
   render() {
@@ -100,7 +110,6 @@ class MenuIcon extends Component {
     } = this.props;
 
     const { isOpened } = this.state;
-
     const supTitleElement = supTitle ? (
       <div
         className="oc-menu-icon__sup-title"
@@ -119,7 +128,34 @@ class MenuIcon extends Component {
         <SVG svg={dropdownSVG} style={{ fill: theme.color }} />
       </div>
     ) : null;
-    console.log(theme);
+
+    let childrenElement = null;
+
+    if (children) {
+      childrenElement = (
+        <Motion
+          defaultStyle={{ x: isOpened ? 1 : 0, y: isOpened ? 100 : 0 }}
+          style={{
+            x: isOpened ? spring(1, springPreset) : spring(0, springPreset)
+          }}
+          onRest={this.handleAnimationEnd}
+        >
+          {interpolatedStyle => (
+            <div
+              className="oc-menu-icon__sub-items-container"
+              style={{
+                opacity: interpolatedStyle.x,
+                pointerEvents: isOpened ? 'auto' : 'none',
+                height: isOpened ? 'auto' : (this.state.animationEnded ? '0' : 'auto')
+              }}
+            >
+              {children}
+            </div>
+          )}
+        </Motion>
+      );
+    }
+    console.log('chil', childrenElement);
     return (
       <div
         ref={ref => (this.containerRef = ref)}
@@ -141,6 +177,7 @@ class MenuIcon extends Component {
         />
         {supTitleElement}
         {dropdownArrowElement}
+        {childrenElement}
       </div>
     );
   }
