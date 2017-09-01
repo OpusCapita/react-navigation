@@ -14,14 +14,16 @@ const propTypes = {
   supTitle: Types.string,
   title: Types.string,
   hideDropdownArrow: Types.bool,
-  theme: themePropTypes
+  theme: themePropTypes,
+  onClick: Types.func
 };
 const defaultProps = {
   svg: '',
   supTitle: '',
   title: '',
   hideDropdownArrow: false,
-  theme: opuscapitaLightTheme
+  theme: opuscapitaLightTheme,
+  onClick: () => {}
 };
 
 const springPreset = presets.stiff;
