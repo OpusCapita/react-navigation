@@ -5,11 +5,7 @@ export default {
   navColor: '#fff',
   menuIconNotificationColor: '#fff',
   menuIconNotificationBgColor: '#ec6608',
-  navBorderColor: 'transparent',
   navActiveBorderColor: '#ec6608',
-  navActiveColor: '#000',
-  navActiveBgColor: '#fff',
-  navOverlay: 'dark',
   isNavHoverOverlayDark: false,
   isMenuIconHoverOverlayDark: false
 };

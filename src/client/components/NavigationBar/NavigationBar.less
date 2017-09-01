@@ -38,8 +38,10 @@
 .oc-navigation-bar__top-level-item {
   display: inline-flex;
   padding: 0;
-  border-top: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
   position: relative;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
 
   &:hover {
     .oc-navigation-bar-overlay;
@@ -65,7 +67,7 @@
 }
 
 .oc-navigation-bar__top-level-item--active {
-  border-top-color: #ec6608;
+  border-bottom-color: #ec6608;
 
   &:after {
     opacity: 0;
@@ -83,7 +85,7 @@
 }
 
 .oc-navigation-bar__clickable-element {
-  padding: 8px 12px;
+  padding: 6px 12px;
   display: inline-flex;
   position: relative;
   background-color: transparent;
@@ -115,16 +117,18 @@
   padding: 0;
   margin: 0;
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   background-color: #fff;
   overflow: hidden;
   transform: translate(0, 100%);
   box-shadow: 0 2px 3px rgba(0,0,0, 0.25);
+  text-shadow: none;
 }
 
 .oc-navigation-bar__sub-item {
   position: relative;
+  font-weight: normal;
 
   &:hover {
     .oc-navigation-bar-overlay;

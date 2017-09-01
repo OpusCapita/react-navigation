@@ -119,7 +119,7 @@ class NavigationBar extends Component {
       );
     } else {
       clickableElement = (
-        <button
+        <div
           href={href}
           onClick={onClick || (() => {})}
           className={`
@@ -128,7 +128,7 @@ class NavigationBar extends Component {
           `}
         >
           {children}
-        </button>
+        </div>
       );
     }
 
@@ -186,9 +186,7 @@ class NavigationBar extends Component {
         `}
         onClick={() => this.handleTopLevelItemClick(key)}
         style={{
-          borderTopColor: isActive ? this.props.theme.navActiveBorderColor : this.props.theme.navBorderColor,
-          color: isActive ? this.props.theme.navActiveColor : 'inherit',
-          backgroundColor: isActive ? this.props.theme.navActiveBgColor : 'inherit'
+          borderBottomColor: isActive ? this.props.theme.navActiveBorderColor : 'transparent'
         }}
       >
         {clickableItem}

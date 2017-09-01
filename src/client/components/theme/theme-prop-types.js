@@ -7,9 +7,6 @@ export default Types.shape({
   menuIconNotificationColor: Types.string,
   navBgColor: Types.string,
   navColor: Types.string,
-  navBorderColor: Types.string,
-  navActiveBgColor: '#fff',
-  navActiveColor: '#333',
   navActiveBorderColor: Types.string,
   isNavHoverOverlayDark: Types.bool,
   isMenuIconHoverOverlayDark: Types.bool
