@@ -143,6 +143,7 @@ class MenuIcon extends Component {
           {interpolatedStyle => (
             <div
               className="oc-menu-icon__sub-items-container"
+              onClick={e => e.stopPropagation()}
               style={{
                 opacity: interpolatedStyle.x,
                 pointerEvents: isOpened ? 'auto' : 'none',
