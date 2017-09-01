@@ -96,7 +96,7 @@ class NavigationBar extends Component {
         <SVG
           svg={dropdownSVG}
           style={{
-            fill: isActive ? this.props.theme.navActiveColor : this.props.theme.navColor
+            fill: this.props.theme.navColor
           }}
         />
       </div>
