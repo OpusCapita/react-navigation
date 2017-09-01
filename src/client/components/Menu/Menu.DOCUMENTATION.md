@@ -99,12 +99,16 @@ TopMenu is
       >
         <div
           style={{
-            padding: '12px',
+            padding: '6px 12px',
             whiteSpace: 'nowrap'
           }}
         >
           <h5>Menu Icon Dropdown</h5>
-          <ul>
+          <ul style={{
+            listStyle: 'none',
+            padding: '0',
+            textAlign: 'center'
+          }}>
             <li>Dropdown Item 0</li>
             <li>Dropdown Item 1</li>
             <li>Dropdown Item 2</li>
