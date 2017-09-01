@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Children } from 'react';
 import Types from 'prop-types';
 import './Menu.less';
 import MenuLogo from '../MenuLogo';
@@ -126,7 +126,7 @@ class Menu extends Component {
         </div>
         <div className="oc-menu__icons-bar-container">
           <MenuIconsBar theme={theme}>
-            {iconsBarItems}
+            {Children.toArray(iconsBarItems)}
           </MenuIconsBar>
         </div>
       </div>
