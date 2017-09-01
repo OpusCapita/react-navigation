@@ -1,4 +1,10 @@
 
+Release 0.0.8 Fri Sep 01 2017 16:19:23 GMT+0300 (+03)
+=======================================================
+
+ - Remove console.log (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Fri Sep 1 16:19:06 2017 +0300)
+ - Updating to a version to  0.0.8 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Fri Sep 1 16:06:52 2017 +0300)
+
 Release 0.0.7 Fri Sep 01 2017 16:06:37 GMT+0300 (+03)
 =======================================================
 
