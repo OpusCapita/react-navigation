@@ -11,10 +11,10 @@ const propTypes = {
   activeItem: Types.number,
   openedItem: Types.number,
   navigationItems: Types.arrayOf(Types.shape({
-    label: Types.string,
+    children: Types.node,
     href: Types.string,
     subItems: Types.arrayOf(Types.shape({
-      label: Types.string,
+      children: Types.node,
       href: Types.string,
       onClick: Types.func
     }))
@@ -88,7 +88,7 @@ class NavigationBar extends Component {
   }
 
   renderClickableElement = (item, key, className) => {
-    const { href, label, subItems, onClick } = item;
+    const { href, children, subItems, onClick } = item;
     const isActive = this.props.activeItem === key;
 
     let dropdownIcon = item.subItems ? (
@@ -114,7 +114,7 @@ class NavigationBar extends Component {
             ${dropdownIcon ? 'oc-navigation-bar__clickable-element--with-dropdown' : ''}
           `}
         >
-          {label}
+          {children}
         </a>
       );
     } else {
@@ -127,7 +127,7 @@ class NavigationBar extends Component {
             ${dropdownIcon ? 'oc-navigation-bar__clickable-element--with-dropdown' : ''}
           `}
         >
-          {label}
+          {children}
         </button>
       );
     }

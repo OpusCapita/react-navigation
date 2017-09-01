@@ -24,34 +24,38 @@ TopMenu is
   labelLinkText="OpusCapita"
   labelLinkHref="http://opuscapita.com"
   navigationItems={[
-    { label: 'Dashboard', href: 'http://opuscapita.com' },
-    { label: 'Supplier Application', href: 'http://opuscapita.com' },
+    { children: 'Dashboard', href: 'http://opuscapita.com' },
+    { children: 'Supplier Application', href: 'http://opuscapita.com' },
     {
-      label: 'Responsibilities',
+      children: 'Responsibilities',
       subItems: [
         { 
-          label: 'Supplier Responsibility Editor', 
+          children: 'Supplier Responsibility Editor', 
           href: 'http://opuscapita.com'
         },
         { 
-          label: 'Classification Group Responsibility Editor', 
+          children: 'Classification Group Responsibility Editor',
           href: 'http://opuscapita.com'
         }
       ]
     },
     {
-      label: 'Reports',
+      children: 'Reports',
       subItems: [
         { 
-          label: 'Supplier Status Report', 
+          children: 'Supplier Status Report', 
           href: 'http://opuscapita.com'
         },
         { 
-          label: 'Supplier Feedback',
+          children: 'Supplier Feedback',
           href: 'http://opuscapita.com'
         },
         { 
-          label: 'Supplier Rating', 
+          children: 'Supplier Rating', 
+          href: 'http://opuscapita.com'
+        },
+        { 
+          children: (<strong>Custom Child</strong>), 
           href: 'http://opuscapita.com'
         }
       ]

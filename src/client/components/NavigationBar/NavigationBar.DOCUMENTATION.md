@@ -16,34 +16,34 @@ NavigationBar is
 <NavigationBar
   activeItem={0}
   navigationItems={[
-    { label: 'Dashboard', href: 'http://google.com' },
-    { label: 'Supplier Application', href: 'http://google.com' },
+    { children: 'Dashboard', href: 'http://google.com' },
+    { children: 'Supplier Application', href: 'http://google.com' },
     {
-      label: 'Responsibilities',
+      children: 'Responsibilities',
       subItems: [
         { 
-          label: 'Supplier Responsibility Editor', 
+          children: 'Supplier Responsibility Editor', 
           href: 'http://google.com'
         },
         { 
-          label: 'Classification Group Responsibility Editor', 
+          children: 'Classification Group Responsibility Editor', 
           href: 'http://google.com'
         }
       ]
     },
     {
-      label: 'Reports',
+      children: 'Reports',
       subItems: [
         { 
-          label: 'Supplier Status Report', 
+          children: 'Supplier Status Report', 
           href: 'http://google.com'
         },
         { 
-          label: 'Supplier Feedback',
+          children: 'Supplier Feedback',
           href: 'http://google.com'
         },
         { 
-          label: 'Supplier Rating', 
+          children: 'Supplier Rating', 
           href: 'http://google.com'
         }
       ]
