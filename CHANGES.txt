@@ -1,4 +1,13 @@
 
+Release 0.0.4 Fri Sep 01 2017 11:26:11 GMT+0300 (+03)
+=======================================================
+
+ - Fix auto hide on MenuIcon child click (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Fri Sep 1 11:24:30 2017 +0300)
+ - Fix warining (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Fri Sep 1 11:21:44 2017 +0300)
+ - Improve styles (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Fri Sep 1 11:16:21 2017 +0300)
+ - Improve styles (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Fri Sep 1 11:07:02 2017 +0300)
+ - Updating to a version to  0.0.4 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Fri Sep 1 10:36:16 2017 +0300)
+
 Release 0.0.3 Fri Sep 01 2017 10:35:52 GMT+0300 (+03)
 =======================================================
 
