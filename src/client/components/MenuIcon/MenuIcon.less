@@ -41,13 +41,23 @@
   padding: 0;
   margin: 0;
   position: absolute;
-  bottom: -6px;
+  bottom: -14px;
   right: 0;
   background-color: #fff;
-  overflow: hidden;
   transform: translate(0, 100%);
   box-shadow: 0 2px 3px rgba(0,0,0, 0.25);
   z-index: 10;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    top: 0;
+    right: 10px;
+    transform: translate(0, -50%) rotate(45deg);
+    z-index: -1;
+  }
 }
 
 .oc-menu-icon__button {
