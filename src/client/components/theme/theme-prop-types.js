@@ -8,8 +8,6 @@ export default Types.shape({
   navBgColor: Types.string,
   navColor: Types.string,
   navActiveBorderColor: Types.string,
-  menuGridItemBgColor: Types.string,
-  menuGridItemColor: Types.string,
   isNavHoverOverlayDark: Types.bool,
   isMenuIconHoverOverlayDark: Types.bool
 });
