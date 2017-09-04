@@ -5,11 +5,13 @@
 
 import React, { Component, PropTypes } from 'react';
 import { showroomScopeDecorator } from '@opuscapita/react-showroom-client';
-import MenuIcon from '../MenuIcon';
 import opuscapitaDarkTheme from '../theme/opuscapita-dark';
 import opuscapitaLightTheme from '../theme/opuscapita-light';
+import MenuIcon from '../MenuIcon';
+import MenuDropdownGrid from '../MenuDropdownGrid';
 
 window.MenuIcon = MenuIcon;
+window.MenuDropdownGrid = MenuDropdownGrid;
 
 function requireAll(requireContext) {
   return requireContext.keys().map(key => ({

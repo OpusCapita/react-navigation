@@ -13,13 +13,31 @@ MenuDropdownGrid is
 
 ```
 <MenuDropdownGrid 
+  activeItem={0}
   items={[
-    { label: 'Shop' },
-    { label: 'Quote' },
-    { label: 'Label' },
-    { label: 'Order' },
-    { label: 'Invoices' },
-    { label: 'Analyze' }
+    { 
+      label: 'Shop', 
+      svg: _scope.getIcon('local_mall') 
+    },
+    { 
+      label: 'Quote', 
+      svg: _scope.getIcon('monetization_on') 
+    },
+    {
+      label: 'Request', 
+      svg: _scope.getIcon('room_service') 
+    },
+    {
+      label: 'Order', 
+      svg: _scope.getIcon('insert_drive_file') 
+    },
+    {
+      label: 'Invoices', 
+      svg: _scope.getIcon('receipt') },
+    { 
+      label: 'Analyze', 
+      svg: _scope.getIcon('trending_up') 
+    }
   ]}
 />
 ```
