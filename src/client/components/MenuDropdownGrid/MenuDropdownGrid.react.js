@@ -4,7 +4,7 @@ import './MenuDropdownGrid.less';
 import SVG from '@opuscapita/react-svg/lib/SVG';
 
 const propTypes = {
-  activeItem: 0,
+  activeItem: Types.number,
   items: Types.arrayOf(Types.shape({
     svg: Types.string,
     label: Types.string

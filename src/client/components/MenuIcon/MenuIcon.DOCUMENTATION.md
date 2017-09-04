@@ -33,6 +33,7 @@ MenuIcon is
   <MenuIcon 
     onClick={() => console.log('click!')}
     svg={_scope.getIcon('person')}
+    label="Admin"
   >
     <div>Hello</div>
   </MenuIcon>

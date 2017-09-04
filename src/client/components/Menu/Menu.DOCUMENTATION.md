@@ -108,7 +108,7 @@ TopMenu is
               svg: _scope.getIcon('insert_drive_file') 
             },
             {
-              label: 'Invoices', 
+              label: 'Invoice', 
               svg: _scope.getIcon('receipt') },
             { 
               label: 'Analyze', 
@@ -130,28 +130,65 @@ TopMenu is
         onClick={() => console.log('click!')}
         svg={_scope.getIcon('person')}
         title="Account settings"
+        label="Admin"
       >
-        <div
-          style={{
-            padding: '6px 12px',
-            whiteSpace: 'nowrap'
-          }}
-        >
-          <h5>Menu Icon Dropdown</h5>
-          <ul style={{
-            listStyle: 'none',
-            padding: '0',
-            textAlign: 'center'
-          }}>
-            <li>Dropdown Item 0</li>
-            <li>Dropdown Item 1</li>
-            <li>Dropdown Item 2</li>
-            <li>Dropdown Item 3</li>
-            <li>Dropdown Item 4</li>
-            <li>Dropdown Item 5</li>
-            <li>Dropdown Item 6</li>
-          </ul>
-        </div>
+        <MenuDropdownList
+          items={[
+          <div className="oc-menu-dropdown-list__header">Operations</div>,
+            <div className="oc-menu-dropdown-list__common-item">
+              Requistion defaults
+            </div>,
+        
+        
+            <div className="oc-menu-dropdown-list__common-item">
+              Buying on behalf of
+            </div>,
+        
+        
+            <div className="oc-menu-dropdown-list__common-item">
+              Delegation
+            </div>,
+        
+        
+            <div className="oc-menu-dropdown-list__header">Current assignment</div>,
+            <div className="oc-menu-dropdown-list__common-item">
+              Musterkunden AG (OC001)
+            </div>,
+                
+            <div className="oc-menu-dropdown-list__divider"></div>,
+            <div className="oc-menu-dropdown-list__common-item">
+              Change language
+            </div>,
+            <div className="oc-menu-dropdown-list__common-item">
+              Change password
+            </div>,
+            <div className="oc-menu-dropdown-list__common-item">
+              <span>Sign out</span>
+            </div>
+          ]}
+        />
+      </MenuIcon>
+    ),
+    (
+      <MenuIcon 
+        onClick={() => console.log('click!')}
+        svg={_scope.getIcon('live_help')}
+        title="Need help ?"
+        hideDropdownArrow={true}
+      >
+        <MenuDropdownList
+          items={[
+            <div className="oc-menu-dropdown-list__common-item">
+              User manual
+            </div>,
+            <div className="oc-menu-dropdown-list__common-item">
+              Contact support
+            </div>,
+            <div className="oc-menu-dropdown-list__common-item">
+              Technical user details
+            </div>,
+          ]}
+        />
       </MenuIcon>
     )
   ]}

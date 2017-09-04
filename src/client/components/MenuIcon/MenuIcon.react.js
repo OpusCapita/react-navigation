@@ -13,6 +13,7 @@ const propTypes = {
   svg: Types.string,
   supTitle: Types.string,
   title: Types.string,
+  label: Types.string,
   hideDropdownArrow: Types.bool,
   theme: themePropTypes,
   onClick: Types.func
@@ -20,6 +21,7 @@ const propTypes = {
 const defaultProps = {
   svg: '',
   supTitle: '',
+  label: '',
   title: '',
   hideDropdownArrow: false,
   theme: opuscapitaLightTheme,
@@ -105,6 +107,7 @@ class MenuIcon extends Component {
       svg,
       supTitle,
       title,
+      label,
       hideDropdownArrow,
       onClick,
       children,
@@ -181,6 +184,8 @@ class MenuIcon extends Component {
           svg={svg}
           svgSize="24px"
           title={isOpened ? '' : title}
+          label={label}
+          contentPosition="before"
         />
         {supTitleElement}
         {dropdownArrowElement}
