@@ -86,6 +86,7 @@ TopMenu is
         onClick={() => console.log('click!')}
         svg={_scope.getIcon('apps')}
         title="Applications"
+        hideDropdownArrow={true}
       >
         <MenuDropdownGrid 
           activeItem={0}
@@ -130,6 +131,7 @@ TopMenu is
         svg={_scope.getIcon('person')}
         title="Account settings"
         label="Admin"
+        hideDropdownArrow={true}
       >
         <MenuDropdownList
           items={[
@@ -173,6 +175,7 @@ TopMenu is
         onClick={() => console.log('click!')}
         svg={_scope.getIcon('help')}
         title="Need help ?"
+        hideDropdownArrow={true}
       >
         <MenuDropdownList
           items={[
