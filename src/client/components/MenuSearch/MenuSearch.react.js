@@ -66,7 +66,7 @@ class MenuSearch extends Component {
 
   handleBodyKeyDown = (event) => {
     if (event.which === 9 || event.which === 27) { // TAB or ESC key
-      this.showAutocomplete();
+      this.hideAutocomplete();
     }
   }
 
