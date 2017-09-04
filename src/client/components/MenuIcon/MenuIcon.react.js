@@ -152,6 +152,7 @@ class MenuIcon extends Component {
               style={{
                 opacity: interpolatedStyle.x,
                 pointerEvents: isOpened ? 'auto' : 'none',
+                overflow: isOpened ? 'visible' : 'hidden',
                 height: isOpened ? 'auto' : (this.state.animationEnded ? '0' : 'auto')
               }}
             >
