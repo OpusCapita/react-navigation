@@ -63,10 +63,8 @@ TopMenu is
   ]}
   iconsBarItems={[
     (
-      <MenuIcon 
-        onClick={() => console.log('click!')}
-        svg={_scope.getIcon('search')}
-        title="Search"
+      <MenuSearch
+        placeholder="Type here to search"
       />
     ), (
       <MenuIcon

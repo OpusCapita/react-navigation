@@ -10,12 +10,14 @@ import opuscapitaLightTheme from '../theme/opuscapita-light';
 import MenuIcon from '../MenuIcon';
 import MenuDropdownGrid from '../MenuDropdownGrid';
 import MenuDropdownList from '../MenuDropdownList';
+import MenuSearch from '../MenuSearch';
 import SVG from '@opuscapita/react-svg/lib/SVG';
 
 window.MenuIcon = MenuIcon;
 window.MenuDropdownGrid = MenuDropdownGrid;
 window.MenuDropdownList = MenuDropdownList;
 window.SVG = SVG;
+window.MenuSearch = MenuSearch;
 
 function requireAll(requireContext) {
   return requireContext.keys().map(key => ({
