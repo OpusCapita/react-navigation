@@ -144,7 +144,10 @@ class MenuIcon extends Component {
         >
           {interpolatedStyle => (
             <div
-              className="oc-menu-icon__sub-items-container"
+              className={`
+                oc-menu-icon__sub-items-container
+                ${showDropdownArrow ? 'oc-menu-icon__sub-items-container--with-dropdown' : ''}
+              `}
               onClick={e => e.stopPropagation()}
               style={{
                 opacity: interpolatedStyle.x,
