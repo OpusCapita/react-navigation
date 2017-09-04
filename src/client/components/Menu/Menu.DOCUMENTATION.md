@@ -64,7 +64,7 @@ TopMenu is
   iconsBarItems={[
     (
       <MenuSearch
-        placeholder="Type here to search"
+        placeholder="Search"
       />
     ), (
       <MenuIcon
