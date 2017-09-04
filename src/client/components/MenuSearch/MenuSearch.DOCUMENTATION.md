@@ -12,7 +12,19 @@ MenuSearch is
 ### Code Example
 
 ```
-<MenuSearch />
+<div
+  style={{ 
+    display: 'flex', 
+    justifyContent: 'flex-end', 
+    backgroundColor: '#3b4a56',
+    padding: '12px'
+  }}
+>
+  <MenuSearch
+    title="Search"
+    placeholder="Search items"
+  />
+</div>
 ```
 
 ### Component Name
