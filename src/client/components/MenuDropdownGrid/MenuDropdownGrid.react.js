@@ -2,6 +2,8 @@ import React, { Component, Children } from 'react';
 import Types from 'prop-types';
 import './MenuDropdownGrid.less';
 import SVG from '@opuscapita/react-svg/lib/SVG';
+import themePropTypes from '../theme/theme-prop-types';
+import opuscapitaLightTheme from '../theme/opuscapita-light';
 
 const propTypes = {
   activeItem: Types.number,
@@ -10,13 +12,15 @@ const propTypes = {
     label: Types.string
   })),
   itemSize: Types.number,
-  itemsPerRow: Types.number
+  itemsPerRow: Types.number,
+  theme: themePropTypes
 };
 const defaultProps = {
   activeItem: null,
   items: [],
   itemSize: 80,
-  itemsPerRow: 3
+  itemsPerRow: 3,
+  theme: opuscapitaLightTheme
 };
 
 export default
@@ -26,7 +30,8 @@ class MenuDropdownGrid extends Component {
       activeItem,
       items,
       itemSize,
-      itemsPerRow
+      itemsPerRow,
+      theme
     } = this.props;
 
     const itemsElement = items.map((item, i) => {
@@ -44,9 +49,20 @@ class MenuDropdownGrid extends Component {
               oc-menu-dropdown-grid__item
               ${activeItem === i ? 'oc-menu-dropdown-grid__item--active' : ''}
             `}
+            style={{
+              backgroundColor: theme.menuGridItemBgColor,
+              color: theme.menuGridItemColor
+            }}
           >
             <div className="oc-menu-dropdown-grid__item-image">
-              <SVG svg={item.svg || ''} style={{ width: '24px', height: '24px', fill: '#333' }} />
+              <SVG
+                svg={item.svg || ''}
+                style={{
+                  width: '24px',
+                  height: '24px',
+                  fill: theme.menuGridItemColor
+                }}
+              />
             </div>
             <div className="oc-menu-dropdown-grid__item-label">
               {item.label || ''}

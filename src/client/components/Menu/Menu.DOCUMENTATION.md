@@ -88,7 +88,8 @@ TopMenu is
         title="Applications"
         hideDropdownArrow={true}
       >
-        <MenuDropdownGrid 
+        <MenuDropdownGrid
+          theme={_scope.state.themes.opuscapitaDark}
           activeItem={0}
           items={[
             { 
