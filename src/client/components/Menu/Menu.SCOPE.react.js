@@ -12,6 +12,7 @@ import MenuDropdownGrid from '../MenuDropdownGrid';
 import MenuDropdownList from '../MenuDropdownList';
 import MenuSearch from '../MenuSearch';
 import SVG from '@opuscapita/react-svg/lib/SVG';
+let circleSVG = require('!!raw-loader!./circle.svg');
 
 window.MenuIcon = MenuIcon;
 window.MenuDropdownGrid = MenuDropdownGrid;
@@ -34,7 +35,7 @@ class MenuScope extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      icons,
+      icons: [ ...icons, { name: 'circle', svg: circleSVG } ],
       themes: {
         opuscapitaDark: opuscapitaDarkTheme,
         opuscapitaLight: opuscapitaLightTheme

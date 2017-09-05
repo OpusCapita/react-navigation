@@ -119,8 +119,8 @@ class Menu extends Component {
     const searchElement = showSearch ? (
       <div className="oc-menu__search-container">
         <MenuSearch
-          minWidth={isMobile ? 240 : 320}
-          maxWidth={isMobile ? 240 : 380}
+          minWidth={isMobile ? 'calc(100% - 48px)' : 320}
+          maxWidth={isMobile ? 'calc(100% - 48px)' : 380}
           placeholder="Search"
         />
       </div>

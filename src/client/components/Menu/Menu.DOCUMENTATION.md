@@ -124,7 +124,7 @@ TopMenu is
     (
       <MenuIcon 
         onClick={() => console.log('click!')}
-        svg={_scope.getIcon('person')}
+        svg={_scope.getIcon('circle')}
         title="Account settings"
         hideDropdownArrow={true}
       >
@@ -161,28 +161,6 @@ TopMenu is
             <div className="oc-menu-dropdown-list__common-item">
               <span>Sign out</span>
             </div>
-          ]}
-        />
-      </MenuIcon>
-    ),
-    (
-      <MenuIcon 
-        onClick={() => console.log('click!')}
-        svg={_scope.getIcon('help')}
-        title="Need help ?"
-        hideDropdownArrow={true}
-      >
-        <MenuDropdownList
-          items={[
-            <div className="oc-menu-dropdown-list__common-item">
-              User manual
-            </div>,
-            <div className="oc-menu-dropdown-list__common-item">
-              Contact support
-            </div>,
-            <div className="oc-menu-dropdown-list__common-item">
-              Technical user details
-            </div>,
           ]}
         />
       </MenuIcon>
