@@ -18,8 +18,8 @@ const propTypes = {
 const defaultProps = {
   theme: opuscapitaDarkTheme,
   placeholder: '',
-  minWidth: 240,
-  maxWidth: 480
+  minWidth: 320,
+  maxWidth: 380
 };
 
 const springPreset = { stiffness: 300, damping: 28 };
@@ -56,7 +56,7 @@ class MenuSearch extends Component {
     this.showAutocomplete();
   }
 
-  handleBodyClick = () => {
+  handleBodyClick = (event) => {
     let clickedOutside = !this.containerRef.contains(event.target);
 
     if (clickedOutside) {

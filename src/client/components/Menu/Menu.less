@@ -1,7 +1,7 @@
 .oc-menu {
   display: flex;
   background-color: #fff;
-  height: 78px;
+  height: 86px;
   position: relative;
   z-index: 999;
 
@@ -36,15 +36,24 @@
   border-top-right-radius: 24px 36px;
 }
 
+.oc-menu__search-container {
+  padding: 3px 12px 0 0;
+}
+
 .oc-menu__navigation-bar {
   z-index: 1;
 }
 
-.oc-menu__middle-container {
+.oc-menu__main-container {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   padding-left: 18px;
+}
+
+.oc-menu__top-row {
+  display: flex;
 }
 
 .oc-menu__app-name {
@@ -54,8 +63,7 @@
   font-size: 24px;
   align-items: center;
   white-space: nowrap;
-  padding-top: 2px;
-  letter-spacing: 0.7px;
+  padding: 10px 0;
 }
 
 .oc-menu__icons-bar-container {
@@ -64,4 +72,27 @@
   padding-right: 8px;
   display: inline-flex;
   align-items: flex-start;
+}
+
+
+@media (max-width: 1366px) {
+  .oc-menu__icons-bar-container {
+    position: absolute;
+    right: 0;
+    flex-direction: column;
+    padding: 4px 12px;
+    height: 86px;
+    justify-content: space-between;
+  }
+
+  .oc-menu__search-container {
+    margin-left: auto;
+    padding: 2px 0 0;
+  }
+}
+
+@media (max-width: 990px) {
+  .oc-menu__app-name {
+    display: none;
+  }
 }

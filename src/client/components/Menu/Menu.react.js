@@ -4,8 +4,12 @@ import './Menu.less';
 import MenuLogo from '../MenuLogo';
 import NavigationBar from '../NavigationBar';
 import MenuIconsBar from '../MenuIconsBar';
+import MenuSearch from '../MenuSearch';
 import themePropTypes from '../theme/theme-prop-types';
 import opuscapitaLightTheme from '../theme/opuscapita-light';
+
+const mobileWidth = 990;
+const padWidth = 1366;
 
 const propTypes = {
   appName: Types.string,
@@ -17,6 +21,7 @@ const propTypes = {
   labelText: Types.string,
   labelLinkText: Types.string,
   labelLinkHref: Types.string,
+  showSearch: Types.bool,
   navigationItems: Types.arrayOf(Types.shape({
     label: Types.string,
     href: Types.string,
@@ -40,6 +45,7 @@ const defaultProps = {
   labelLinkText: '',
   labelLinkHref: '#',
   navigationItems: [],
+  showSearch: true,
   iconsBarItems: [],
   containerElement: window,
   theme: opuscapitaLightTheme
@@ -50,18 +56,32 @@ class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      containerScrolled: false
+      containerScrolled: false,
+      rect: null
     };
 
     this.handleContainerScroll = this.handleContainerScroll.bind(this);
+    this.handleWindowResize = this.handleWindowResize.bind(this);
   }
 
   componentDidMount() {
+    window.addEventListener('resize', this.handleWindowResize);
     this.props.containerElement.addEventListener('scroll', this.handleContainerScroll);
+
+    this.setRect();
   }
 
   componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowResize);
     this.props.containerElement.removeEventListener('scroll', this.handleContainerScroll);
+  }
+
+  setRect() {
+    this.setState({ rect: this.containerRef.getBoundingClientRect() });
+  }
+
+  handleWindowResize() {
+    this.setRect();
   }
 
   handleContainerScroll(e) {
@@ -84,14 +104,48 @@ class Menu extends Component {
       labelLinkText,
       labelLinkHref,
       navigationItems,
+      showSearch,
       iconsBarItems,
       theme
     } = this.props;
 
-    const { containerScrolled } = this.state;
+    const { containerScrolled, rect } = this.state;
+    const searchElement = showSearch ? (
+      <div className="oc-menu__search-container">
+        <MenuSearch
+          placeholder="Search"
+          />
+      </div>
+    ) : null;
+
+    const logoElement = (
+      <div className="oc-menu__logo-container">
+        <MenuLogo
+          logoSrc={logoSrc}
+          logoTitle={logoTitle}
+          logoHref={logoHref}
+          labelText={labelText}
+          labelLinkText={labelLinkText}
+          labelLinkHref={labelLinkHref}
+          />
+      </div>
+    );
+
+    const navigationBarElement = (
+      <div className="oc-menu__navigation-bar">
+        <NavigationBar
+          activeItem={activeItem}
+          navigationItems={navigationItems}
+          theme={theme}
+          />
+      </div>
+    );
+
+    const isMobile = rect && rect.width < mobileWidth;
 
     return (
       <div
+        ref={ref => this.containerRef = ref}
         className={`
           oc-menu
           ${alwaysAtTop ? 'oc-menu--at-top' : ''}
@@ -102,32 +156,28 @@ class Menu extends Component {
           color: theme.color
         }}
       >
-        <div className="oc-menu__logo-container">
-          <MenuLogo
-            logoSrc={logoSrc}
-            logoTitle={logoTitle}
-            logoHref={logoHref}
-            labelText={labelText}
-            labelLinkText={labelLinkText}
-            labelLinkHref={labelLinkHref}
-          />
-        </div>
-        <div className="oc-menu__middle-container">
-          <div className="oc-menu__app-name">
-            {appName}
+        {!isMobile ? logoElement : null}
+
+        <div className="oc-menu__main-container">
+          <div className="oc-menu__top-row">
+
+            {isMobile ? logoElement : null}
+
+            <div className="oc-menu__app-name">
+              {appName}
+            </div>
+            <div className="oc-menu__icons-bar-container">
+              {searchElement}
+              <MenuIconsBar theme={theme}>
+                {Children.toArray(iconsBarItems)}
+              </MenuIconsBar>
+            </div>
           </div>
-          <div className="oc-menu__navigation-bar">
-            <NavigationBar
-              activeItem={activeItem}
-              navigationItems={navigationItems}
-              theme={theme}
-            />
+
+          <div className="oc-menu__bottom-row">
+            {!isMobile ? navigationBarElement : null}
           </div>
-        </div>
-        <div className="oc-menu__icons-bar-container">
-          <MenuIconsBar theme={theme}>
-            {Children.toArray(iconsBarItems)}
-          </MenuIconsBar>
+
         </div>
       </div>
     );

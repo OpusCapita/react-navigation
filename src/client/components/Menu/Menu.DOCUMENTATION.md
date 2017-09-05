@@ -23,6 +23,7 @@ TopMenu is
   labelText="powered by "
   labelLinkText="OpusCapita"
   labelLinkHref="http://opuscapita.com"
+  showSearch={true}
   navigationItems={[
     { children: 'Dashboard', href: 'http://opuscapita.com' },
     { children: 'Supplier Application', href: 'http://opuscapita.com' },
@@ -63,10 +64,6 @@ TopMenu is
   ]}
   iconsBarItems={[
     (
-      <MenuSearch
-        placeholder="Search"
-      />
-    ), (
       <MenuIcon
         onClick={() => console.log('click!')}
         svg={_scope.getIcon('shopping_cart')}
