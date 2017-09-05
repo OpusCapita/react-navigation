@@ -126,7 +126,6 @@ TopMenu is
         onClick={() => console.log('click!')}
         svg={_scope.getIcon('person')}
         title="Account settings"
-        label="Admin"
         hideDropdownArrow={true}
       >
         <MenuDropdownList

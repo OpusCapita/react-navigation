@@ -109,12 +109,20 @@ class Menu extends Component {
       theme
     } = this.props;
 
-    const { containerScrolled, rect } = this.state;
+    const {
+      containerScrolled,
+      rect
+    } = this.state;
+
+    const isMobile = rect && rect.width < mobileWidth;
+
     const searchElement = showSearch ? (
       <div className="oc-menu__search-container">
         <MenuSearch
+          minWidth={isMobile ? 240 : 320}
+          maxWidth={isMobile ? 240 : 380}
           placeholder="Search"
-          />
+        />
       </div>
     ) : null;
 
@@ -140,8 +148,6 @@ class Menu extends Component {
           />
       </div>
     );
-
-    const isMobile = rect && rect.width < mobileWidth;
 
     return (
       <div
