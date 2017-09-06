@@ -133,7 +133,7 @@ TopMenu is
           lastName="Albers"
           userName="st-albers"
           initials="SA"
-          avatarSrc="/static/avatar.jpg"
+          avatarSrc="./static/avatar.jpg"
           onClick={() => console.log('click')}
           actions={[
             {
