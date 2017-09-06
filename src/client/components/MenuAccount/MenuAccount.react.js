@@ -5,7 +5,7 @@ import MenuAccountIcon from '../MenuAccountIcon';
 import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
 import Button from '@opuscapita/react-buttons/lib/Button';
 
-const logoutSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/power_settings_new.svg');
+const logoutSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/exit_to_app.svg');
 
 const propTypes = {
   firstName: Types.string,
