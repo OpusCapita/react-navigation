@@ -124,11 +124,10 @@ TopMenu is
     (
       <MenuIcon 
         onClick={() => console.log('click!')}
-        svg={_scope.getIcon('circle')}
         title="Account settings"
-        hideDropdownArrow={true}
+        label="Alexey"
       >
-        <MenuAccount 
+        <MenuAccount
           firstName="Alexey"
           lastName="Sergeev"
           userName="alexey.sergeev"

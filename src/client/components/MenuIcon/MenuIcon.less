@@ -79,7 +79,7 @@
 }
 
 
-// XXX Remove it if @opuscapita/react-buttons will be replaced
+// XXX Remove it if @opuscapita/react-buttons will be replaced or modified
 .oc-menu-icon__button--dark-overlay:hover:before,
 .oc-menu-icon_-button--dark-overlay:focus:before {
   background-color: rgba(0, 0, 0, 0.04);
@@ -94,6 +94,16 @@
   display: none;
 }
 
-.oc-menu-icon button {
-  text-transform: none;
+.oc-menu-icon__button {
+  text-transform: none !important;
+}
+
+.oc-menu-icon__button--with-dropdown {
+  padding-left: 6px !important;
+}
+
+.oc-menu-icon__button > div > div {
+  max-width: 10ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

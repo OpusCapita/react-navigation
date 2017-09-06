@@ -17,6 +17,7 @@ const propTypes = {
   onAvatarClick: Types.func,
   actions: Types.arrayOf(Types.shape({
     label: Types.string,
+    svg: Types.string,
     onClick: Types.func
   })),
   bottomElement: Types.node
@@ -57,8 +58,12 @@ class MenuAccount extends Component {
       <Button
         key={i}
         className="oc-menu-account__action-button"
+        color="#333"
         label={action.label}
+        svg={action.svg}
         onClick={action.onClick}
+        svgSize="20px"
+        contentPosition="before"
       />
     ));
 
