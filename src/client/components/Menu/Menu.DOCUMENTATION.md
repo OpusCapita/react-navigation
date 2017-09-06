@@ -88,11 +88,11 @@ TopMenu is
           activeItem={0}
           items={[
             { 
-              label: 'Shop', 
+              label: 'Online Product Catalog', 
               svg: _scope.getIcon('local_mall') 
             },
             { 
-              label: 'Quote', 
+              label: 'Request for Quote', 
               svg: _scope.getIcon('monetization_on') 
             },
             {
@@ -100,12 +100,13 @@ TopMenu is
               svg: _scope.getIcon('room_service') 
             },
             {
-              label: 'Order', 
+              label: 'Order manager', 
               svg: _scope.getIcon('insert_drive_file') 
             },
             {
-              label: 'Invoice', 
-              svg: _scope.getIcon('receipt') },
+              label: 'Invoices manager', 
+              svg: _scope.getIcon('receipt') 
+            },
             { 
               label: 'Analyze', 
               svg: _scope.getIcon('trending_up') 

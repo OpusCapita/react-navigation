@@ -15,7 +15,7 @@ const propTypes = {
 const defaultProps = {
   activeItem: null,
   items: [],
-  itemSize: 80,
+  itemSize: 100,
   itemsPerRow: 3
 };
 
