@@ -128,39 +128,26 @@ TopMenu is
         title="Account settings"
         hideDropdownArrow={true}
       >
-        <MenuDropdownList
-          items={[
-          <div className="oc-menu-dropdown-list__header">Operations</div>,
-            <div className="oc-menu-dropdown-list__common-item">
-              Requistion defaults
-            </div>,
-        
-        
-            <div className="oc-menu-dropdown-list__common-item">
-              Buying on behalf of
-            </div>,
-        
-        
-            <div className="oc-menu-dropdown-list__common-item">
-              Delegation
-            </div>,
-        
-        
-            <div className="oc-menu-dropdown-list__header">Current assignment</div>,
-            <div className="oc-menu-dropdown-list__common-item">
-              Musterkunden AG (OC001)
-            </div>,
-                
-            <div className="oc-menu-dropdown-list__divider"></div>,
-            <div className="oc-menu-dropdown-list__common-item">
-              Change language
-            </div>,
-            <div className="oc-menu-dropdown-list__common-item">
-              Change password
-            </div>,
-            <div className="oc-menu-dropdown-list__common-item">
-              <span>Sign out</span>
-            </div>
+        <MenuAccount 
+          firstName="Stephan"
+          lastName="Albers"
+          userName="st-albers"
+          initials="SA"
+          avatarSrc="/static/avatar.jpg"
+          onClick={() => console.log('click')}
+          actions={[
+            {
+              label: 'My services', 
+              onClick: () => console.log('My services click')
+            },
+            {
+              label: 'Settings', 
+              onClick: () => console.log('Settings click')
+            },
+            {
+              label: 'Help', 
+              onClick: () => console.log('Help click')
+            }
           ]}
         />
       </MenuIcon>

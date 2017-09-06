@@ -11,6 +11,7 @@ import MenuIcon from '../MenuIcon';
 import MenuDropdownGrid from '../MenuDropdownGrid';
 import MenuDropdownList from '../MenuDropdownList';
 import MenuSearch from '../MenuSearch';
+import MenuAccount from '../MenuAccount';
 import SVG from '@opuscapita/react-svg/lib/SVG';
 let circleSVG = require('!!raw-loader!./circle.svg');
 
@@ -19,6 +20,7 @@ window.MenuDropdownGrid = MenuDropdownGrid;
 window.MenuDropdownList = MenuDropdownList;
 window.SVG = SVG;
 window.MenuSearch = MenuSearch;
+window.MenuAccount = MenuAccount;
 
 function requireAll(requireContext) {
   return requireContext.keys().map(key => ({
