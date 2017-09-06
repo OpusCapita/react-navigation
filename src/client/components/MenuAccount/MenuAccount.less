@@ -1,9 +1,11 @@
 .oc-menu-account {
-  padding: 12px;
+
 }
 
 .oc-menu-account__top-row {
+  padding: 12px;
   display: flex;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .oc-menu-account__name-container {
@@ -27,23 +29,40 @@
 }
 
 .oc-menu-account__actions-container {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  padding: 12px 0;
+  padding: 8px 0 12px 0;
   margin-left: -4px;
 }
 
-.oc-menu-account__actions-container button {
-  // XXX @opuscapita/react-buttons-fix
-  text-transform: none;
+.oc-menu-account__middle-row {
+  padding: 0 12px;
 }
 
 .oc-menu-account__action-button {
-  font-size: 16px;
+  // XXX @opuscapita/react-buttons-fix
+  text-transform: none;
+  font-size: 14px;
   padding-left: 8px;
   padding-right: 8px;
-  margin-bottom: 1px;
   font-weight: normal;
+  position: relative;
+}
+
+.oc-menu-account__action-button:focus:before,
+.oc-menu-account__action-button:hover:before {
+  content: none;
+}
+
+.oc-menu-account__action-button:focus:after,
+.oc-menu-account__action-button:hover:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .oc-menu-account__bottom-row {
