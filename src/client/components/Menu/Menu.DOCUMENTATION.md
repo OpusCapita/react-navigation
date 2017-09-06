@@ -123,9 +123,11 @@ TopMenu is
     ),
     (
       <MenuIcon 
+        svg={_scope.getIcon('person')}
         onClick={() => console.log('click!')}
         title="Account settings"
         label="Alexey"
+        hideDropdownArrow={true}
       >
         <MenuAccount
           firstName="Alexey"
@@ -136,7 +138,7 @@ TopMenu is
           onClick={() => console.log('click')}
           actions={[
             {
-              label: 'My services', 
+              label: 'My services',
               onClick: () => console.log('My services click')
             },
             {
