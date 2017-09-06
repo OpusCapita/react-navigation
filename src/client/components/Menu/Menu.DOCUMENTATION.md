@@ -129,9 +129,9 @@ TopMenu is
         hideDropdownArrow={true}
       >
         <MenuAccount 
-          firstName="Stephan"
-          lastName="Albers"
-          userName="st-albers"
+          firstName="Alexey"
+          lastName="Sergeev"
+          userName="alexey.sergeev"
           initials="SA"
           avatarSrc="./static/avatar.jpg"
           onClick={() => console.log('click')}

@@ -13,9 +13,9 @@ MenuAccount is
 
 ```
 <MenuAccount 
-  firstName="Stephan"
-  lastName="Albers"
-  userName="st-albers"
+  firstName="Alexey"
+  lastName="Sergeev"
+  userName="sab"
   initials="SA"
   avatarSrc="/static/avatar.jpg"
   onClick={() => console.log('click')}
