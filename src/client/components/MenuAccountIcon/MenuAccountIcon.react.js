@@ -32,7 +32,6 @@ class MenuAccountIcon extends Component {
 
     const style = ({
       backgroundImage: `url(${avatarSrc})`,
-      boxShadow: avatarSrc ? 'none' : 'rgba(0, 0, 0, 0.22) 0px 0px 0px 1px inset',
       width: size,
       height: size,
       color: theme.bgColor,
