@@ -169,9 +169,9 @@ class Menu extends Component {
 
             {isMobile ? logoElement : null}
 
-            <div className="oc-menu__app-name">
+            <h1 className="oc-menu__app-name">
               {appName}
-            </div>
+            </h1>
             <div className="oc-menu__icons-bar-container">
               {searchElement}
               <MenuIconsBar theme={theme}>

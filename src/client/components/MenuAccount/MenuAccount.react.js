@@ -53,8 +53,9 @@ class MenuAccount extends Component {
       bottomElement
     } = this.props;
 
-    const actionsElement = actions.map(action => (
+    const actionsElement = actions.map((action, i) => (
       <Button
+        key={i}
         className="oc-menu-account__action-button"
         label={action.label}
         onClick={action.onClick}
