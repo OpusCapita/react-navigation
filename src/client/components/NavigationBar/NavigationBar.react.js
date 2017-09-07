@@ -189,7 +189,14 @@ class NavigationBar extends Component {
           borderBottomColor: isActive ? this.props.theme.navActiveBorderColor : 'transparent'
         }}
       >
-        {clickableItem}
+        <div
+          className={`
+            oc-navigation-bar__top-level-clickable-item
+            ${isActive ? 'oc-navigation-bar__top-level-clickable-item--active' : '' }`
+          }
+        >
+          {clickableItem}
+        </div>
         {subItems}
       </li>
     );

@@ -148,6 +148,10 @@ TopMenu is
             {
               label: 'Help', 
               onClick: () => console.log('Help click')
+            },
+            {
+              label: 'Log out', 
+              onClick: () => console.log('Help click')
             }
           ]}
         />

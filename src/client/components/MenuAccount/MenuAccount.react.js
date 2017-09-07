@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuAccount.less';
 import MenuAccountIcon from '../MenuAccountIcon';
-import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
+// import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
 import Button from '@opuscapita/react-buttons/lib/Button';
 import MenuSelect from '../MenuSelect';
 
-const logoutSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/exit_to_app.svg');
+// const logoutSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/exit_to_app.svg');
 
 const propTypes = {
   firstName: Types.string,
@@ -116,10 +116,10 @@ class MenuAccount extends Component {
             />
           </div>
           <div className="oc-menu-account__name-container">
-            <div className="oc-menu-account__first-name">{firstName}</div>
-            <div className="oc-menu-account__last-name">{lastName}</div>
+            <div className="oc-menu-account__full-name">{firstName} {lastName}</div>
             <div className="oc-menu-account__user-name">{userName}</div>
           </div>
+          {/*
           <div className="oc-menu-account__top-buttons-container">
             <TitledButton
               svg={logoutSVG}
@@ -128,6 +128,7 @@ class MenuAccount extends Component {
               onClick={onLogout}
             />
           </div>
+          */}
         </div>
 
         <div className="oc-menu-account__middle-row">
