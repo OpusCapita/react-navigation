@@ -73,7 +73,7 @@ class MenuAccount extends Component {
         {bottomElement}
         <div className="oc-menu-account__select-item">
           <span className="oc-menu-account__select-item-label">Current assignment</span>
-          <strong>Masterkunden AG</strong>
+          <span>Masterkunden AG</span>
         </div>
 
         <div className="oc-menu-account__select-item">
