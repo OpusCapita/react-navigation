@@ -124,7 +124,6 @@ TopMenu is
     ),
     (
       <MenuIcon 
-        svg={_scope.getIcon('person')}
         onClick={() => console.log('click!')}
         title="Account settings"
         label="Alexey"
