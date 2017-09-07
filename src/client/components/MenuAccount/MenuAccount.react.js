@@ -4,6 +4,7 @@ import './MenuAccount.less';
 import MenuAccountIcon from '../MenuAccountIcon';
 import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
 import Button from '@opuscapita/react-buttons/lib/Button';
+import MenuSelect from '../MenuSelect';
 
 const logoutSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/exit_to_app.svg');
 
@@ -67,11 +68,41 @@ class MenuAccount extends Component {
       />
     ));
 
-    const bottomRowElement = bottomElement ? (
+    const bottomRowElement = (
       <div className="oc-menu-account__bottom-row">
         {bottomElement}
+        <div className="oc-menu-account__select-item">
+          <span className="oc-menu-account__select-item-label">Current assignment</span>
+          <strong>Masterkunden AG</strong>
+        </div>
+
+        <div className="oc-menu-account__select-item">
+          <span className="oc-menu-account__select-item-label">Buying behalf on</span>
+
+          <MenuSelect className="oc-menu-account__select-item-select">
+            <option>Cersei Lannister</option>
+            <option>Jaime Lannister</option>
+            <option>Jorah Mormont</option>
+            <option>Margaery Tyrell</option>
+            <option>Petyr Baelish</option>
+            <option>Robert Baratheon</option>
+          </MenuSelect>
+        </div>
+
+        <div className="oc-menu-account__select-item">
+          <span className="oc-menu-account__select-item-label">Language</span>
+
+          <MenuSelect className="oc-menu-account__select-item-select">
+            <option>English</option>
+            <option>Finnish</option>
+            <option>German</option>
+            <option>Norwegian</option>
+            <option>Russian</option>
+            <option>Swedish</option>
+          </MenuSelect>
+        </div>
       </div>
-    ) : null;
+    );
 
     return (
       <div className="oc-menu-account">

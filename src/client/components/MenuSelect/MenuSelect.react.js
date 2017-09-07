@@ -6,8 +6,10 @@ const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_d
 export default
 class MenuSelect extends PureComponent {
   render() {
+    const { className } = this.props;
+
     return (
-      <div className="oc-menu-select">
+      <div className={`oc-menu-select ${className || ''}`}>
         <div className="oc-menu-select__dropdown-icon">
           <SVG
             svg={dropdownSVG}

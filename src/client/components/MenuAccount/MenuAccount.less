@@ -12,7 +12,7 @@
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 72px 0 24px;
+  padding: 0 96px 0 24px;
 }
 
 .oc-menu-account__first-name,
@@ -42,10 +42,15 @@
 .oc-menu-account__action-button {
   // XXX @opuscapita/react-buttons-fix
   text-transform: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   position: relative;
   padding: 4px 8px;
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .oc-menu-account__action-button:focus:before,
@@ -54,7 +59,7 @@
 }
 
 .oc-menu-account__action-button:focus:before {
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.36);
 }
 
 .oc-menu-account__action-button:focus:before,
@@ -70,4 +75,25 @@
 
 .oc-menu-account__bottom-row {
   border-top: 1px solid #e5e5e5;
+  padding: 12px;
+}
+
+.oc-menu-account__select-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.oc-menu-account__select-item-label {
+  margin-right: 8px;
+}
+
+.oc-menu-account__select-item-select {
+  margin-left: auto;
 }
