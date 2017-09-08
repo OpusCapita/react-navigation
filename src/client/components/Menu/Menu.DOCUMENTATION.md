@@ -118,9 +118,73 @@ TopMenu is
       <MenuIcon 
         onClick={() => console.log('click!')}
         svg={_scope.getIcon('notifications')}
-        supTitle="7"
+        supTitle="10"
         title="Notifications"
-      />
+        hideDropdownArrow={true}
+      >
+        <Notifications>
+          <Notification 
+            svg={_scope.getIcon('notifications')}
+            svgColor="#ec6608"
+            message="One item in your cart has changed prize."
+            dateTime="20/02/2017"
+          />
+          <Notification 
+            svg={_scope.getIcon('check')}
+            svgColor="#3AA57B"
+            message="Your request for approval limit change is now approved."
+            dateTime="20/02/2017"
+          />
+          <Notification 
+            svg={_scope.getIcon('info')}
+            svgColor="#67707C"
+            message="Your password will expire in 14 days."
+            dateTime="20/02/2017"
+          />
+          <Notification 
+            svg={_scope.getIcon('warning')}
+            svgColor="#DD2515"
+            message="Automatic material fetch failed."
+            dateTime="20/02/2017"
+          />
+          <Notification 
+            svg={_scope.getIcon('warning')}
+            svgColor="#DD2515"
+            message="Operation has failed!"
+            dateTime="20/02/2017"
+          />
+          <Notification 
+            svg={_scope.getIcon('warning')}
+            svgColor="#DD2515"
+            message="Operation has failed!"
+            dateTime="20/02/2017"
+          />
+          <Notification 
+            svg={_scope.getIcon('warning')}
+            svgColor="#DD2515"
+            message="Operation has failed!"
+            dateTime="20/02/2017"
+          />
+          <Notification 
+            svg={_scope.getIcon('warning')}
+            svgColor="#DD2515"
+            message="Operation has failed!"
+            dateTime="20/02/2017"
+          />
+          <Notification 
+            svg={_scope.getIcon('warning')}
+            svgColor="#DD2515"
+            message="Operation has failed!"
+            dateTime="20/02/2017"
+          />
+          <Notification 
+            svg={_scope.getIcon('warning')}
+            svgColor="#DD2515"
+            message="Operation has failed!"
+            dateTime="20/02/2017"
+          />
+        </Notifications>
+      </MenuIcon>
     ),
     (
       <MenuIcon 
