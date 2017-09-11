@@ -1,0 +1,98 @@
+.oc-menu-account {
+
+}
+
+.oc-menu-account__top-row {
+  padding: 12px 12px 0;
+  display: flex;
+}
+
+.oc-menu-account__name-container {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 96px 0 24px;
+}
+
+.oc-menu-account__first-name,
+.oc-menu-account__last-name {
+  font-size: 18px;
+}
+
+.oc-menu-account__user-name {
+  font-size: 14px;
+}
+
+.oc-menu-account__top-buttons-container {
+  margin-left: auto;
+}
+
+.oc-menu-account__actions-container {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  margin-left: -4px;
+}
+
+.oc-menu-account__middle-row {
+  padding: 0 12px;
+}
+
+.oc-menu-account__action-button {
+  // XXX @opuscapita/react-buttons-fix
+  text-transform: none;
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  padding: 4px 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.oc-menu-account__action-button:focus:before,
+.oc-menu-account__action-button:hover:before {
+  content: none;
+}
+
+.oc-menu-account__action-button:focus:before {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.36);
+}
+
+.oc-menu-account__action-button:focus:before,
+.oc-menu-account__action-button:hover:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.oc-menu-account__bottom-row {
+  border-top: 1px solid #e5e5e5;
+  padding: 12px;
+}
+
+.oc-menu-account__select-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  min-height: 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.oc-menu-account__select-item-label {
+  margin-right: 8px;
+}
+
+.oc-menu-account__select-item-select {
+  margin-left: auto;
+}

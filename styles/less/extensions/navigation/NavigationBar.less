@@ -1,0 +1,130 @@
+.oc-navigation-bar-overlay {
+  & {
+    cursor: pointer;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.04);
+    z-index: -1;
+  }
+}
+
+.oc-navigation-bar-overlay--dark {
+  &:after {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.oc-navigation-bar-overlay--light {
+  &:after {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.oc-navigation-bar {
+  list-style: none;
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+.oc-navigation-bar__top-level-item {
+  display: inline-flex;
+  padding: 0;
+  border-bottom: 4px solid #e5e5e5;
+  position: relative;
+  font-weight: bold;
+
+  &:hover {
+    .oc-navigation-bar-overlay;
+  }
+}
+
+.oc-navigation-bar__top-level-item--dark-overlay:hover {
+  .oc-navigation-bar-overlay--dark;
+}
+
+.oc-navigation-bar__top-level-item--light-overlay:hover {
+  .oc-navigation-bar-overlay--light;
+}
+
+.oc-navigation-bar__top-level-item--dark-overlay.oc-navigation-bar__top-level-item--opened {
+  .oc-navigation-bar-overlay;
+  .oc-navigation-bar-overlay--dark;
+}
+
+.oc-navigation-bar__top-level-item--light-overlay.oc-navigation-bar__top-level-item--opened {
+  .oc-navigation-bar-overlay;
+  .oc-navigation-bar-overlay--light;
+}
+
+.oc-navigation-bar__top-level-item--active {
+
+}
+
+.oc-navigation-bar__dropdown-icon {
+  padding: 0 4px 0 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.oc-navigation-bar__clickable-element-container {
+  display: flex;
+}
+
+.oc-navigation-bar__clickable-element {
+  padding: 6px 12px;
+  display: inline-flex;
+  position: relative;
+  background-color: transparent;
+  white-space: nowrap;
+  z-index: 1;
+
+  &,
+  &:focus,
+  &:active,
+  &:hover {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: inherit;
+  }
+}
+
+.oc-navigation-bar__clickable-element--with-dropdown {
+  padding-right: 2px;
+}
+
+.oc-navigation-bar__sub-items-container {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  color: #333;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  background-color: #fff;
+  overflow: hidden;
+  transform: translate(0, 100%);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.oc-navigation-bar__sub-item {
+  position: relative;
+  font-weight: normal;
+
+  &:hover {
+    .oc-navigation-bar-overlay;
+  }
+}

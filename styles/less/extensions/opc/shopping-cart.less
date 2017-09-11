@@ -1,0 +1,204 @@
+#shoppingForm  {
+  position: relative;
+
+  .progress {
+    height: 8px;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -10px;
+    width: 100%;
+
+    .progress-bar {
+      width: 0;
+      transition: none;
+    }
+  }
+
+  .navbar .btn .product-list-select-all {
+    margin: 0;
+    top: 1px;
+    position: relative;
+  }
+}
+
+.shopping-cart {
+
+  td .bs-callout {
+    margin: 0;
+  }
+
+  .product-delete {
+    width: 1px;
+  }
+
+  table.price {
+    width: 430px;
+  }
+
+  table.price td {
+    vertical-align: top;
+  }
+
+  table.price td:first-child {
+    width: 170px;
+  }
+
+  table.price td:last-child {
+    text-align: right;
+  }
+
+  table.price td.form {
+    padding-left: 1em;
+    padding-right: 1em;
+    white-space: nowrap;
+  }
+
+  .price-discount {
+    display: block;
+    margin-top: -9px;
+  }
+
+  .total h3 {
+    font-weight: 500;
+
+    small {
+      color: @text-color;
+    }
+  }
+
+  .select {
+    width: 30px;
+  }
+
+  .message-holder {
+    position: absolute;
+    right: 8px;
+    margin-top: 2px;
+  }
+
+  .product-checkbox {
+    width: 1px;
+  }
+
+  .product-image {
+    width: 150px;
+    min-width: 50px;
+  }
+
+  .product-price {
+    width: 1px;
+
+    hr {
+      margin-bottom: 7px;
+      margin-top: 2px;
+    }
+
+    .table-dl .dt {
+      font-weight: normal;
+      width: 25%;
+      white-space: nowrap;
+      color:inherit;
+    }
+
+    span {
+      font-size: 85%;
+      font-weight: bold;
+    }
+
+    span.label {
+      font-size: 75%;
+      padding-bottom: 0.2em;
+      padding-top: 0.1em;
+    }
+
+    span a {
+      color: #555;
+    }
+
+    span a:hover {
+      text-decoration: none;
+    }
+
+    span a span.label {
+      font-size: 85%;
+    }
+
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .shopping-cart .message-holder {
+    margin-top: -11px;
+  }
+}
+
+.percentage-value {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: block;
+    height: 4px;
+    top: 50%;
+    margin-top: -2px;
+    background: #6BB;
+  }
+
+  .value {
+    position: absolute;
+    display: block;
+    height: 4px;
+    top: 50%;
+    margin-top: -2px;
+    background: #034;
+  }
+
+  .value.danger {
+    background: #d2322d;
+    width: 100%;
+  }
+
+  .badge.expense {
+    position: relative;
+    background: #034;
+    font-size: 1.6em;
+    padding: .5em .5em;
+  }
+
+  .badge.expense.danger {
+    background: #d2322d;
+  }
+
+  .badge.expense span {
+    color: #6bb;
+    font-size: .6em;
+  }
+
+  .badge.expense.danger span {
+    color: #ff9f9c;
+  }
+
+  .badge.total {
+    position: absolute;
+    background: #6bb;
+    font-size: 1.6em;
+    color: #fff;
+    right: 0;
+    padding: .5em .5em;
+  }
+
+  .badge small {
+    font-size: .6em;
+    display: block;
+    margin: .2em 0 .4em;
+  }
+
+  .badge.total span {
+    font-size: .6em;
+  }
+}

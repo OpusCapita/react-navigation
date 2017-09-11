@@ -1,0 +1,62 @@
+.show-for-print-only {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@media print {
+  header,
+  form#searchForm.search-bar.form-inline,
+  hr,
+  td.select,
+  td.dd,
+  td.product-delete,
+  button#updateCart,
+  h4.price.position-price.text-nowrap {
+	display: none !important;
+	visibility: hidden !important;
+  }
+
+  .show-for-print-only {
+	display: inline-block !important;
+	visibility: visible !important;
+  }
+
+  .hide-for-print {
+	display: none !important;
+	visibility: hidden !important;
+  }
+
+  div.col-sm-4,
+  div.col-lg-4 {
+	float: left;
+  }
+
+  td.product-shortdesc.product-desc {
+	padding: 0 !important;
+  }
+
+  td.text-right h3 {
+	margin-right: 25%;
+	position: relative;
+  }
+
+  td.form {
+	padding: 0 !important;
+	margin-left: -10% !important;
+	position: relative;
+	width: 95%;
+  }
+
+  img {
+	width: 50%;
+  }
+
+  div#items.table-responsive {
+	overflow-x: hidden;
+	border: none;
+  }
+
+  a[href]:after {
+	content: none !important;
+  }
+}
