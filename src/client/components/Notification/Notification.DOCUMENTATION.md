@@ -14,7 +14,6 @@ Notification is
 ```
 <Notification 
   svg={_scope.getIcon('notifications')}
-  svgColor="#ec6608"
   message="One item in your cart has changed prize."
   dateTime="20/02/2017"
 />

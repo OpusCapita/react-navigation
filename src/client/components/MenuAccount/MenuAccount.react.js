@@ -62,7 +62,6 @@ class MenuAccount extends Component {
         label={action.label}
         svg={action.svg}
         onClick={action.onClick}
-        svgSize="20px"
         contentPosition="before"
       />
     ));

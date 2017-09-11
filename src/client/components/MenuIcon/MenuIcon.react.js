@@ -98,8 +98,6 @@ class MenuIcon extends Component {
 
   render() {
     const {
-      bgColor,
-      color,
       svg,
       supTitle,
       title,
@@ -170,9 +168,7 @@ class MenuIcon extends Component {
             ${supTitle ? 'oc-menu-icon__button--with-suptitle' : ''}
             ${'oc-menu-icon__button--light-overlay'}
           `}
-          bgColor="transparent"
           svg={svg}
-          svgSize="24px"
           title={isOpened ? '' : title}
           label={label}
           contentPosition="before"

@@ -75,7 +75,7 @@
     "write-file-webpack-plugin": "^3.4.2"
   },
   "dependencies": {
-    "@opuscapita/react-buttons": "2.0.1",
+    "@opuscapita/react-buttons": "2.0.2",
     "@opuscapita/react-svg": "2.0.0",
     "@opuscapita/svg-icons": "^1.0.9",
     "lodash": "4.17.4",
