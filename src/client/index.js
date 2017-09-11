@@ -10,7 +10,6 @@ module.exports = {
   MenuIconsBar: require('./components/MenuIconsBar').default,
   MenuLogo: require('./components/MenuLogo').default,
   MenuSearch: require('./components/MenuSearch').default,
-  MenuSearchBar: require('./components/MenuSearchBar').default,
   MenuSelect: require('./components/MenuSelect').default,
   NavigationBar: require('./components/NavigationBar').default,
   Notification: require('./components/Notification').default,
