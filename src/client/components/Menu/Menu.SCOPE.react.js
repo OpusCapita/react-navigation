@@ -12,6 +12,7 @@ import MenuDropdownGrid from '../MenuDropdownGrid';
 import MenuDropdownList from '../MenuDropdownList';
 import MenuSearch from '../MenuSearch';
 import MenuAccount from '../MenuAccount';
+import MenuSelect from '../MenuSelect';
 import Notification from '../Notification';
 import Notifications from '../Notifications';
 import SVG from '@opuscapita/react-svg/lib/SVG';
@@ -23,6 +24,7 @@ window.MenuDropdownList = MenuDropdownList;
 window.SVG = SVG;
 window.MenuSearch = MenuSearch;
 window.MenuAccount = MenuAccount;
+window.MenuSelect = MenuSelect;
 window.Notifications = Notifications;
 window.Notification = Notification;
 

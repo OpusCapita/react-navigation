@@ -200,13 +200,14 @@ TopMenu is
           initials="SA"
           avatarSrc="./static/avatar.jpg"
           onClick={() => console.log('click')}
+          onLogout={() => console.log('logout')}
           actions={[
             {
               label: 'My services',
               onClick: () => console.log('My services click')
             },
             {
-              label: 'Settings', 
+              label: 'Settings',
               onClick: () => console.log('Settings click')
             },
             {
@@ -214,6 +215,41 @@ TopMenu is
               onClick: () => console.log('Help click')
             }
           ]}
+          bottomElement={(
+            <div>
+              <div className="oc-menu-account__select-item">
+                <span className="oc-menu-account__select-item-label">Current assignment</span>
+                <span>Masterkunden AG</span>
+              </div>
+      
+              <div className="oc-menu-account__select-item">
+                <span className="oc-menu-account__select-item-label">Buying behalf on</span>
+      
+                <MenuSelect className="oc-menu-account__select-item-select">
+                  <option>Cersei Lannister</option>
+                  <option>Jaime Lannister</option>
+                  <option>Jorah Mormont</option>
+                  <option>Iron bank</option>
+                  <option>Margaery Tyrell</option>
+                  <option>Petyr Baelish</option>
+                  <option>Robert Baratheon</option>
+                </MenuSelect>
+              </div>
+      
+              <div className="oc-menu-account__select-item">
+                <span className="oc-menu-account__select-item-label">Language</span>
+      
+                <MenuSelect className="oc-menu-account__select-item-select">
+                  <option>English</option>
+                  <option>Finnish</option>
+                  <option>German</option>
+                  <option>Norwegian</option>
+                  <option>Russian</option>
+                  <option>Swedish</option>
+                </MenuSelect>
+              </div>
+            </div>
+          )}
         />
       </MenuIcon>
     )

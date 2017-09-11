@@ -71,36 +71,6 @@ class MenuAccount extends Component {
     const bottomRowElement = (
       <div className="oc-menu-account__bottom-row">
         {bottomElement}
-        <div className="oc-menu-account__select-item">
-          <span className="oc-menu-account__select-item-label">Current assignment</span>
-          <span>Masterkunden AG</span>
-        </div>
-
-        <div className="oc-menu-account__select-item">
-          <span className="oc-menu-account__select-item-label">Buying behalf on</span>
-
-          <MenuSelect className="oc-menu-account__select-item-select">
-            <option>Cersei Lannister</option>
-            <option>Jaime Lannister</option>
-            <option>Jorah Mormont</option>
-            <option>Margaery Tyrell</option>
-            <option>Petyr Baelish</option>
-            <option>Robert Baratheon</option>
-          </MenuSelect>
-        </div>
-
-        <div className="oc-menu-account__select-item">
-          <span className="oc-menu-account__select-item-label">Language</span>
-
-          <MenuSelect className="oc-menu-account__select-item-select">
-            <option>English</option>
-            <option>Finnish</option>
-            <option>German</option>
-            <option>Norwegian</option>
-            <option>Russian</option>
-            <option>Swedish</option>
-          </MenuSelect>
-        </div>
       </div>
     );
 
