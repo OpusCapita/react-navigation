@@ -6,7 +6,7 @@ const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_d
 export default
 class MenuSelect extends PureComponent {
   render() {
-    const { className } = this.props;
+    const { className, ...restProps } = this.props;
 
     return (
       <div className={`oc-menu-select ${className || ''}`}>
@@ -16,7 +16,7 @@ class MenuSelect extends PureComponent {
             style={{ fill: '#333' }}
           />
         </div>
-        <select className="oc-menu-select__select">
+        <select className="oc-menu-select__select" {...restProps}>
           {this.props.children}
         </select>
       </div>
