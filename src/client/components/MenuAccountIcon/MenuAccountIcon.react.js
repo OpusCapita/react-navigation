@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuAccountIcon.less';
-import themePropTypes from '../theme/theme-prop-types';
-import opuscapitaDarkTheme from '../theme/opuscapita-dark';
 
 const propTypes = {
   initials: Types.string,
   avatarSrc: Types.string,
-  onClick: Types.func,
-  size: Types.number,
-  theme: themePropTypes
+  onClick: Types.func
 };
 const defaultProps = {
   initials: '',
   avatarSrc: '',
-  onClick: () => {},
-  size: 128,
-  theme: opuscapitaDarkTheme
+  onClick: () => {}
 };
 
 export default
@@ -26,17 +20,8 @@ class MenuAccountIcon extends Component {
       initials,
       avatarSrc,
       onClick,
-      size,
-      theme
+      style
     } = this.props;
-
-    const style = ({
-      backgroundImage: `url(${avatarSrc})`,
-      width: size,
-      height: size,
-      color: theme.bgColor,
-      fontSize: size / 2
-    });
 
     const initialsElement = avatarSrc ? null : initials;
 
@@ -44,7 +29,7 @@ class MenuAccountIcon extends Component {
       <div
         className="oc-menu-account-icon"
         onClick={onClick}
-        style={style}
+        style={{ ...style, backgroundImage: `url(${avatarSrc})` }}
       >
         {initialsElement}
       </div>

@@ -2,21 +2,17 @@ import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuSearch.less';
 import SVG from '@opuscapita/react-svg/lib/SVG';
-import themePropTypes from '../theme/theme-prop-types';
-import opuscapitaDarkTheme from '../theme/opuscapita-dark';
 import { spring, presets, Motion } from 'react-motion';
 
 const searchSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/search.svg');
 
 
 const propTypes = {
-  theme: themePropTypes,
   placeholder: Types.string,
   minWidth: Types.number,
   maxWidth: Types.number
 };
 const defaultProps = {
-  theme: opuscapitaDarkTheme,
   placeholder: '',
   minWidth: 320,
   maxWidth: 380
@@ -84,7 +80,6 @@ class MenuSearch extends Component {
 
   render() {
     const {
-      theme,
       placeholder,
       minWidth,
       maxWidth
@@ -120,7 +115,6 @@ class MenuSearch extends Component {
               >
                 <SVG
                   svg={searchSVG}
-                  style={{ fill: theme.color }}
                 />
               </div>
               <input

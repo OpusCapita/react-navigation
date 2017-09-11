@@ -59,7 +59,6 @@ class MenuAccount extends Component {
       <Button
         key={i}
         className="oc-menu-account__action-button"
-        color="#333"
         label={action.label}
         svg={action.svg}
         onClick={action.onClick}
@@ -82,7 +81,6 @@ class MenuAccount extends Component {
               initials={initials}
               avatarSrc={avatarSrc}
               onClick={onAvatarClick}
-              size={96}
             />
           </div>
           <div className="oc-menu-account__name-container">
@@ -93,7 +91,6 @@ class MenuAccount extends Component {
             <TitledButton
               svg={logoutSVG}
               title="Logout"
-              color="#333"
               onClick={onLogout}
             />
           </div>

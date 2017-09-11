@@ -5,8 +5,7 @@ import MenuLogo from '../MenuLogo';
 import NavigationBar from '../NavigationBar';
 import MenuIconsBar from '../MenuIconsBar';
 import MenuSearch from '../MenuSearch';
-import themePropTypes from '../theme/theme-prop-types';
-import opuscapitaLightTheme from '../theme/opuscapita-light';
+import '../theme/opuscapita-dark.less';
 
 const mobileWidth = 990;
 const padWidth = 1366;
@@ -15,6 +14,7 @@ const propTypes = {
   appName: Types.string,
   activeItem: Types.number,
   alwaysAtTop: Types.bool,
+  className: Types.string,
   logoSrc: Types.string,
   logoHref: Types.string,
   logoTitle: Types.string,
@@ -31,13 +31,13 @@ const propTypes = {
     }))
   })),
   iconsBarItems: Types.arrayOf(Types.node),
-  containerElement: Types.object,
-  theme: themePropTypes
+  containerElement: Types.object
 };
 const defaultProps = {
   appName: '',
   alwaysAtTop: false,
   activeItem: null,
+  className: 'oc-menu--opuscapita-dark-theme',
   logoSrc: '',
   logoTitle: '',
   logoHref: '#',
@@ -47,8 +47,7 @@ const defaultProps = {
   navigationItems: [],
   showSearch: true,
   iconsBarItems: [],
-  containerElement: window,
-  theme: opuscapitaLightTheme
+  containerElement: window
 };
 
 export default
@@ -97,6 +96,7 @@ class Menu extends Component {
       appName,
       activeItem,
       alwaysAtTop,
+      className,
       logoSrc,
       logoTitle,
       logoHref,
@@ -105,8 +105,7 @@ class Menu extends Component {
       labelLinkHref,
       navigationItems,
       showSearch,
-      iconsBarItems,
-      theme
+      iconsBarItems
     } = this.props;
 
     const {
@@ -144,8 +143,7 @@ class Menu extends Component {
         <NavigationBar
           activeItem={activeItem}
           navigationItems={navigationItems}
-          theme={theme}
-          />
+        />
       </div>
     );
 
@@ -154,13 +152,10 @@ class Menu extends Component {
         ref={ref => this.containerRef = ref}
         className={`
           oc-menu
+          ${className}
           ${alwaysAtTop ? 'oc-menu--at-top' : ''}
           ${containerScrolled ? 'oc-menu--scrolled' : ''}
         `}
-        style={{
-          backgroundColor: theme.bgColor,
-          color: theme.color
-        }}
       >
         {!isMobile ? logoElement : null}
 
@@ -174,7 +169,7 @@ class Menu extends Component {
             </h1>
             <div className="oc-menu__icons-bar-container">
               {searchElement}
-              <MenuIconsBar theme={theme}>
+              <MenuIconsBar>
                 {Children.toArray(iconsBarItems)}
               </MenuIconsBar>
             </div>

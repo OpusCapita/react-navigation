@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuIcon.less';
-import themePropTypes from '../theme/theme-prop-types';
-import opuscapitaLightTheme from '../theme/opuscapita-light';
 import { spring, presets, Motion } from 'react-motion';
 import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
 import SVG from '@opuscapita/react-svg/lib/SVG';
@@ -15,7 +13,6 @@ const propTypes = {
   title: Types.string,
   label: Types.string,
   hideDropdownArrow: Types.bool,
-  theme: themePropTypes,
   onClick: Types.func
 };
 const defaultProps = {
@@ -24,7 +21,6 @@ const defaultProps = {
   label: '',
   title: '',
   hideDropdownArrow: false,
-  theme: opuscapitaLightTheme,
   onClick: () => {}
 };
 
@@ -60,8 +56,7 @@ class MenuIcon extends Component {
       this.props.label !== nextProps.label ||
       this.props.hideDropdownArrow !== nextProps.hideDropdownArrow ||
       this.state.isOpened !== nextState.isOpened ||
-      this.state.animationEnded !== nextState.animationEnded ||
-      !isEqual(this.props.theme, nextProps.theme)
+      this.state.animationEnded !== nextState.animationEnded
    );
   }
 
@@ -111,18 +106,13 @@ class MenuIcon extends Component {
       label,
       hideDropdownArrow,
       onClick,
-      children,
-      theme
+      children
     } = this.props;
 
     const { isOpened } = this.state;
     const supTitleElement = supTitle ? (
       <div
         className="oc-menu-icon__sup-title"
-        style={{
-          backgroundColor: theme.menuIconNotificationBgColor,
-          color: theme.menuIconNotificationColor
-        }}
       >
         {supTitle}
       </div>
@@ -131,7 +121,7 @@ class MenuIcon extends Component {
     const showDropdownArrow = (children && !hideDropdownArrow);
     const dropdownArrowElement =  showDropdownArrow ? (
       <div className="oc-menu-icon__dropdown-icon">
-        <SVG svg={dropdownSVG} style={{ fill: theme.color }} />
+        <SVG svg={dropdownSVG} />
       </div>
     ) : null;
 
@@ -178,10 +168,9 @@ class MenuIcon extends Component {
             oc-menu-icon__button
             ${showDropdownArrow ? 'oc-menu-icon__button--with-dropdown' : ''}
             ${supTitle ? 'oc-menu-icon__button--with-suptitle' : ''}
-            ${theme.isMenuIconHoverOverlayDark ? 'oc-menu-icon__button--dark-overlay' : 'oc-menu-icon__button--light-overlay'}
+            ${'oc-menu-icon__button--light-overlay'}
           `}
           bgColor="transparent"
-          color={theme.color}
           svg={svg}
           svgSize="24px"
           title={isOpened ? '' : title}

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './NavigationBar.less';
-import themePropTypes from '../theme/theme-prop-types';
-import opuscapitaLightTheme from '../theme/opuscapita-light';
 import { spring, presets, Motion } from 'react-motion';
 import SVG from '@opuscapita/react-svg/lib/SVG';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
@@ -18,14 +16,12 @@ const propTypes = {
       href: Types.string,
       onClick: Types.func
     }))
-  })),
-  theme: themePropTypes
+  }))
 };
 const defaultProps = {
   openedItem: null,
   activeItem: null,
-  navigationItems: [],
-  theme: opuscapitaLightTheme
+  navigationItems: []
 };
 
 const springPreset = presets.stiff;
@@ -95,9 +91,6 @@ class NavigationBar extends Component {
       <div className="oc-navigation-bar__dropdown-icon">
         <SVG
           svg={dropdownSVG}
-          style={{
-            fill: this.props.theme.navColor
-          }}
         />
       </div>
     ) : null;
@@ -182,12 +175,9 @@ class NavigationBar extends Component {
           oc-navigation-bar__top-level-item
           ${isActive ? 'oc-navigation-bar__top-level-item--active' : ''}
           ${isOpened ? 'oc-navigation-bar__top-level-item--opened' : ''}
-          ${this.props.theme.isNavHoverOverlayDark ? 'oc-navigation-bar__top-level-item--dark-overlay' : 'oc-navigation-bar__top-level-item--light-overlay'}
+          ${'oc-navigation-bar__top-level-item--light-overlay'}
         `}
         onClick={() => this.handleTopLevelItemClick(key)}
-        style={{
-          borderBottomColor: isActive ? this.props.theme.navActiveBorderColor : 'transparent'
-        }}
       >
         <div
           className={`
@@ -215,8 +205,7 @@ class NavigationBar extends Component {
 
   render() {
     let {
-      navigationItems,
-      theme
+      navigationItems
     } = this.props;
 
     const navigationItemsElement = navigationItems.map(
@@ -227,10 +216,6 @@ class NavigationBar extends Component {
       <ul
         ref={ref => (this.containerRef = ref)}
         className="oc-navigation-bar"
-        style={{
-          backgroundColor: theme.navBgColor,
-          color: theme.navColor
-        }}
       >
         {navigationItemsElement}
       </ul>

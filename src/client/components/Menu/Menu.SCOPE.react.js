@@ -5,8 +5,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import { showroomScopeDecorator } from '@opuscapita/react-showroom-client';
-import opuscapitaDarkTheme from '../theme/opuscapita-dark';
-import opuscapitaLightTheme from '../theme/opuscapita-light';
 import MenuIcon from '../MenuIcon';
 import MenuDropdownGrid from '../MenuDropdownGrid';
 import MenuDropdownList from '../MenuDropdownList';
@@ -44,10 +42,6 @@ class MenuScope extends Component {
     super(props);
     this.state = {
       icons: [ ...icons, { name: 'circle', svg: circleSVG } ],
-      themes: {
-        opuscapitaDark: opuscapitaDarkTheme,
-        opuscapitaLight: opuscapitaLightTheme
-      },
       logos: {
         dark: 'https://develop.businessnetwork.opuscapita.com/invoice/static/img/oc-logo-white.svg',
         light: 'http://test.jcatalog.com/oc-logo-rgb.svg'

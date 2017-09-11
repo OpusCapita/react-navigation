@@ -16,7 +16,7 @@ TopMenu is
   appName="Supplier Information Manager"
   activeItem={0}
   alwaysAtTop={true}
-  theme={_scope.state.themes.opuscapitaDark}
+  className="oc-menu--opuscapita-dark-theme"
   logoSrc={_scope.state.logos.dark}
   logoTitle="OpusCapita"
   logoHref="http://opuscapita.com"
@@ -84,7 +84,6 @@ TopMenu is
         hideDropdownArrow={true}
       >
         <MenuDropdownGrid
-          theme={_scope.state.themes.opuscapitaDark}
           activeItem={0}
           items={[
             { 
