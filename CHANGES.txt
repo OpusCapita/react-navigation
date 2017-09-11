@@ -1,4 +1,21 @@
 
+Release 0.0.13 Mon Sep 11 2017 18:46:14 GMT+0300 (+03)
+=======================================================
+
+ - Remove inline styles (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:45:59 2017 +0300)
+ - Updating to a version to  0.0.13 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:32:01 2017 +0300)
+ - Fix exports (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:31:23 2017 +0300)
+ - Fix exports (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:30:57 2017 +0300)
+ - Remove inline styles (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:29:35 2017 +0300)
+ - Update docs (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 14:38:53 2017 +0300)
+ - Updating to a version to  0.0.12 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 14:38:25 2017 +0300)
+ - Fix MenuSelect onChange (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 14:37:49 2017 +0300)
+ - Updating to a version to  0.0.11 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 12:19:08 2017 +0300)
+ - Fix exports (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 12:18:38 2017 +0300)
+ - Fix exports (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 12:17:16 2017 +0300)
+ - Fix exports (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 12:16:23 2017 +0300)
+ - Updating to a version to  0.0.10 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 12:14:08 2017 +0300)
+
 Release 0.0.12 Mon Sep 11 2017 18:31:45 GMT+0300 (+03)
 =======================================================
 
