@@ -13,6 +13,5 @@ module.exports = {
   MenuSelect: require('./components/MenuSelect').default,
   NavigationBar: require('./components/NavigationBar').default,
   Notification: require('./components/Notification').default,
-  Notifications: require('./components/Notifications').default,
-  theme: require('./components/theme').default
+  Notifications: require('./components/Notifications').default
 };
