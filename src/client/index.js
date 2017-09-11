@@ -13,6 +13,7 @@ module.exports = {
   MenuSearchBar: require('./components/MenuSearchBar').default,
   MenuSelect: require('./components/MenuSelect').default,
   NavigationBar: require('./components/NavigationBar').default,
-  Navigation: require('./components/Navigations').default,
+  Notification: require('./components/Notification').default,
+  Notifications: require('./components/Notifications').default,
   theme: require('./components/theme').default
 };
