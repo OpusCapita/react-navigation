@@ -180,7 +180,6 @@ TopMenu is
         onClick={() => console.log('click!')}
         title="Account settings"
         label="Alexey"
-        hideDropdownArrow={true}
       >
         <MenuAccount
           firstName="Alexey"
@@ -202,6 +201,10 @@ TopMenu is
             {
               label: 'Help', 
               onClick: () => console.log('Help click')
+            },
+            {
+              label: 'Log out',
+              onClick: () => console.log('Log out click')
             }
           ]}
           bottomElement={(
