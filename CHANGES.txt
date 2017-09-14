@@ -1,4 +1,28 @@
 
+Release 0.0.16 Thu Sep 14 2017 09:14:47 GMT+0300 (+03)
+=======================================================
+
+ - Fix dropdown button styles (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Thu Sep 14 09:14:24 2017 +0300)
+ - Updating to a version to  0.0.16 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Thu Sep 14 08:48:37 2017 +0300)
+ - Fix styles (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Thu Sep 14 08:48:07 2017 +0300)
+ - Fix logo in IE11 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Thu Sep 14 08:20:28 2017 +0300)
+ - Updating to a version to  0.0.15 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Wed Sep 13 18:08:52 2017 +0300)
+ - Fix select arrows in IE11. Fix deps verisons. Remove logout button (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Wed Sep 13 18:07:58 2017 +0300)
+ - Updating to a version to  0.0.14 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:46:30 2017 +0300)
+ - Remove inline styles (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:45:59 2017 +0300)
+ - Updating to a version to  0.0.13 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:32:01 2017 +0300)
+ - Fix exports (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:31:23 2017 +0300)
+ - Fix exports (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:30:57 2017 +0300)
+ - Remove inline styles (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 18:29:35 2017 +0300)
+ - Update docs (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 14:38:53 2017 +0300)
+ - Updating to a version to  0.0.12 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 14:38:25 2017 +0300)
+ - Fix MenuSelect onChange (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 14:37:49 2017 +0300)
+ - Updating to a version to  0.0.11 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 12:19:08 2017 +0300)
+ - Fix exports (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 12:18:38 2017 +0300)
+ - Fix exports (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 12:17:16 2017 +0300)
+ - Fix exports (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 12:16:23 2017 +0300)
+ - Updating to a version to  0.0.10 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 12:14:08 2017 +0300)
+
 Release 0.0.15 Thu Sep 14 2017 08:48:22 GMT+0300 (+03)
 =======================================================
 
