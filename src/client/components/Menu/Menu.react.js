@@ -8,7 +8,6 @@ import MenuSearch from '../MenuSearch';
 import '../theme/opuscapita-dark.less';
 
 const mobileWidth = 990;
-const padWidth = 1366;
 
 const propTypes = {
   appName: Types.string,
@@ -134,7 +133,7 @@ class Menu extends Component {
           labelText={labelText}
           labelLinkText={labelLinkText}
           labelLinkHref={labelLinkHref}
-          />
+        />
       </div>
     );
 
@@ -149,7 +148,7 @@ class Menu extends Component {
 
     return (
       <div
-        ref={ref => this.containerRef = ref}
+        ref={ref => (this.containerRef = ref)}
         className={`
           oc-menu
           ${className}

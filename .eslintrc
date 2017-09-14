@@ -1,3 +1,10 @@
 {
-  "extends": "opuscapita"
+  "extends": "opuscapita",
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "window": true,
+    "document": true
+  }
 }

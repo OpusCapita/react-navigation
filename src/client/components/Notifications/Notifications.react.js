@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import Types from 'prop-types';
 import './Notifications.less';
-
-const propTypes = {};
-const defaultProps = {};
 
 export default
 class Notifications extends Component {
@@ -31,7 +27,7 @@ class Notifications extends Component {
     return (
       <div className="oc-notifications">
         <div
-          ref={ref => this.containerRef = ref}
+          ref={ref => (this.containerRef = ref)}
           className="oc-notifications__items-container"
           onWheel={this.handleWheel}
         >
@@ -41,6 +37,3 @@ class Notifications extends Component {
     );
   }
 }
-
-Notifications.propTypes = propTypes;
-Notifications.defaultProps = defaultProps;

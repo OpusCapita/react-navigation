@@ -1,5 +1,4 @@
 import React, { Component, Children } from 'react';
-import Types from 'prop-types';
 import './MenuIconsBar.less';
 
 export default

@@ -1,4 +1,5 @@
-import React, { Component, Children } from 'react';
+/* eslint-disable react/jsx-pascal-case */
+import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuDropdownGrid.less';
 import SVG from '@opuscapita/react-svg/lib/SVG';

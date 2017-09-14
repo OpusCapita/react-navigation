@@ -33,7 +33,7 @@ function requireAll(requireContext) {
   }));
 }
 
-let icons = requireAll(require.context( '!!raw-loader!@opuscapita/svg-icons/lib', true, /.*\.svg$/));
+let icons = requireAll(require.context('!!raw-loader!@opuscapita/svg-icons/lib', true, /.*\.svg$/));
 
 @showroomScopeDecorator
 export default
@@ -41,7 +41,7 @@ class MenuScope extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      icons: [ ...icons, { name: 'circle', svg: circleSVG } ],
+      icons: [...icons, { name: 'circle', svg: circleSVG }],
       logos: {
         dark: 'https://develop.businessnetwork.opuscapita.com/invoice/static/img/oc-logo-white.svg',
         light: 'http://test.jcatalog.com/oc-logo-rgb.svg'

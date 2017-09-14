@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuAccount.less';
 import MenuAccountIcon from '../MenuAccountIcon';
-//import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
 import Button from '@opuscapita/react-buttons/lib/Button';
-import MenuSelect from '../MenuSelect';
-
-const logoutSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/power_settings_new.svg');
 
 const propTypes = {
   firstName: Types.string,
   lastName: Types.string,
   userName: Types.string,
-  onLogout: Types.func,
   initials: Types.string,
   avatarSrc: Types.string,
   onAvatarClick: Types.func,
@@ -27,7 +22,6 @@ const defaultProps = {
   firstName: '',
   lastName: '',
   userName: '',
-  onLogout: () => {},
   initials: '',
   avatarSrc: '',
   onAvatarClick: '',
@@ -47,7 +41,6 @@ class MenuAccount extends Component {
       firstName,
       lastName,
       userName,
-      onLogout,
       initials,
       avatarSrc,
       onAvatarClick,
@@ -61,7 +54,7 @@ class MenuAccount extends Component {
         className="oc-menu-account__action-button"
         label={action.label}
         svg={action.svg}
-        onClick={action.onClick}
+        onClick={e => action.onClick(e)}
         contentPosition="before"
       />
     ));
@@ -86,15 +79,6 @@ class MenuAccount extends Component {
             <div className="oc-menu-account__full-name">{firstName} {lastName}</div>
             <div className="oc-menu-account__user-name">{userName}</div>
           </div>
-          {/*
-          <div className="oc-menu-account__top-buttons-container">
-            <TitledButton
-              svg={logoutSVG}
-              title="Logout"
-              onClick={onLogout}
-            />
-          </div>
-          */}
         </div>
 
         <div className="oc-menu-account__middle-row">

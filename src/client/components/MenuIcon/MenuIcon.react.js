@@ -1,10 +1,10 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuIcon.less';
 import { spring, presets, Motion } from 'react-motion';
 import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
 import SVG from '@opuscapita/react-svg/lib/SVG';
-import isEqual from 'lodash/isEqual';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 
 const propTypes = {
@@ -43,11 +43,6 @@ class MenuIcon extends Component {
     document.body.addEventListener('keydown', this.handleBodyKeyDown);
   }
 
-  componentWillUnmount() {
-    document.body.removeEventListener('click', this.handleBodyClick);
-    document.body.removeEventListener('keydown', this.handleBodyKeyDown);
-  }
-
   shouldComponentUpdate(nextProps, nextState) {
     return (
       this.props.svg !== nextProps.svg ||
@@ -57,7 +52,12 @@ class MenuIcon extends Component {
       this.props.hideDropdownArrow !== nextProps.hideDropdownArrow ||
       this.state.isOpened !== nextState.isOpened ||
       this.state.animationEnded !== nextState.animationEnded
-   );
+    );
+  }
+
+  componentWillUnmount() {
+    document.body.removeEventListener('click', this.handleBodyClick);
+    document.body.removeEventListener('keydown', this.handleBodyKeyDown);
   }
 
   handleBodyClick(event) {
@@ -103,7 +103,7 @@ class MenuIcon extends Component {
       title,
       label,
       hideDropdownArrow,
-      onClick,
+      onClick, // eslint-disable-line no-unused-vars
       children
     } = this.props;
 
@@ -117,7 +117,7 @@ class MenuIcon extends Component {
     ) : null;
 
     const showDropdownArrow = (children && !hideDropdownArrow);
-    const dropdownArrowElement =  showDropdownArrow ? (
+    const dropdownArrowElement = showDropdownArrow ? (
       <div className="oc-menu-icon__dropdown-icon">
         <SVG svg={dropdownSVG} />
       </div>

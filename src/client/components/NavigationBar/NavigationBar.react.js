@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './NavigationBar.less';
@@ -84,8 +85,12 @@ class NavigationBar extends Component {
   }
 
   renderClickableElement = (item, key, className) => {
-    const { href, children, subItems, onClick } = item;
-    const isActive = this.props.activeItem === key;
+    const {
+      href,
+      children,
+      subItems, // eslint-disable-line no-unused-vars
+      onClick
+    } = item;
 
     let dropdownIcon = item.subItems ? (
       <div className="oc-navigation-bar__dropdown-icon">

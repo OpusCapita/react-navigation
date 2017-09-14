@@ -5,12 +5,14 @@ import './MenuAccountIcon.less';
 const propTypes = {
   initials: Types.string,
   avatarSrc: Types.string,
-  onClick: Types.func
+  onClick: Types.func,
+  style: Types.object
 };
 const defaultProps = {
   initials: '',
   avatarSrc: '',
-  onClick: () => {}
+  onClick: () => {},
+  style: Types.object
 };
 
 export default

@@ -1,7 +1,16 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { PureComponent } from 'react';
+import Types from 'prop-types';
 import './MenuSelect.less';
 import SVG from '@opuscapita/react-svg/lib/SVG';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
+
+const propTypes = {
+  className: Types.string
+};
+const defaultProps = {
+  className: Types.string
+};
 
 export default
 class MenuSelect extends PureComponent {
@@ -23,3 +32,6 @@ class MenuSelect extends PureComponent {
     );
   }
 }
+
+MenuSelect.propTypes = propTypes;
+MenuSelect.defaultProps = defaultProps;

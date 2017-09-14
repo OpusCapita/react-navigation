@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuSearch.less';
 import SVG from '@opuscapita/react-svg/lib/SVG';
-import { spring, presets, Motion } from 'react-motion';
+import { spring, Motion } from 'react-motion';
 
 const searchSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/search.svg');
 
@@ -91,7 +92,7 @@ class MenuSearch extends Component {
 
     return (
       <div
-        ref={ref => this.containerRef = ref}
+        ref={ref => (this.containerRef = ref)}
         className="oc-menu-search"
       >
         <Motion
@@ -118,7 +119,7 @@ class MenuSearch extends Component {
                 />
               </div>
               <input
-                ref={ref => this.inputRef = ref}
+                ref={ref => (this.inputRef = ref)}
                 className="oc-menu-search__input"
                 placeholder={placeholder}
                 onFocus={this.handleInputFocus}
