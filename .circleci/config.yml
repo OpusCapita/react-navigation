@@ -48,7 +48,7 @@ jobs:
 
       - run:
           name: deploy-gh-pages
-          command: ./gh-pages-update.sh
+          command: npm run gh-pages-deploy
 
 workflows:
   version: 2
