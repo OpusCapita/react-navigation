@@ -28,7 +28,7 @@
   display: inline-flex;
   align-items: center;
   position: absolute;
-  right: 0;
+  right: 6px;
   height: 100%;
 }
 
@@ -70,11 +70,6 @@
   z-index: 10;
 }
 
-.oc-menu-icon__button--with-dropdown {
-  padding-right: 12px !important;
-}
-
-
 // XXX Remove it if @opuscapita/react-buttons will be replaced or modified
 .oc-menu-icon__button--dark-overlay:hover:before,
 .oc-menu-icon_-button--dark-overlay:focus:before {
@@ -96,8 +91,8 @@
   color: #fff;
 }
 
-.oc-menu-icon__button--with-dropdown {
-  padding-left: 6px !important;
+.oc-menu-icon__button--with-dropdown .oc-button {
+  padding-right: 32px;
 }
 
 .oc-menu-icon__button > div > div {
