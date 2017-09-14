@@ -14,6 +14,10 @@ rm -rf ./styles &&
 mv .gh-pages-tmp/* . &&
 rm -rf .gh-pages-tmp &&
 git add . &&
+
+git config user.email "$GH_EMAIL" > /dev/null 2>&1 &&
+git config user.name "$GH_NAME" > /dev/null 2>&1 &&
+
 git commit -m "Update gh-pages" &&
 git push --force origin gh-pages &&
 git checkout master
