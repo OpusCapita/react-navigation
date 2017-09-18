@@ -32,11 +32,6 @@ class Notifications extends Component {
           onWheel={this.handleWheel}
         >
           {children}
-          <div className="oc-notifications__more-container">
-            <a href="#" className="oc-notifications__more">
-              View more
-            </a>
-          </div>
         </div>
       </div>
     );

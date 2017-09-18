@@ -1,6 +1,6 @@
 ### Synopsis
 
-TopMenu is 
+TopMenu is
 *Write here a short introduction and/or overview that explains **what** component is.*
 
 ### Props Reference
@@ -30,11 +30,11 @@ TopMenu is
     {
       children: 'Responsibilities',
       subItems: [
-        { 
-          children: 'Supplier Responsibility Editor', 
+        {
+          children: 'Supplier Responsibility Editor',
           href: 'http://opuscapita.com'
         },
-        { 
+        {
           children: 'Classification Group Responsibility Editor',
           href: 'http://opuscapita.com'
         }
@@ -43,20 +43,20 @@ TopMenu is
     {
       children: 'Reports',
       subItems: [
-        { 
-          children: 'Supplier Status Report', 
+        {
+          children: 'Supplier Status Report',
           href: 'http://opuscapita.com'
         },
-        { 
+        {
           children: 'Supplier Feedback',
           href: 'http://opuscapita.com'
         },
-        { 
-          children: 'Supplier Rating', 
+        {
+          children: 'Supplier Rating',
           href: 'http://opuscapita.com'
         },
-        { 
-          children: (<strong>Custom Child</strong>), 
+        {
+          children: (<strong>Custom Child</strong>),
           href: 'http://opuscapita.com'
         }
       ]
@@ -71,13 +71,13 @@ TopMenu is
         title="My cart"
       />
     ), (
-      <MenuIcon 
+      <MenuIcon
         onClick={() => console.log('click!')}
         svg={_scope.getIcon('list')}
         title="My lists"
       />
     ), (
-      <MenuIcon 
+      <MenuIcon
         onClick={() => console.log('click!')}
         svg={_scope.getIcon('apps')}
         title="Applications"
@@ -86,35 +86,35 @@ TopMenu is
         <MenuDropdownGrid
           activeItem={0}
           items={[
-            { 
-              label: 'Online Product Catalog', 
-              svg: _scope.getIcon('local_mall') 
-            },
-            { 
-              label: 'Request for Quote', 
-              svg: _scope.getIcon('monetization_on') 
+            {
+              label: 'Online Product Catalog',
+              svg: _scope.getIcon('local_mall')
             },
             {
-              label: 'Request', 
-              svg: _scope.getIcon('room_service') 
+              label: 'Request for Quote',
+              svg: _scope.getIcon('monetization_on')
             },
             {
-              label: 'Order manager', 
-              svg: _scope.getIcon('insert_drive_file') 
+              label: 'Request',
+              svg: _scope.getIcon('room_service')
             },
             {
-              label: 'Invoices manager', 
-              svg: _scope.getIcon('receipt') 
+              label: 'Order manager',
+              svg: _scope.getIcon('insert_drive_file')
             },
-            { 
-              label: 'Analyze', 
-              svg: _scope.getIcon('trending_up') 
+            {
+              label: 'Invoices manager',
+              svg: _scope.getIcon('receipt')
+            },
+            {
+              label: 'Analyze',
+              svg: _scope.getIcon('trending_up')
             }
           ]}
         />
       </MenuIcon>
     ), (
-      <MenuIcon 
+      <MenuIcon
         onClick={() => console.log('click!')}
         svg={_scope.getIcon('notifications')}
         supTitle="10"
@@ -122,47 +122,49 @@ TopMenu is
         hideDropdownArrow={true}
       >
         <Notifications>
-          <Notification 
+          <div className="oc-notifications__header">New notifications</div>
+          <Notification
             svg={_scope.getIcon('info')}
             svgClassName="fill-info"
             message={<span>Your password will expire in 14 days. <a href="#">Change it now</a></span>}
             dateTime="20/02/2017"
           />
-          <Notification 
+          <Notification
             svg={_scope.getIcon('warning')}
             svgClassName="fill-error"
             message={<span>Automatic currnency rate update failed. <a href="#">Try manual update</a></span>}
             dateTime="20/02/2017"
           />
-          <Notification 
+          <hr className="oc-notifications__divider" />
+          <div className="oc-notifications__header">Recent notifications</div>
+          <Notification
             svg={_scope.getIcon('check')}
             svgClassName="fill-success"
             message={<span>Full report for Neon Lights Oy you requester is ready. <a href="#">See full results</a></span>}
             dateTime="20/02/2017"
           />
-          <Notification 
-            svg={_scope.getIcon('info')}
-            svgClassName="fill-warning"
-            message="Your password will expire in 14 days."
-            dateTime="20/02/2017"
-          />
-          <Notification 
+          <Notification
             svg={_scope.getIcon('info')}
             svgClassName="fill-info"
             message="You are substituting Steven Brice for invoice reviewing between 18.9.2017 - 29.9.2017"
             dateTime="20/02/2017"
           />
-        </Notifications>
-          <Notification 
+          <Notification
             svg={_scope.getIcon('notifications_active')}
             svgClassName="fill-warning"
-            message={<span>Your 5 invoices are highlighted as urgent for approval<a href="#">Show me those</a></span>}
+            message={<span>Your 5 invoices are highlighted as urgent for approval <a href="#">Show me those</a></span>}
             dateTime="20/02/2017"
           />
+          <div className="oc-notifications__more-container">
+            <a href="#" className="oc-notifications__more">
+              View more
+            </a>
+          </div>
+        </Notifications>
       </MenuIcon>
     ),
     (
-      <MenuIcon 
+      <MenuIcon
         onClick={() => console.log('click!')}
         title="Account settings"
         label="Alexey"
@@ -185,7 +187,7 @@ TopMenu is
               onClick: () => console.log('Settings click')
             },
             {
-              label: 'Help', 
+              label: 'Help',
               onClick: () => console.log('Help click')
             },
             {
@@ -199,10 +201,10 @@ TopMenu is
                 <span className="oc-menu-account__select-item-label">Current assignment</span>
                 <span>Masterkunden AG</span>
               </div>
-      
+
               <div className="oc-menu-account__select-item">
                 <span className="oc-menu-account__select-item-label">Buying behalf on</span>
-      
+
                 <MenuSelect
                   className="oc-menu-account__select-item-select"
                   onChange={e => console.log('change', e)}
@@ -216,11 +218,11 @@ TopMenu is
                   <option>Robert Baratheon</option>
                 </MenuSelect>
               </div>
-      
+
               <div className="oc-menu-account__select-item">
                 <span className="oc-menu-account__select-item-label">Language</span>
-      
-                <MenuSelect 
+
+                <MenuSelect
                   className="oc-menu-account__select-item-select"
                   onChange={e => console.log('change', e)}
                 >
@@ -248,4 +250,3 @@ Menu
 ### License
 
 Licensed by © 2017 OpusCapita
-
