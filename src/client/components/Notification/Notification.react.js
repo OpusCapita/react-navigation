@@ -6,12 +6,14 @@ import SVG from '@opuscapita/react-svg/lib/SVG';
 
 const propTypes = {
   svg: Types.string,
-  message: Types.string,
+  svgClassName: Types.string,
+  message: Types.node,
   dateTime: Types.string,
   className: Types.string
 };
 const defaultProps = {
   svg: '',
+  svgClassName: '',
   message: '',
   dateTime: '',
   className: ''
@@ -27,6 +29,7 @@ class Notification extends Component {
   render() {
     const {
       svg,
+      svgClassName,
       message,
       dateTime,
       className,
@@ -36,15 +39,17 @@ class Notification extends Component {
     return (
       <div className={`oc-notification ${className}`} { ...restProps }>
         <div className={`oc-notification__icon`}>
-          <SVG svg={svg} />
+          <SVG svg={svg} className={svgClassName} />
         </div>
 
-        <div className={`oc-notification__message`}>
-          {message}
-        </div>
+        <div className="oc-notification__text-contaniner">
+          <div className={`oc-notification__message`}>
+            {message}
+          </div>
 
-        <div className={`oc-notification__date-time`}>
-          {dateTime}
+          <div className={`oc-notification__date-time`}>
+            {dateTime}
+          </div>
         </div>
       </div>
     );
