@@ -1,6 +1,6 @@
 {
   "name": "@opuscapita/react-navigation",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Start write new project with no effort.",
   "scripts": {
     "npm-build": "rimraf lib && webpack --config webpack.production.config.js",
