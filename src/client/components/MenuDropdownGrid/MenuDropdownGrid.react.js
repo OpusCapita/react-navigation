@@ -8,16 +8,19 @@ const propTypes = {
   activeItem: Types.number,
   items: Types.arrayOf(Types.shape({
     svg: Types.string,
-    label: Types.string
+    label: Types.string,
+    href: Types.string
   })),
   itemSize: Types.number,
-  itemsPerRow: Types.number
+  itemsPerRow: Types.number,
+  maxRows: Types.number
 };
 const defaultProps = {
   activeItem: null,
   items: [],
-  itemSize: 100,
-  itemsPerRow: 3
+  itemSize: 110,
+  itemsPerRow: 3,
+  maxRows: 2
 };
 
 export default
@@ -27,14 +30,16 @@ class MenuDropdownGrid extends Component {
       activeItem,
       items,
       itemSize,
-      itemsPerRow
+      itemsPerRow,
+      maxRows
     } = this.props;
 
     const itemsElement = items.map((item, i) => {
       return (
-        <div
+        <a
           key={i}
           className={`oc-menu-dropdown-grid__item-container`}
+          href={item.href || '#'}
           style={{
             width: `${itemSize}px`,
             height: `${itemSize}px`
@@ -50,8 +55,8 @@ class MenuDropdownGrid extends Component {
               <SVG
                 svg={item.svg || ''}
                 style={{
-                  width: '24px',
-                  height: '24px',
+                  width: '32px',
+                  height: '32px',
                   fill: '#333'
                 }}
               />
@@ -60,18 +65,23 @@ class MenuDropdownGrid extends Component {
               {item.label || ''}
             </div>
           </div>
-        </div>
+        </a>
       );
     });
 
     return (
       <div
         className="oc-menu-dropdown-grid"
-        style={{
-          width: (items.length > itemsPerRow) ? (itemSize * itemsPerRow) : (itemSize * items.length)
-        }}
       >
-        {itemsElement}
+        <div
+          className="oc-menu-dropdown-grid__items"
+          style={{
+            height: (items.length > itemsPerRow) ? itemSize * maxRows : itemSize,
+            width: (items.length > itemsPerRow) ? (itemSize * itemsPerRow) : (itemSize * items.length)
+          }}
+        >
+          {itemsElement}
+        </div>
       </div>
     );
   }
