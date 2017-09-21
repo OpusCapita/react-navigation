@@ -20,6 +20,7 @@ const propTypes = {
   labelText: Types.string,
   labelLinkText: Types.string,
   labelLinkHref: Types.string,
+  noMargin: Types.bool,
   showSearch: Types.bool,
   navigationItems: Types.arrayOf(Types.shape({
     label: Types.string,
@@ -43,6 +44,7 @@ const defaultProps = {
   labelText: '',
   labelLinkText: '',
   labelLinkHref: '#',
+  noMargin: false,
   navigationItems: [],
   showSearch: true,
   iconsBarItems: [],
@@ -102,6 +104,7 @@ class Menu extends Component {
       labelText,
       labelLinkText,
       labelLinkHref,
+      noMargin,
       navigationItems,
       showSearch,
       iconsBarItems
@@ -154,6 +157,7 @@ class Menu extends Component {
           ${className}
           ${alwaysAtTop ? 'oc-menu--at-top' : ''}
           ${containerScrolled ? 'oc-menu--scrolled' : ''}
+          ${noMargin ? 'oc-menu--no-margin' : ''}
         `}
       >
         {!isMobile ? logoElement : null}
