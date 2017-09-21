@@ -44,11 +44,6 @@ class MenuDropdownGrid extends Component {
             <div className="oc-menu-dropdown-grid__item-image">
               <SVG
                 svg={item.svg || ''}
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  fill: '#333'
-                }}
               />
             </div>
             <div className="oc-menu-dropdown-grid__item-label">
