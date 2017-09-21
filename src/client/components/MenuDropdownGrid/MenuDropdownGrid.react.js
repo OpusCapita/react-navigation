@@ -10,17 +10,11 @@ const propTypes = {
     svg: Types.string,
     label: Types.string,
     href: Types.string
-  })),
-  itemSize: Types.number,
-  itemsPerRow: Types.number,
-  maxRows: Types.number
+  }))
 };
 const defaultProps = {
   activeItem: null,
-  items: [],
-  itemSize: 110,
-  itemsPerRow: 3,
-  maxRows: 2
+  items: []
 };
 
 export default
@@ -40,10 +34,6 @@ class MenuDropdownGrid extends Component {
           key={i}
           className={`oc-menu-dropdown-grid__item-container`}
           href={item.href || '#'}
-          style={{
-            width: `${itemSize}px`,
-            height: `${itemSize}px`
-          }}
         >
           <div
             className={`
@@ -73,13 +63,7 @@ class MenuDropdownGrid extends Component {
       <div
         className="oc-menu-dropdown-grid"
       >
-        <div
-          className="oc-menu-dropdown-grid__items"
-          style={{
-            height: (items.length > itemsPerRow) ? itemSize * maxRows : itemSize,
-            width: (items.length > itemsPerRow) ? (itemSize * itemsPerRow) : (itemSize * items.length)
-          }}
-        >
+        <div className="oc-menu-dropdown-grid__items">
           {itemsElement}
         </div>
       </div>
