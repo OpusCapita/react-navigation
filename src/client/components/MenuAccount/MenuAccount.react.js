@@ -11,11 +11,14 @@ const propTypes = {
   initials: Types.string,
   avatarSrc: Types.string,
   onAvatarClick: Types.func,
-  actions: Types.arrayOf(Types.shape({
-    label: Types.string,
-    svg: Types.string,
-    onClick: Types.func
-  })),
+  actions: Types.oneOf([
+    Types.arrayOf(Types.shape({
+      label: Types.string,
+      svg: Types.string,
+      onClick: Types.func
+    })),
+    Types.node
+  ]),
   bottomElement: Types.node
 };
 const defaultProps = {
@@ -48,16 +51,24 @@ class MenuAccount extends Component {
       bottomElement
     } = this.props;
 
-    const actionsElement = actions.map((action, i) => (
-      <Button
-        key={i}
-        className="oc-menu-account__action-button"
-        label={action.label}
-        svg={action.svg}
-        onClick={e => action.onClick(e)}
-        contentPosition="before"
-      />
-    ));
+    const actionsElement = actions.map((action, i) => {
+      const isReactNode = React.isValidElement(action);
+
+      if (isReactNode) {
+        return action;
+      }
+
+      return (
+        <Button
+          key={i}
+          className="oc-menu-account__action-button"
+          label={action.label}
+          svg={action.svg}
+          onClick={e => action.onClick(e)}
+          contentPosition="before"
+        />
+      );
+    });
 
     const bottomRowElement = (
       <div className="oc-menu-account__bottom-row">

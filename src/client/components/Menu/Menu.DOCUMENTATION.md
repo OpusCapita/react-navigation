@@ -193,7 +193,8 @@ TopMenu is
             {
               label: 'Log out',
               onClick: () => console.log('Log out click')
-            }
+            },
+            (<button className="btn btn-primary">Custom Button</button>)
           ]}
           bottomElement={(
             <div>
