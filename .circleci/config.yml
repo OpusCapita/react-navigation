@@ -34,7 +34,7 @@ jobs:
         ports:
           - 4444:4444
 
-      - image: selenium/node-chrome-debug:latest
+      - image: selenium/node-chrome:latest
         depends_on:
           - hub
         environment:
