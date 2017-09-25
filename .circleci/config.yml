@@ -28,7 +28,25 @@ jobs:
   regression-testing:
     docker:
       - image: circleci/node:6
-      - image: selenium/standalone-chrome:3.5.3
+
+      - image: selenium/hub:3.5.3
+        container_name: hub
+        ports:
+          - 4444:4444
+
+      - image: selenium/node-chrome:3.5.3
+        depends_on:
+          - hub
+        environment:
+          HUB_PORT_4444_TCP_ADDR: hub
+          HUB_PORT_4444_TCP_PORT: 4444
+
+      - image: selenium/node-firefox:3.5.3
+        depends_on:
+          - hub
+        environment:
+          HUB_PORT_4444_TCP_ADDR: hub
+          HUB_PORT_4444_TCP_PORT: 4444
     working_directory: ~/repo
     steps:
       - checkout
