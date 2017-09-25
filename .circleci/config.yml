@@ -80,7 +80,7 @@ workflows:
   version: 2
   build-all:
     jobs:
-      - build:
+      - regression-testing:
           filters:
             branches:
               ignore:
