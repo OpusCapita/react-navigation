@@ -22,10 +22,7 @@ class MenuDropdownGrid extends Component {
   render() {
     const {
       activeItem,
-      items,
-      itemSize,
-      itemsPerRow,
-      maxRows
+      items
     } = this.props;
 
     const itemsElement = items.map((item, i) => {
