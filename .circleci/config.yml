@@ -28,7 +28,7 @@ jobs:
   regression-testing:
     docker:
       - image: circleci/node:6
-      - image: selenium/selenium/standalone-chrome:3.5.3
+      - image: selenium/standalone-chrome:3.5.3
     working_directory: ~/repo
     steps:
       - checkout
