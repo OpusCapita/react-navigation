@@ -1,8 +1,34 @@
 version: 2
 jobs:
-  build:
+  # build:
+  #   docker:
+  #     - image: circleci/node:6
+  #   working_directory: ~/repo
+  #   steps:
+  #     - checkout
+  #     - restore_cache:
+  #         keys:
+  #         - v1-dependencies-{{ checksum "package.json" }}
+  #         # fallback to using the latest cache if no exact match is found
+  #         - v1-dependencies-
+
+  #     - run:
+  #         name: install-dependencies
+  #         command: yarn install
+
+  #     - save_cache:
+  #         paths:
+  #           - node_modules
+  #         key: v1-dependencies-{{ checksum "package.json" }}
+
+  #     - run:
+  #         name: lint
+  #         command: npm run lint
+
+  regression-testing:
     docker:
       - image: circleci/node:6
+      - image: selenium/selenium/standalone-chrome:3.5.3
     working_directory: ~/repo
     steps:
       - checkout
@@ -22,33 +48,33 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: lint
-          command: npm run lint
+          name: test-chrome
+          command: npm run ui-test
 
-  update-gh-pages:
-    docker:
-      - image: circleci/node:6
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+  # update-gh-pages:
+  #   docker:
+  #     - image: circleci/node:6
+  #   working_directory: ~/repo
+  #   steps:
+  #     - checkout
+  #     - restore_cache:
+  #         keys:
+  #         - v1-dependencies-{{ checksum "package.json" }}
+  #         # fallback to using the latest cache if no exact match is found
+  #         - v1-dependencies-
 
-      - run:
-          name: install-dependencies
-          command: yarn install
+  #     - run:
+  #         name: install-dependencies
+  #         command: yarn install
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+  #     - save_cache:
+  #         paths:
+  #           - node_modules
+  #         key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run:
-          name: deploy-gh-pages
-          command: npm run gh-pages-deploy
+  #     - run:
+  #         name: deploy-gh-pages
+  #         command: npm run gh-pages-deploy
 
 workflows:
   version: 2
@@ -59,10 +85,10 @@ workflows:
             branches:
               ignore:
                 - gh-pages
-      - update-gh-pages:
-          requires:
-            - build
-          filters:
-            branches:
-              only:
-                - master
+      # - update-gh-pages:
+      #     requires:
+      #       - build
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master
