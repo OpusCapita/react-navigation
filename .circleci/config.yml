@@ -29,17 +29,13 @@ jobs:
     docker:
       - image: circleci/node:6
 
-      - image: selenium/hub:latest
-        container_name: hub
+      - image: selenium/standalone-chrome:latest
         ports:
           - 4444:4444
 
-      - image: selenium/node-chrome:latest
-        depends_on:
-          - hub
-        environment:
-          HUB_PORT_4444_TCP_ADDR: hub
-          HUB_PORT_4444_TCP_PORT: 4444
+      - image: selenium/standalone-firefox:latest
+        ports:
+          - 4444:4445
 
     working_directory: ~/repo
     steps:
