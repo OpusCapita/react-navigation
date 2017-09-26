@@ -11,8 +11,8 @@
     "start": "showroom-scan src && node www/index",
     "gh-pages-deploy": "showroom-scan src && sh ./gh-pages-update.sh",
     "test": "mocha --compilers js:babel-core/register --require ignore-styles --require ./test/setup.js --recursive src/**/*.spec.js",
-    "selenium:chrome": "cross-env SELENIUM_BROWSER=chrome && wdio",
-    "selenium:firefox": "cross-env SELENIUM_BROWSER=firefox && wdio"
+    "selenium:chrome": "wdio",
+    "selenium:firefox": "wdio"
   },
   "main": "lib/index.js",
   "files": [

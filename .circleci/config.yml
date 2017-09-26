@@ -28,6 +28,8 @@ jobs:
   selenium-chrome:
     docker:
       - image: circleci/node:6
+        environment:
+          SELENIUM_BROWSER: chrome
       - image: selenium/standalone-chrome:latest
         ports:
           - 4444:4444
@@ -57,6 +59,8 @@ jobs:
   selenium-firefox:
     docker:
       - image: circleci/node:6
+        environment:
+          SELENIUM_BROWSER: firefox
       - image: selenium/standalone-firefox:latest
         ports:
           - 4444:4444
