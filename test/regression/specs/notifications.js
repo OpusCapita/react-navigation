@@ -5,7 +5,7 @@ describe('Github test', function(){
   var client;
 
   before(function() {
-    client = webdriverio.remote({ desiredCapabilities: { browserName: 'firefox' } });
+    client = webdriverio.remote({ desiredCapabilities: { browserName: process.env.SELENIUM_BROWSER || 'firefox' } });
     return client.init();
   });
 

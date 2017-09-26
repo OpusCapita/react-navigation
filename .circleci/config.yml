@@ -25,10 +25,38 @@ jobs:
   #         name: lint
   #         command: npm run lint
 
-  regression-testing:
+  selenium-chrome:
     docker:
       - image: circleci/node:6
+      - image: selenium/standalone-chrome:latest
+        ports:
+          - 4444:4444
 
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run:
+          name: install-dependencies
+          command: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: test-chrome
+          command: npm run selenium:chrome
+
+  selenium-firefox:
+    docker:
+      - image: circleci/node:6
       - image: selenium/standalone-firefox:latest
         ports:
           - 4444:4444
@@ -53,7 +81,7 @@ jobs:
 
       - run:
           name: test-chrome
-          command: npm run ui-test
+          command: npm run selenium:firefox
 
   # update-gh-pages:
   #   docker:
@@ -84,7 +112,12 @@ workflows:
   version: 2
   build-all:
     jobs:
-      - regression-testing:
+      - selenium-chrome:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+      - selenium-firefox:
           filters:
             branches:
               ignore:
