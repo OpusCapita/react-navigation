@@ -7,8 +7,6 @@ module.exports.config = {
   ],
   maxInstances: 2,
   capabilities: [{
-    browserName: 'chrome'
-  }, {
     browserName: 'firefox'
   }],
   debug: false,

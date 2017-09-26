@@ -5,7 +5,7 @@ describe('Github test', function(){
   var client;
 
   before(function() {
-    client = webdriverio.remote({ desiredCapabilities: { browserName: 'chrome' } });
+    client = webdriverio.remote({ desiredCapabilities: { browserName: 'firefox' } });
     return client.init();
   });
 
