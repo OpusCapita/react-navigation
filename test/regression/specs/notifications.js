@@ -6,7 +6,10 @@ describe('Navigation menu', function(){
 
   before(function() {
     client = webdriverio.remote({ desiredCapabilities: { browserName: process.env.SELENIUM_BROWSER || 'firefox' } });
-    return client.init();
+    client.init();
+    client.waitForVisible('.demo-page');
+
+    return client;
   });
 
   // it('header logo', function() {
@@ -18,13 +21,13 @@ describe('Navigation menu', function(){
   //     });
   // });
 
-    it('title', function() {
+  it('title', function() {
     return client
       .url('https://github.com/')
       .getTitle().then(function (title) {
         assert(title === "Menu");
-      });
     });
+  });
 
   //   it('href color', function() {
   //   return client
