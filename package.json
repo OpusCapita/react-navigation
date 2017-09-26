@@ -11,8 +11,8 @@
     "start": "showroom-scan src && node www/index",
     "gh-pages-deploy": "showroom-scan src && sh ./gh-pages-update.sh",
     "test": "mocha --compilers js:babel-core/register --require ignore-styles --require ./test/setup.js --recursive src/**/*.spec.js",
-    "selenium:chrome": "crossenv SELENIUM_BROWSER=chrome && wdio",
-    "selenium:firefox": "crossenv SELENIUM_BROWSER=firefox && wdio"
+    "selenium:chrome": "cross-env SELENIUM_BROWSER=chrome && wdio",
+    "selenium:firefox": "cross-env SELENIUM_BROWSER=firefox && wdio"
   },
   "main": "lib/index.js",
   "files": [
@@ -47,6 +47,7 @@
     "chai": "3.5.0",
     "chai-enzyme": "0.6.1",
     "compression": "1.6.2",
+    "cross-env": "5.0.5",
     "css-loader": "0.26.2",
     "enzyme": "2.7.1",
     "eslint": "3.17.0",
