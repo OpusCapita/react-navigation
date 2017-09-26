@@ -54,7 +54,7 @@ jobs:
 
       - run:
           name: run-selenium
-          command: npm start & sh test-regression.sh localhost 3000
+          command: npm start & sh test-regression.sh "http://localhost:3000"
 
   regression-firefox:
     docker:
@@ -85,7 +85,7 @@ jobs:
 
       - run:
           name: run-selenium
-          command: npm start & sh test-regression.sh localhost 3000
+          command: npm start & sh test-regression.sh "http://localhost:3000"
 
   # update-gh-pages:
   #   docker:

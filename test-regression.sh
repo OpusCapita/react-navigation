@@ -1,7 +1,7 @@
 #!/bin/sh
 
-until $(curl --output /dev/null --silent --head --fail http://`$1`:`$2`); do
-    printf "Waiting for response from $1:$2"
+until $(curl --output /dev/null --silent --head --fail $1); do
+    printf "Waiting for response from $1"
     sleep 3
 done
 
