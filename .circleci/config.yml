@@ -25,7 +25,7 @@ jobs:
   #         name: lint
   #         command: npm run lint
 
-  selenium-chrome:
+  regression-chrome:
     docker:
       - image: circleci/node:6
         environment:
@@ -53,10 +53,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: test-chrome
-          command: npm run selenium:chrome
+          name: run-selenium
+          command: npm start & sh test-regression.sh localhost 3000
 
-  selenium-firefox:
+  regression-firefox:
     docker:
       - image: circleci/node:6
         environment:
@@ -84,8 +84,8 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: test-chrome
-          command: npm run selenium:firefox
+          name: run-selenium
+          command: npm start & sh test-regression.sh localhost 3000
 
   # update-gh-pages:
   #   docker:
@@ -116,12 +116,12 @@ workflows:
   version: 2
   build-all:
     jobs:
-      - selenium-chrome:
+      - regression-chrome:
           filters:
             branches:
               ignore:
                 - gh-pages
-      - selenium-firefox:
+      - regression-firefox:
           filters:
             branches:
               ignore:
