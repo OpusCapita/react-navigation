@@ -86,30 +86,21 @@ TopMenu is
         <MenuDropdownGrid
           activeItem={0}
           items={[
-            {
-              label: 'Online Product Catalog',
-              svg: _scope.getIcon('local_mall')
-            },
-            {
-              label: 'Request for Quote',
-              svg: _scope.getIcon('monetization_on')
-            },
-            {
-              label: 'Request',
-              svg: _scope.getIcon('room_service')
-            },
-            {
-              label: 'Order manager',
-              svg: _scope.getIcon('insert_drive_file')
-            },
-            {
-              label: 'Invoices manager',
-              svg: _scope.getIcon('receipt')
-            },
-            {
-              label: 'Analyze',
-              svg: _scope.getIcon('trending_up')
-            }
+            { label: 'Analytics', svg: _scope.getIcon('app_analytics') },
+            { label: 'Business Network Portal', svg: _scope.getIcon('app_business_network_portal') },
+            { label: 'Catalog Portal', svg: _scope.getIcon('app_catalog_portal') },
+            { label: 'Contracts', svg: _scope.getIcon('app_contracts') },
+            { label: 'Document Portal', svg: _scope.getIcon('app_document_portal') },
+            { label: 'Inventory', svg: _scope.getIcon('app_inventory') },
+            { label: 'Invoice', svg: _scope.getIcon('app_invoice') },
+            { label: 'Liquidity', svg: _scope.getIcon('app_liquidity') },
+            { label: 'Order', svg: _scope.getIcon('app_order') },
+            { label: 'Payments', svg: _scope.getIcon('app_payments') },
+            { label: 'Product Information', svg: _scope.getIcon('app_product_information') },
+            { label: 'Receivables Collection', svg: _scope.getIcon('app_receivables_collection') },
+            { label: 'RFQ', svg: _scope.getIcon('app_rfq') },
+            { label: 'Shop', svg: _scope.getIcon('app_shop') },
+            { label: 'Supplier Information', svg: _scope.getIcon('app_supplier_information') }
           ]}
         />
       </MenuIcon>
