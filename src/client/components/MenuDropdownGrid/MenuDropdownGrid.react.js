@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
+/* eslint-disable no-script-url */
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuDropdownGrid.less';
