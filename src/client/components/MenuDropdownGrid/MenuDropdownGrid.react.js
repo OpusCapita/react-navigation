@@ -26,11 +26,12 @@ class MenuDropdownGrid extends Component {
     } = this.props;
 
     const itemsElement = items.map((item, i) => {
+      let { svg, label, ...restProps } = item;
       return (
         <a
           key={i}
           className={`oc-menu-dropdown-grid__item-container`}
-          href={item.href || '#'}
+          {...restProps}
         >
           <div
             className={`
@@ -40,11 +41,11 @@ class MenuDropdownGrid extends Component {
           >
             <div className="oc-menu-dropdown-grid__item-image">
               <SVG
-                svg={item.svg || ''}
+                svg={svg || ''}
               />
             </div>
             <div className="oc-menu-dropdown-grid__item-label">
-              {item.label || ''}
+              {label || ''}
             </div>
           </div>
         </a>
