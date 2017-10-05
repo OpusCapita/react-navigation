@@ -32,7 +32,7 @@ class MenuDropdownGrid extends Component {
           <div
             key={i}
             className={`oc-menu-dropdown-grid__item-container`}
-            >
+          >
           </div>
         );
       }
