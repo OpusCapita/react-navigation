@@ -85,7 +85,7 @@ class MenuSearch extends Component {
       minWidth,
       maxWidth,
       children,
-      onFocus,
+      onFocus, // eslint-disable-line no-unused-vars
       ...restProps
     } = this.props;
 

@@ -112,7 +112,6 @@ class Menu extends Component {
       navigationItems,
       showSearch,
       searchProps,
-      children,
       iconsBarItems
     } = this.props;
 
