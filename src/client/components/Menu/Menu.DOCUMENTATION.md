@@ -88,6 +88,7 @@ TopMenu is
           items={[
             { label: 'Analytics', svg: _scope.getIcon('app_analytics') },
             { label: 'Business Network Portal', svg: _scope.getIcon('app_business_network_portal') },
+            null,
             { label: 'Catalog Portal', svg: _scope.getIcon('app_catalog_portal') },
             { label: 'Contracts', svg: _scope.getIcon('app_contracts') },
             { label: 'Document Portal', svg: _scope.getIcon('app_document_portal') },
@@ -95,6 +96,7 @@ TopMenu is
             { label: 'Invoice', svg: _scope.getIcon('app_invoice') },
             { label: 'Liquidity', svg: _scope.getIcon('app_liquidity') },
             { label: 'Order', svg: _scope.getIcon('app_order') },
+            null,
             { label: 'Payments', svg: _scope.getIcon('app_payments') },
             { label: 'Product Information', svg: _scope.getIcon('app_product_information') },
             { label: 'Receivables Collection', svg: _scope.getIcon('app_receivables_collection') },

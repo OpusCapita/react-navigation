@@ -27,7 +27,18 @@ class MenuDropdownGrid extends Component {
     } = this.props;
 
     const itemsElement = items.map((item, i) => {
+      if (!item) {
+        return (
+          <div
+            key={i}
+            className={`oc-menu-dropdown-grid__item-container`}
+            >
+          </div>
+        );
+      }
+
       let { svg, label, href, ...restProps } = item;
+
       return (
         <a
           key={i}
