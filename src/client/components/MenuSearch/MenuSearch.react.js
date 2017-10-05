@@ -9,14 +9,14 @@ const searchSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/search.svg');
 
 
 const propTypes = {
-  placeholder: Types.string,
   minWidth: Types.number,
-  maxWidth: Types.number
+  maxWidth: Types.number,
+  onFocus: Types.func
 };
 const defaultProps = {
-  placeholder: '',
   minWidth: 320,
-  maxWidth: 380
+  maxWidth: 380,
+  onFocus: () => {}
 };
 
 const springPreset = { stiffness: 300, damping: 28 };
@@ -49,8 +49,9 @@ class MenuSearch extends Component {
     this.inputRef.focus();
   }
 
-  handleInputFocus = () => {
+  handleInputFocus = (e) => {
     this.showAutocomplete();
+    this.props.onFocus(e);
   }
 
   handleBodyClick = (event) => {
@@ -81,9 +82,11 @@ class MenuSearch extends Component {
 
   render() {
     const {
-      placeholder,
       minWidth,
-      maxWidth
+      maxWidth,
+      children,
+      onFocus,
+      ...restProps
     } = this.props;
 
     const {
@@ -121,12 +124,13 @@ class MenuSearch extends Component {
               <input
                 ref={ref => (this.inputRef = ref)}
                 className="oc-menu-search__input"
-                placeholder={placeholder}
                 onFocus={this.handleInputFocus}
+                { ...restProps }
               />
             </div>
           )}
         </Motion>
+        {isOpened ? children : null}
       </div>
     );
   }

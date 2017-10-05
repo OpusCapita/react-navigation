@@ -22,6 +22,7 @@ const propTypes = {
   labelLinkHref: Types.string,
   noMargin: Types.bool,
   showSearch: Types.bool,
+  searchProps: Types.object,
   navigationItems: Types.arrayOf(Types.shape({
     label: Types.string,
     href: Types.string,
@@ -47,6 +48,9 @@ const defaultProps = {
   noMargin: false,
   navigationItems: [],
   showSearch: true,
+  searchProps: {
+    placeholder: 'Search'
+  },
   iconsBarItems: [],
   containerElement: window
 };
@@ -107,6 +111,8 @@ class Menu extends Component {
       noMargin,
       navigationItems,
       showSearch,
+      searchProps,
+      children,
       iconsBarItems
     } = this.props;
 
@@ -122,7 +128,7 @@ class Menu extends Component {
         <MenuSearch
           minWidth={isMobile ? 'calc(100% - 48px)' : 320}
           maxWidth={isMobile ? 'calc(100% - 48px)' : 380}
-          placeholder="Search"
+          { ...searchProps }
         />
       </div>
     ) : null;

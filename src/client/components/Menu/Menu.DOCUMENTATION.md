@@ -24,6 +24,32 @@ TopMenu is
   labelLinkText="OpusCapita"
   labelLinkHref="http://opuscapita.com"
   showSearch={true}
+  searchProps={{
+    placeholder: 'Search items',
+    onFocus: () => console.log('Search focus'),
+    onBlur: () => console.log('Search blur'),
+    children: (
+      <div 
+        style={{ 
+          position: 'absolute', 
+          bottom: '0px', 
+          left: '24px',
+          width: '300px',
+          background: '#fff',
+          borderBottomLeftRadius: '2px',
+          borderBottomRightRadius: '2px',
+          color: '#333',
+          transform: 'translate(0, 100%)',
+          zIndex: '100',
+          boxShadow: '0 2px 16px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.15)'
+        }} 
+      >
+        <div style={{ padding: '12px 24px' }}>Item 1</div>
+        <div style={{ padding: '12px 24px' }}>Item 1</div>
+        <div style={{ padding: '12px 24px' }}>Item 1</div>
+      </div>
+    )
+  }}
   navigationItems={[
     { children: 'Dashboard', href: 'http://opuscapita.com' },
     { children: 'Supplier Application', href: 'http://opuscapita.com' },
