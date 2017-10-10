@@ -1,18 +1,15 @@
 @oc-menu-dropdown-grid--item-size: 110;
 @oc-menu-dropdown__items--width: @oc-menu-dropdown-grid--item-size * 3;
-@oc-menu-dropdown__items--height: @oc-menu-dropdown-grid--item-size * 2;
 
 .oc-menu-dropdown-grid {
   margin: 8px 0;
   padding: 0 8px;
-  overflow: auto;
 }
 
 .oc-menu-dropdown-grid__items {
   display: flex;
   flex-wrap: wrap;
   width: unit(@oc-menu-dropdown__items--width, px);
-  max-height: unit(@oc-menu-dropdown__items--height, px);
 }
 
 .oc-menu-dropdown-grid__item-container {
