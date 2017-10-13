@@ -66,6 +66,7 @@ class MenuAccount extends Component {
           svg={action.svg}
           onClick={e => action.onClick(e)}
           contentPosition="before"
+          data-test="oc-menu-account__action-button"
         />
       );
     });
@@ -77,7 +78,7 @@ class MenuAccount extends Component {
     );
 
     return (
-      <div className="oc-menu-account">
+      <div className="oc-menu-account" data-test="oc-menu-account">
         <div className="oc-menu-account__top-row">
           <div className="oc-menu-account__account-icon-container">
             <MenuAccountIcon

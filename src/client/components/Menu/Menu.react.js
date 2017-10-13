@@ -157,6 +157,7 @@ class Menu extends Component {
     return (
       <div
         ref={ref => (this.containerRef = ref)}
+        data-test="oc-menu"
         className={`
           oc-menu
           ${className}
@@ -172,7 +173,10 @@ class Menu extends Component {
 
             {isMobile ? logoElement : null}
 
-            <h1 className="oc-menu__app-name">
+            <h1
+              className="oc-menu__app-name"
+              data-test="oc-menu__app-name"
+            >
               {appName}
             </h1>
             <div className="oc-menu__icons-bar-container">

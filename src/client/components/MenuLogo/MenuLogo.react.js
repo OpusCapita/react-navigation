@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuLogo.less';
 
@@ -20,7 +20,7 @@ const defaultProps = {
 };
 
 export default
-class MenuLogo extends PureComponent {
+class MenuLogo extends Component {
   render() {
     const {
       logoSrc,
@@ -32,7 +32,10 @@ class MenuLogo extends PureComponent {
     } = this.props;
 
     return (
-      <div className="oc-menu-logo">
+      <div
+        className="oc-menu-logo"
+        data-test="oc-menu-logo"
+      >
         <div className="oc-menu-logo__image-container">
           <a
             target="_blank"

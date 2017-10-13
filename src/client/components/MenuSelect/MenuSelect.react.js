@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuSelect.less';
 import SVG from '@opuscapita/react-svg/lib/SVG';
@@ -13,7 +13,7 @@ const defaultProps = {
 };
 
 export default
-class MenuSelect extends PureComponent {
+class MenuSelect extends Component {
   render() {
     const { className, ...restProps } = this.props;
 

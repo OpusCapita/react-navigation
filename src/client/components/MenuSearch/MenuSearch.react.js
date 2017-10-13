@@ -97,6 +97,7 @@ class MenuSearch extends Component {
       <div
         ref={ref => (this.containerRef = ref)}
         className="oc-menu-search"
+        data-test="oc-menu-search"
       >
         <Motion
           defaultStyle={{ x: isOpened ? 1 : 0, y: isOpened ? maxWidth : minWidth }}
@@ -124,6 +125,7 @@ class MenuSearch extends Component {
               <input
                 ref={ref => (this.inputRef = ref)}
                 className="oc-menu-search__input"
+                data-test="oc-menu-search__input"
                 onFocus={this.handleInputFocus}
                 { ...restProps }
               />

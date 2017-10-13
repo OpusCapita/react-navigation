@@ -176,6 +176,7 @@ class NavigationBar extends Component {
     return (
       <li
         key={key}
+        data-test="oc-navigation-bar__top-level-item"
         className={`
           oc-navigation-bar__top-level-item
           ${isActive ? 'oc-navigation-bar__top-level-item--active' : ''}
@@ -202,6 +203,7 @@ class NavigationBar extends Component {
       <li
         key={key}
         className="oc-navigation-bar__sub-item"
+        data-test="oc-navigation-bar__sub-item"
       >
         {this.renderClickableElement(subItem, key)}
       </li>
@@ -221,6 +223,7 @@ class NavigationBar extends Component {
       <ul
         ref={ref => (this.containerRef = ref)}
         className="oc-navigation-bar"
+        data-test="oc-navigation-bar"
       >
         {navigationItemsElement}
       </ul>

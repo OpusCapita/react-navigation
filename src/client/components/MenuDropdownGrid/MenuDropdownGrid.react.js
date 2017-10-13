@@ -43,6 +43,7 @@ class MenuDropdownGrid extends Component {
         <a
           key={i}
           className={`oc-menu-dropdown-grid__item-container`}
+          data-test={`oc-menu-dropdown-grid__item-container`}
           href={href || 'javascript: void(0)'}
           {...restProps}
         >
