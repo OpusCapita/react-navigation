@@ -18,6 +18,6 @@ git add . &&
 git config user.email "$GH_EMAIL" > /dev/null 2>&1 &&
 git config user.name "$GH_NAME" > /dev/null 2>&1 &&
 
-git commit -m "Update gh-pages" &&
+git commit -m "Deploy to GitHub pages [ci skip]" &&
 git push --force origin gh-pages &&
 git checkout master
