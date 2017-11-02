@@ -38,7 +38,6 @@ class MenuLogo extends Component {
       >
         <div className="oc-menu-logo__image-container">
           <a
-            target="_blank"
             className="oc-menu-logo__image-link"
             href={logoHref}
           >
@@ -54,7 +53,6 @@ class MenuLogo extends Component {
             {labelText}
           </span>
           <a
-            target="_blank"
             className="oc-menu-logo__label-link"
             href={labelLinkHref}
           >
