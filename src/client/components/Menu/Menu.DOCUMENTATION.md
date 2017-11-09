@@ -187,6 +187,7 @@ TopMenu is
         onClick={() => console.log('click!')}
         title="Account settings"
         label="Alexey"
+        id="menu-account-icon"
       >
         <MenuAccount
           firstName="Alexey"
@@ -199,7 +200,8 @@ TopMenu is
           actions={[
             {
               label: 'My services',
-              onClick: () => console.log('My services click')
+              onClick: () => console.log('My services click'),
+              id: 'my-services-action'
             },
             {
               label: 'Settings',
