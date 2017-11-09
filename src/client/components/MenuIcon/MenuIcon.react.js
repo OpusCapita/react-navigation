@@ -104,7 +104,8 @@ class MenuIcon extends Component {
       label,
       hideDropdownArrow,
       onClick, // eslint-disable-line no-unused-vars
-      children
+      children,
+      ...restProps
     } = this.props;
 
     const { isOpened } = this.state;
@@ -160,6 +161,7 @@ class MenuIcon extends Component {
         ref={ref => (this.containerRef = ref)}
         className="oc-menu-icon"
         onClick={this.handleClick}
+        {...restProps}
       >
         <TitledButton
           className={`
