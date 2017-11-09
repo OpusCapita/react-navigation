@@ -58,15 +58,18 @@ class MenuAccount extends Component {
         return action;
       }
 
+      let { label, svg, onClick, ...restProps } = action;
+
       return (
         <Button
           key={i}
           className="oc-menu-account__action-button"
-          label={action.label}
-          svg={action.svg}
-          onClick={e => action.onClick(e)}
+          label={label}
+          svg={svg}
+          onClick={e => onClick(e)}
           contentPosition="before"
           data-test="oc-menu-account__action-button"
+          {...restProps}
         />
       );
     });
@@ -88,8 +91,8 @@ class MenuAccount extends Component {
             />
           </div>
           <div className="oc-menu-account__name-container">
-            <div className="oc-menu-account__full-name">{firstName} {lastName}</div>
-            <div className="oc-menu-account__user-name">{userName}</div>
+            <div id="oc-menu-account__full-name" className="oc-menu-account__full-name">{firstName} {lastName}</div>
+            <div id="oc-menu-account__user-name" className="oc-menu-account__user-name">{userName}</div>
           </div>
         </div>
 
