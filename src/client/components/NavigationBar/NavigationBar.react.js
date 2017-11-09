@@ -89,7 +89,8 @@ class NavigationBar extends Component {
       href,
       children,
       subItems, // eslint-disable-line no-unused-vars
-      onClick
+      onClick,
+      ...restProps
     } = item;
 
     let dropdownIcon = item.subItems ? (
@@ -111,6 +112,7 @@ class NavigationBar extends Component {
             oc-navigation-bar__clickable-element
             ${dropdownIcon ? 'oc-navigation-bar__clickable-element--with-dropdown' : ''}
           `}
+          {...restProps}
         >
           {children}
         </a>
