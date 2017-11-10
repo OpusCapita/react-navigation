@@ -1,0 +1,17 @@
+"8e1cc46050c7de89c31fdc589def82bd3ffc271d"
+[cl-struct-undo-tree [nil ([nil ([nil ([nil ([nil (#1=[nil nil ((317 . 318)) nil (23023 2052 984406 107000) 0 nil]) ((#("
+" 0 1 (fontified t)) . -317) (undo-tree-id0 . -1) (undo-tree-id1 . -1) 318) nil (23023 2052 984415 9000) 0 nil]) ((#("
+.oc-menu-account-icon {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  font-weight: 900;
+  box-shadow: 0px 1px 0 1px rgba(0,0,0,0.12);
+}
+" 0 1 (fontified t) 1 23 (fontified t face css-selector) 23 24 (fontified t face (rainbow-delimiters-depth-1-face)) 24 25 (fontified t) 25 27 (fontified t) 27 32 (fontified t face css-property) 32 42 (fontified t) 42 48 (fontified t face css-property) 48 58 (fontified t) 58 65 (fontified t face css-property) 65 75 (fontified t) 75 86 (fontified t face css-property) 86 98 (fontified t) 98 113 (fontified t face css-property) 113 125 (fontified t) 125 141 (fontified t face css-property) 141 151 (fontified t) 151 170 (fontified t face css-property) 170 182 (fontified t) 182 197 (fontified t face css-property) 197 208 (fontified t) 208 221 (fontified t face css-property) 221 230 (fontified t) 230 241 (fontified t face css-property) 241 250 (fontified t) 250 260 (fontified t face css-property) 260 280 (fontified t) 280 281 (fontified t face (rainbow-delimiters-depth-2-face)) 281 291 (fontified t) 291 292 (fontified t face (rainbow-delimiters-depth-2-face)) 292 294 (fontified t) 294 295 (fontified t face (rainbow-delimiters-depth-1-face)) 295 296 (fontified t)) . -318) (undo-tree-id2 . 295) (undo-tree-id3 . 295) (undo-tree-id4 . 295) (undo-tree-id5 . 295) (undo-tree-id6 . 295) (undo-tree-id7 . 295) (undo-tree-id8 . -296) (undo-tree-id9 . 296) (undo-tree-id10 . -296) 614) nil (23023 2052 984426 859000) 0 nil]) ((1 . 318)) nil (23023 2052 984428 594000) 0 nil]) ((1 . 2) (t 22969 7177 760912 94000)) nil (23023 2052 984429 983000) 0 nil]) nil nil (23023 2052 984430 794000) 0 nil] #1# 449 5 nil]

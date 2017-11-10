@@ -1,0 +1,104 @@
+<div class="oc-menu-account">
+  <div class="oc-menu-account__top-row">
+    <div class="oc-menu-account__account-icon-container">
+      <div class="oc-menu-account-icon" style="background-image: url(&quot;./static/avatar.jpg&quot;);"></div>
+    </div>
+    <div class="oc-menu-account__name-container">
+      <div class="oc-menu-account__full-name">
+        Alexey Sergeev
+      </div>
+
+      <div class="oc-menu-account__user-name">alexey.sergeev</div>
+    </div>
+  </div>
+
+  <div class="oc-menu-account__middle-row">
+    <div class="oc-menu-account__actions-container">
+
+      <button class="oc-menu-account__action-button oc-button" tabindex="0" type="button">
+        <div class="oc-button__content" style="flex-direction: row-reverse;">
+          <div class="oc-button__label" style="text-align: right; visibility: initial;">
+            My services
+          </div>
+        </div>
+      </button>
+
+      <button class="oc-menu-account__action-button oc-button" tabindex="0" type="button">
+        <div class="oc-button__content" style="flex-direction: row-reverse;">
+          <div class="oc-button__label" style="text-align: right; visibility: initial;">
+            Settings
+          </div>
+        </div>
+      </button>
+
+      <button class="oc-menu-account__action-button oc-button" tabindex="0" type="button">
+        <div class="oc-button__content" style="flex-direction: row-reverse;">
+          <div class="oc-button__label" style="text-align: right; visibility: initial;">
+            Help
+          </div>
+        </div>
+      </button>
+
+      <button class="oc-menu-account__action-button oc-button" tabindex="0" type="button">
+        <div class="oc-button__content" style="flex-direction: row-reverse;">
+          <div class="oc-button__label" style="text-align: right; visibility: initial;">
+            Log out
+          </div>
+        </div>
+      </button>
+
+      <button class="btn btn-primary">
+        Custom Button
+      </button>
+    </div>
+  </div>
+
+  <div class="oc-menu-account__bottom-row">
+    <div>
+      <div class="oc-menu-account__select-item">
+        <span class="oc-menu-account__select-item-label">Current assignment</span>
+        <span>Masterkunden AG</span>
+      </div>
+      <div class="oc-menu-account__select-item">
+        <span class="oc-menu-account__select-item-label">Buying behalf on</span>
+        <div class="oc-menu-select oc-menu-account__select-item-select">
+          <div class="oc-menu-select__dropdown-icon">
+            <div class="oc-svg" style="fill: rgb(51, 51, 51);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" focusable="false">
+                <path d="M14 20l10 10 10-10z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <select class="oc-menu-select__select">
+            <option>Cersei Lannister</option>
+            <option>Jaime Lannister</option>
+            <option>Jorah Mormont</option>
+            <option>Iron bank</option>
+            <option>Margaery Tyrell</option>
+            <option>Petyr Baelish</option>
+            <option>Robert Baratheon</option>
+          </select>
+
+        </div>
+      </div>
+      <div class="oc-menu-account__select-item"><span class="oc-menu-account__select-item-label">Language</span>
+        <div class="oc-menu-select oc-menu-account__select-item-select">
+          <div class="oc-menu-select__dropdown-icon">
+            <div class="oc-svg " style="fill: rgb(51, 51, 51);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" focusable="false">
+                <path d="M14 20l10 10 10-10z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <select class="oc-menu-select__select">
+            <option>English</option>
+            <option>Finnish</option>
+            <option>German</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
