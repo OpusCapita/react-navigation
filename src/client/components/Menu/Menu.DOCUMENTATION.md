@@ -52,7 +52,7 @@ TopMenu is
   }}
   navigationItems={[
     { children: 'Dashboard', href: 'http://opuscapita.com', target: '_blank', id: 'nav-item-1' },
-    { children: 'Supplier Application', href: 'http://opuscapita.com' },
+    { children: <div>Supplier Application<span className="badge btn-primary-bg">3</span></div>, href: 'http://opuscapita.com' },
     {
       children: 'Responsibilities',
       subItems: [
