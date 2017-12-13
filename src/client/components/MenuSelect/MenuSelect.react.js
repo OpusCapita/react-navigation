@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuSelect.less';
-import SVG from '@opuscapita/react-svg/lib/SVG';
+import { SVG } from '@opuscapita/react-svg';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 
 const propTypes = {

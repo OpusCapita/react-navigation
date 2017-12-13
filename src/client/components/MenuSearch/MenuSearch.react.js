@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuSearch.less';
-import SVG from '@opuscapita/react-svg/lib/SVG';
+import { SVG } from '@opuscapita/react-svg';
 import { spring, Motion } from 'react-motion';
 
 const searchSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/search.svg');
