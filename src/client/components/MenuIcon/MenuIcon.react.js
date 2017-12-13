@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuIcon.less';
 import { spring, presets, Motion } from 'react-motion';
-import TitledButton from '@opuscapita/react-buttons/lib/TitledButton';
-import SVG from '@opuscapita/react-svg/lib/SVG';
+import { TitledButton } from '@opuscapita/react-buttons';
+import { SVG } from '@opuscapita/react-svg';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 
 const propTypes = {

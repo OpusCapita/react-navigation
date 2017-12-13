@@ -3,7 +3,9 @@
    https://github.com/OpusCapita/react-showroom-client/blob/master/docs/scope-component.md
 */
 
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import { showroomScopeDecorator } from '@opuscapita/react-showroom-client';
 import MenuIcon from '../MenuIcon';
 import MenuDropdownGrid from '../MenuDropdownGrid';
@@ -13,7 +15,7 @@ import MenuAccount from '../MenuAccount';
 import MenuSelect from '../MenuSelect';
 import Notification from '../Notification';
 import Notifications from '../Notifications';
-import SVG from '@opuscapita/react-svg/lib/SVG';
+import { SVG } from '@opuscapita/react-svg';
 let circleSVG = require('!!raw-loader!./circle.svg');
 
 window.MenuIcon = MenuIcon;

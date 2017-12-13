@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './Notification.less';
-import SVG from '@opuscapita/react-svg/lib/SVG';
+import { SVG } from '@opuscapita/react-svg';
 
 const propTypes = {
   svg: Types.string,
