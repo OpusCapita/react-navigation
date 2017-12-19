@@ -1,4 +1,10 @@
 
+Release 0.1.1 Tue Dec 19 2017 14:18:02 GMT+0300 (+03)
+=======================================================
+
+ - Fix wrong prop type (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Tue Dec 19 14:17:33 2017 +0300)
+ - Updating to a version to  0.1.1 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Dec 18 15:09:57 2017 +0300)
+
 Release 0.1.0 Mon Dec 18 2017 15:09:40 GMT+0300 (+03)
 =======================================================
 
