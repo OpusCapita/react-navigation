@@ -27,7 +27,7 @@ const defaultProps = {
   userName: '',
   initials: '',
   avatarSrc: '',
-  onAvatarClick: '',
+  onAvatarClick: () => {},
   actions: [],
   bottomElement: null
 };
