@@ -25,10 +25,3 @@ class MenuLogoScope extends Component {
     );
   }
 }
-
-MenuLogoScope.contextTypes = {
-  i18n: PropTypes.object
-};
-MenuLogoScope.childContextTypes = {
-  i18n: PropTypes.object
-};

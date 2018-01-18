@@ -24,10 +24,3 @@ class MenuSearchScope extends Component {
     );
   }
 }
-
-MenuSearchScope.contextTypes = {
-  i18n: PropTypes.object
-};
-MenuSearchScope.childContextTypes = {
-  i18n: PropTypes.object
-};

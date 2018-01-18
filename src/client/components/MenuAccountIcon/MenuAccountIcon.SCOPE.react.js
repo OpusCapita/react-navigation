@@ -24,10 +24,3 @@ class MenuAccountIconScope extends Component {
     );
   }
 }
-
-MenuAccountIconScope.contextTypes = {
-  i18n: PropTypes.object
-};
-MenuAccountIconScope.childContextTypes = {
-  i18n: PropTypes.object
-};

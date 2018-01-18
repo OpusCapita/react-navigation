@@ -24,10 +24,3 @@ class MenuSelectScope extends Component {
     );
   }
 }
-
-MenuSelectScope.contextTypes = {
-  i18n: PropTypes.object
-};
-MenuSelectScope.childContextTypes = {
-  i18n: PropTypes.object
-};

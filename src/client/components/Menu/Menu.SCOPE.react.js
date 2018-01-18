@@ -63,10 +63,3 @@ class MenuScope extends Component {
     );
   }
 }
-
-MenuScope.contextTypes = {
-  i18n: PropTypes.object
-};
-MenuScope.childContextTypes = {
-  i18n: PropTypes.object
-};

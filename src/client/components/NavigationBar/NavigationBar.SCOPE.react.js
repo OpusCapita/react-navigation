@@ -24,10 +24,3 @@ class NavigationBarScope extends Component {
     );
   }
 }
-
-NavigationBarScope.contextTypes = {
-  i18n: PropTypes.object
-};
-NavigationBarScope.childContextTypes = {
-  i18n: PropTypes.object
-};

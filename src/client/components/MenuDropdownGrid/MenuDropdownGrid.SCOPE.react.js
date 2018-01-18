@@ -37,10 +37,3 @@ class MenuDropdownGridScope extends Component {
     );
   }
 }
-
-MenuDropdownGridScope.contextTypes = {
-  i18n: PropTypes.object
-};
-MenuDropdownGridScope.childContextTypes = {
-  i18n: PropTypes.object
-};
