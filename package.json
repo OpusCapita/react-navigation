@@ -79,7 +79,7 @@
   "dependencies": {
     "@opuscapita/react-buttons": "4.0.2",
     "@opuscapita/react-svg": "4.0.0",
-    "@opuscapita/svg-icons": "1.1.1",
+    "@opuscapita/svg-icons": "1.1.2",
     "lodash": "4.17.4",
     "prop-types": "15.5.10",
     "react-motion": "0.5.2"
