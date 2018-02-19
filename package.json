@@ -1,6 +1,6 @@
 {
   "name": "@opuscapita/react-navigation",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Start write new project with no effort.",
   "scripts": {
     "npm-build": "rimraf lib && webpack --config webpack.production.config.js",
@@ -79,7 +79,7 @@
     "@opuscapita/opuscapita-ui": "^1.0.2-beta.4",
     "@opuscapita/react-buttons": "4.0.2",
     "@opuscapita/react-svg": "4.0.0",
-    "@opuscapita/svg-icons": "1.1.1",
+    "@opuscapita/svg-icons": "1.1.2",
     "lodash": "4.17.4",
     "prop-types": "15.5.10",
     "react-perfect-scrollbar": "^1.0.0"
