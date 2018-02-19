@@ -81,7 +81,8 @@
     "@opuscapita/react-svg": "4.0.0",
     "@opuscapita/svg-icons": "1.1.1",
     "lodash": "4.17.4",
-    "prop-types": "15.5.10"
+    "prop-types": "15.5.10",
+    "react-perfect-scrollbar": "^1.0.0"
   },
   "keywords": [
     "react",
