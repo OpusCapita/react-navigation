@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './NavigationBar.less';
-import { spring, presets, Motion } from 'react-motion';
 import { SVG } from '@opuscapita/react-svg';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 
@@ -25,15 +24,12 @@ const defaultProps = {
   navigationItems: []
 };
 
-const springPreset = presets.stiff;
-
 export default
 class NavigationBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      openedItem: null,
-      animationEnded: true
+      openedItem: null
     };
 
     this.handleBodyClick = this.handleBodyClick.bind(this);
@@ -65,11 +61,11 @@ class NavigationBar extends Component {
   }
 
   showTopLevelItem = (key) => {
-    this.setState({ openedItem: key, animationEnded: false });
+    this.setState({ openedItem: key });
   }
 
   hideTopLevelItem = () => {
-    this.setState({ openedItem: null, animationEnded: false });
+    this.setState({ openedItem: null });
   }
 
   handleTopLevelItemClick = (key) => {
@@ -78,10 +74,6 @@ class NavigationBar extends Component {
     } else {
       this.showTopLevelItem(key);
     }
-  }
-
-  handleAnimationEnd = () => {
-    this.setState({ animationEnded: true });
   }
 
   renderClickableElement = (item, key, className) => {
@@ -150,28 +142,13 @@ class NavigationBar extends Component {
     let subItems = null;
     let isOpened = this.state.openedItem === key;
 
-    if (navigationItem.subItems) {
+    if (navigationItem.subItems && isOpened) {
       subItems = (
-        <Motion
-          defaultStyle={{ x: isOpened ? 1 : 0, y: isOpened ? 100 : 0 }}
-          style={{
-            x: isOpened ? spring(1, springPreset) : spring(0, springPreset)
-          }}
-          onRest={this.handleAnimationEnd}
+        <ul
+          className="oc-navigation-bar__sub-items-container"
         >
-          {interpolatedStyle => (
-            <ul
-              className="oc-navigation-bar__sub-items-container"
-              style={{
-                opacity: interpolatedStyle.x,
-                pointerEvents: isOpened ? 'auto' : 'none',
-                height: isOpened ? 'auto' : (this.state.animationEnded ? '0' : 'auto')
-              }}
-            >
-              {navigationItem.subItems.map((subItem, i) => this.renderSubLevelItem(subItem, i))}
-            </ul>
-          )}
-        </Motion>
+          {navigationItem.subItems.map((subItem, i) => this.renderSubLevelItem(subItem, i))}
+        </ul>
       );
     }
 

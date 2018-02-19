@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuIcon.less';
-import { spring, presets, Motion } from 'react-motion';
 import { TitledButton } from '@opuscapita/react-buttons';
 import { SVG } from '@opuscapita/react-svg';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
@@ -24,15 +23,12 @@ const defaultProps = {
   onClick: () => {}
 };
 
-const springPreset = presets.stiff;
-
 export default
 class MenuIcon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpened: false,
-      animationEnded: false
+      isOpened: false
     };
     this.handleBodyClick = this.handleBodyClick.bind(this);
     this.handleBodyKeyDown = this.handleBodyKeyDown.bind(this);
@@ -50,8 +46,7 @@ class MenuIcon extends Component {
       this.props.title !== nextProps.title ||
       this.props.label !== nextProps.label ||
       this.props.hideDropdownArrow !== nextProps.hideDropdownArrow ||
-      this.state.isOpened !== nextState.isOpened ||
-      this.state.animationEnded !== nextState.animationEnded
+      this.state.isOpened !== nextState.isOpened
     );
   }
 
@@ -92,10 +87,6 @@ class MenuIcon extends Component {
     this.props.onClick();
   }
 
-  handleAnimationEnd = () => {
-    this.setState({ animationEnded: true });
-  }
-
   render() {
     const {
       svg,
@@ -124,37 +115,24 @@ class MenuIcon extends Component {
       </div>
     ) : null;
 
-    let childrenElement = null;
+    let childrenElement = (children && isOpened) ? (
+      <div
+        className={`
+          oc-menu-icon__sub-items-container
+          ${showDropdownArrow ? 'oc-menu-icon__sub-items-container--with-dropdown' : ''}
+        `}
+        onClick={e => e.stopPropagation()}
+      >
+        {children}
+      </div>
+    ) : null;
 
-    if (children) {
-      childrenElement = (
-        <Motion
-          defaultStyle={{ x: isOpened ? 1 : 0, y: isOpened ? 100 : 0 }}
-          style={{
-            x: isOpened ? spring(1, springPreset) : spring(0, springPreset)
-          }}
-          onRest={this.handleAnimationEnd}
-        >
-          {interpolatedStyle => (
-            <div
-              className={`
-                oc-menu-icon__sub-items-container
-                ${showDropdownArrow ? 'oc-menu-icon__sub-items-container--with-dropdown' : ''}
-              `}
-              onClick={e => e.stopPropagation()}
-              style={{
-                opacity: interpolatedStyle.x,
-                pointerEvents: isOpened ? 'auto' : 'none',
-                overflow: isOpened ? 'visible' : 'hidden',
-                height: isOpened ? 'auto' : (this.state.animationEnded ? '0' : 'auto')
-              }}
-            >
-              {children}
-            </div>
-          )}
-        </Motion>
-      );
-    }
+    let childrenArrowElement = (children && isOpened) ? (
+      <div
+        className="oc-menu-icon__children-arrow"
+      >
+      </div>
+    ) : null;
 
     return (
       <div
@@ -163,20 +141,23 @@ class MenuIcon extends Component {
         onClick={this.handleClick}
         {...restProps}
       >
-        <TitledButton
-          className={`
-            oc-menu-icon__button
-            ${showDropdownArrow ? 'oc-menu-icon__button--with-dropdown' : ''}
-            ${supTitle ? 'oc-menu-icon__button--with-suptitle' : ''}
-            ${'oc-menu-icon__button--light-overlay'}
-          `}
-          svg={svg}
-          title={isOpened ? '' : title}
-          label={label}
-          contentPosition="before"
-        />
-        {supTitleElement}
-        {dropdownArrowElement}
+        <div className="oc-menu-icon__container">
+          <TitledButton
+            className={`
+              oc-menu-icon__button
+              ${showDropdownArrow ? 'oc-menu-icon__button--with-dropdown' : ''}
+              ${supTitle ? 'oc-menu-icon__button--with-suptitle' : ''}
+              ${'oc-menu-icon__button--light-overlay'}
+            `}
+            svg={svg}
+            title={isOpened ? '' : title}
+            label={label}
+            contentPosition="before"
+          />
+          {supTitleElement}
+          {dropdownArrowElement}
+          {childrenArrowElement}
+        </div>
         {childrenElement}
       </div>
     );

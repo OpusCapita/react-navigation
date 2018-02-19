@@ -1,6 +1,22 @@
 .oc-menu-icon {
+
+}
+
+.oc-menu-icon__container {
   display: inline-flex;
   position: relative;
+  height: 32px;
+}
+
+.oc-menu-icon__children-arrow {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  bottom: -26px;
+  right: 10px;
+  transform: translate(0, -50%) rotate(45deg);
+  z-index: 100;
 }
 
 .oc-menu-icon__sup-title {
@@ -47,17 +63,6 @@
   transform: translate(0, 100%);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.15);
   z-index: 10;
-  &:after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: #fff;
-    top: 0;
-    right: 10px;
-    transform: translate(0, -50%) rotate(45deg);
-    z-index: -10;
-  }
 }
 
 .oc-menu-icon__sub-items-container--with-dropdown {

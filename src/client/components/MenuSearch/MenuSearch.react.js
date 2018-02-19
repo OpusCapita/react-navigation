@@ -24,8 +24,7 @@ class MenuSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpened: false,
-      animationEnded: true
+      isOpened: false
     };
   }
 
@@ -63,16 +62,12 @@ class MenuSearch extends Component {
     }
   }
 
-  handleAnimationEnd = () => {
-    this.setState({ animationEnded: true });
-  }
-
   showAutocomplete = () => {
-    this.setState({ isOpened: true, animationEnded: false });
+    this.setState({ isOpened: true });
   }
 
   hideAutocomplete = () => {
-    this.setState({ isOpened: false, animationEnded: false });
+    this.setState({ isOpened: false });
   }
 
   render() {
