@@ -7,8 +7,6 @@ import MenuIconsBar from '../MenuIconsBar';
 import MenuSearch from '../MenuSearch';
 import '../theme/opuscapita-dark.less';
 
-const mobileWidth = 990;
-
 const propTypes = {
   appName: Types.string,
   activeItem: Types.number,
@@ -89,11 +87,7 @@ class Menu extends Component {
   }
 
   handleContainerScroll(e) {
-    if (this.props.containerElement.scrollY) {
-      this.setState({ containerScrolled: true });
-    } else {
-      this.setState({ containerScrolled: false });
-    }
+    this.setState({ containerScrolled: new Boolean(this.props.containerElement.scrollY) });
   }
 
   render() {
@@ -120,30 +114,11 @@ class Menu extends Component {
       rect
     } = this.state;
 
-    const isMobile = rect && rect.width < mobileWidth;
-
     const searchElement = showSearch ? (
       <div className="oc-menu__search-container">
-        <MenuSearch
-          minWidth={isMobile ? 'calc(100% - 48px)' : 320}
-          maxWidth={isMobile ? 'calc(100% - 48px)' : 380}
-          { ...searchProps }
-        />
+        <MenuSearch { ...searchProps } />
       </div>
     ) : null;
-
-    const logoElement = (
-      <div className="oc-menu__logo-container">
-        <MenuLogo
-          logoSrc={logoSrc}
-          logoTitle={logoTitle}
-          logoHref={logoHref}
-          labelText={labelText}
-          labelLinkText={labelLinkText}
-          labelLinkHref={labelLinkHref}
-        />
-      </div>
-    );
 
     const navigationBarElement = (
       <div className="oc-menu__navigation-bar">
@@ -166,31 +141,37 @@ class Menu extends Component {
           ${noMargin ? 'oc-menu--no-margin' : ''}
         `}
       >
-        {!isMobile ? logoElement : null}
-
-        <div className="oc-menu__main-container">
-          <div className="oc-menu__top-row">
-
-            {isMobile ? logoElement : null}
-
+        <div className="oc-menu__left-col">
+          <MenuLogo
+            logoSrc={logoSrc}
+            logoTitle={logoTitle}
+            logoHref={logoHref}
+            labelText={labelText}
+            labelLinkText={labelLinkText}
+            labelLinkHref={labelLinkHref}
+          />
+        </div>
+        <div className="oc-menu__middle-col">
+          <div className="oc-menu__middle-col-top-row">
             <h1
               className="oc-menu__app-name"
               data-test="oc-menu__app-name"
             >
               {appName}
             </h1>
-            <div className="oc-menu__icons-bar-container">
-              {searchElement}
-              <MenuIconsBar>
-                {Children.toArray(iconsBarItems)}
-              </MenuIconsBar>
-            </div>
+          </div>
+          <div className="oc-menu__middle-col-bottom-row">
+            {navigationBarElement}
           </div>
 
-          <div className="oc-menu__bottom-row">
-            {!isMobile ? navigationBarElement : null}
+        </div>
+        <div className="oc-menu__right-col">
+          <div className="oc-menu__icons-bar-container">
+            {searchElement}
+            <MenuIconsBar>
+              {Children.toArray(iconsBarItems)}
+            </MenuIconsBar>
           </div>
-
         </div>
       </div>
     );

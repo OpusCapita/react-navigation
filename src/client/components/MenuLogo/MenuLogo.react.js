@@ -32,22 +32,17 @@ class MenuLogo extends Component {
     } = this.props;
 
     return (
-      <div
-        className="oc-menu-logo"
-        data-test="oc-menu-logo"
-      >
-        <div className="oc-menu-logo__image-container">
-          <a
-            className="oc-menu-logo__image-link"
-            href={logoHref}
-          >
-            <img
-              className="oc-menu-logo__image"
-              title={logoTitle}
-              src={logoSrc}
+      <div className="oc-menu-logo" data-test="oc-menu-logo">
+        <a
+          className="oc-menu-logo__link"
+          href={logoHref}
+        >
+          <img
+            className="oc-menu-logo__image"
+            title={logoTitle}
+            src={logoSrc}
             />
-          </a>
-        </div>
+        </a>
         <div className="oc-menu-logo__label">
           <span className="oc-menu-logo__label-text">
             {labelText}

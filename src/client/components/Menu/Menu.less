@@ -1,7 +1,7 @@
 .oc-menu {
   display: flex;
   background-color: #fff;
-  height: 86px;
+  height: 70px;
   position: relative;
   z-index: 999;
   margin-bottom: 20px;
@@ -36,95 +36,58 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
 }
 
-.oc-menu__logo-container {
+.oc-menu__left-col {
   display: inline-flex;
   align-items: center;
-  border-top-right-radius: 24px 36px;
 }
 
 .oc-menu__search-container {
-  padding: 3px 12px 0 0;
+  padding: 0 12px 0 0;
 }
 
 .oc-menu__navigation-bar {
   z-index: 1;
 }
 
-.oc-menu__main-container {
+.oc-menu__middle-col {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: flex-end;
   padding-left: 10px;
   position: relative;
+  justify-content: flex-end;
 }
 
-.oc-menu__top-row {
+.oc-menu__middle-col-top-row,
+.oc-menu__middle-col-bottom-row {
+  height: 50%;
+}
+
+.oc-menu__middle-col-top-row {
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 2px 0 0 10px;
+  align-items: center;
 }
 
-.oc-menu__bottom-row {
+.oc-menu__middle-col-bottom-row {
   display: flex;
   align-items: flex-end;
 }
 
 .oc-menu__app-name {
   display: inline-flex;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 24px;
   align-items: center;
   white-space: nowrap;
-  padding: 10px 0 10px 10px;
   margin: 0;
   border: none;
+  padding: 10px 0 10px 10px;
 }
 
 .oc-menu__icons-bar-container {
   margin-left: auto;
-  padding: 6px 24px;
+  padding: 4px 24px;
   padding-right: 8px;
   display: inline-flex;
   align-items: flex-start;
-}
-
-@media (max-width: 1366px) {
-  .oc-menu__icons-bar-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    flex-direction: column;
-    padding: 4px 12px;
-    height: 86px;
-    justify-content: space-between;
-  }
-
-  .oc-menu__search-container {
-    margin-left: auto;
-    padding: 2px 0 0;
-  }
-}
-
-@media (max-width: 990px) {
-  .oc-menu__main-container {
-    padding-left: 0;
-  }
-
-  .oc-menu__app-name {
-    display: none;
-  }
-
-  .oc-menu__icons-bar-container {
-    width: 100%;
-  }
-
-  .oc-menu__logo-container {
-    position: absolute;
-    left: 0;
-    top: 10px;
-  }
 }

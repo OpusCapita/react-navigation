@@ -3,19 +3,14 @@ import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuSearch.less';
 import { SVG } from '@opuscapita/react-svg';
-import { spring, Motion } from 'react-motion';
 
 const searchSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/search.svg');
 
 
 const propTypes = {
-  minWidth: Types.number,
-  maxWidth: Types.number,
   onFocus: Types.func
 };
 const defaultProps = {
-  minWidth: 320,
-  maxWidth: 380,
   onFocus: () => {}
 };
 
@@ -82,8 +77,6 @@ class MenuSearch extends Component {
 
   render() {
     const {
-      minWidth,
-      maxWidth,
       children,
       onFocus, // eslint-disable-line no-unused-vars
       ...restProps
@@ -99,39 +92,25 @@ class MenuSearch extends Component {
         className="oc-menu-search"
         data-test="oc-menu-search"
       >
-        <Motion
-          defaultStyle={{ x: isOpened ? 1 : 0, y: isOpened ? maxWidth : minWidth }}
-          style={{
-            x: isOpened ? spring(1, springPreset) : spring(0, springPreset),
-            y: isOpened ? spring(maxWidth, springPreset) : spring(minWidth, springPreset)
-          }}
-          onRest={this.handleAnimationEnd}
-        >
-          {interpolatedStyle => (
-            <div
-              className="oc-menu-search__container"
-              style={{
-                width: `${interpolatedStyle.y}px`
-              }}
-            >
-              <div
-                className="oc-menu-search__search-icon"
-                onClick={this.handleSearchIconClick}
-              >
-                <SVG
-                  svg={searchSVG}
-                />
-              </div>
-              <input
-                ref={ref => (this.inputRef = ref)}
-                className="oc-menu-search__input"
-                data-test="oc-menu-search__input"
-                onFocus={this.handleInputFocus}
-                { ...restProps }
-              />
-            </div>
-          )}
-        </Motion>
+        <div
+          className="oc-menu-search__container"
+       >
+          <div
+            className="oc-menu-search__search-icon"
+            onClick={this.handleSearchIconClick}
+          >
+            <SVG
+              svg={searchSVG}
+            />
+          </div>
+          <input
+            ref={ref => (this.inputRef = ref)}
+            className="oc-menu-search__input"
+            data-test="oc-menu-search__input"
+            onFocus={this.handleInputFocus}
+            { ...restProps }
+          />
+        </div>
         {isOpened ? children : null}
       </div>
     );
