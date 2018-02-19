@@ -3,14 +3,17 @@ import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuSearch.less';
 import { SVG } from '@opuscapita/react-svg';
+import MenuIcon from '../MenuIcon';
 
 const searchSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/search.svg');
 
 
 const propTypes = {
+  isMinimized: Types.bool,
   onFocus: Types.func
 };
 const defaultProps = {
+  isMinimized: false,
   onFocus: () => {}
 };
 
@@ -24,9 +27,6 @@ class MenuSearch extends Component {
       isOpened: false,
       animationEnded: true
     };
-
-    this.handleBodyClick = this.handleBodyClick.bind(this);
-    this.handleBodyKeyDown = this.handleBodyKeyDown.bind(this);
   }
 
   componentDidMount() {
@@ -41,7 +41,7 @@ class MenuSearch extends Component {
 
   handleSearchIconClick = () => {
     this.showAutocomplete();
-    this.inputRef.focus();
+    (this.inputRef && this.inputRef).focus();
   }
 
   handleInputFocus = (e) => {
@@ -78,6 +78,7 @@ class MenuSearch extends Component {
   render() {
     const {
       children,
+      isMinimized,
       onFocus, // eslint-disable-line no-unused-vars
       ...restProps
     } = this.props;
@@ -85,6 +86,28 @@ class MenuSearch extends Component {
     const {
       isOpened
     } = this.state;
+
+    if (isMinimized) {
+      return (
+        <div
+          ref={ref => (this.containerRef = ref)}
+          className="oc-menu-search"
+          data-test="oc-menu-search"
+        >
+          <div
+            className="oc-menu-search__search-icon"
+            onClick={this.handleSearchIconClick}
+          >
+            <MenuIcon
+              onClick={() => console.log('click!')}
+              svg={searchSVG}
+              title="My lists"
+            />
+            {isOpened ? children : null}
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div

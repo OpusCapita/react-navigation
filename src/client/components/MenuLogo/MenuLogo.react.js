@@ -8,7 +8,8 @@ const propTypes = {
   logoTitle: Types.string,
   labelText: Types.string,
   labelLinkText: Types.string,
-  labelLinkHref: Types.string
+  labelLinkHref: Types.string,
+  showLabel: Types.bool
 };
 const defaultProps = {
   logoSrc: '',
@@ -16,7 +17,8 @@ const defaultProps = {
   logoHref: '#',
   labelText: '',
   labelLinkText: '',
-  labelLinkHref: '#'
+  labelLinkHref: '#',
+  showLabel: true
 };
 
 export default
@@ -28,7 +30,8 @@ class MenuLogo extends Component {
       logoTitle,
       labelText,
       labelLinkText,
-      labelLinkHref
+      labelLinkHref,
+      showLabel
     } = this.props;
 
     return (
@@ -43,7 +46,12 @@ class MenuLogo extends Component {
             src={logoSrc}
             />
         </a>
-        <div className="oc-menu-logo__label">
+        <div
+          className={`
+            oc-menu-logo__label
+            ${showLabel ? '' : 'oc-menu-logo__label--hidden' }
+          `}
+        >
           <span className="oc-menu-logo__label-text">
             {labelText}
           </span>

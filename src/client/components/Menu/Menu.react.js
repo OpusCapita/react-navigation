@@ -29,8 +29,7 @@ const propTypes = {
       href: Types.string
     }))
   })),
-  iconsBarItems: Types.arrayOf(Types.node),
-  containerElement: Types.object
+  iconsBarItems: Types.arrayOf(Types.node)
 };
 const defaultProps = {
   appName: '',
@@ -49,45 +48,45 @@ const defaultProps = {
   searchProps: {
     placeholder: 'Search'
   },
-  iconsBarItems: [],
-  containerElement: window
+  iconsBarItems: []
 };
+
+const menuHeight = 70;
+const tabletWidth = 1024;
+const iconsBarWidth = 640;
 
 export default
 class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      containerScrolled: false,
+      isMinimized: false,
       rect: null
     };
-
-    this.handleContainerScroll = this.handleContainerScroll.bind(this);
-    this.handleWindowResize = this.handleWindowResize.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.handleWindowResize);
-    this.props.containerElement.addEventListener('scroll', this.handleContainerScroll);
+    window.addEventListener('scroll', this.handleContainerScroll);
 
     this.setRect();
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleWindowResize);
-    this.props.containerElement.removeEventListener('scroll', this.handleContainerScroll);
+    window.removeEventListener('scroll', this.handleContainerScroll);
   }
 
-  setRect() {
-    this.setState({ rect: this.containerRef.getBoundingClientRect() });
+  setRect = () => {
+    this.setState({ rect: this.container.getBoundingClientRect() });
   }
 
-  handleWindowResize() {
+  handleWindowResize = () => {
     this.setRect();
   }
 
-  handleContainerScroll(e) {
-    this.setState({ containerScrolled: new Boolean(this.props.containerElement.scrollY) });
+  handleContainerScroll = (e) => {
+    this.setState({ isMinimized: window.pageYOffset > menuHeight });
   }
 
   render() {
@@ -110,13 +109,23 @@ class Menu extends Component {
     } = this.props;
 
     const {
-      containerScrolled,
+      isMinimized,
       rect
     } = this.state;
 
-    const searchElement = showSearch ? (
+    let { container, iconsBarContainer, leftCol, middleColBottomRow } = this;
+    let mounted = !!(container && iconsBarContainer && leftCol && middleColBottomRow);
+
+    let minimizeSearch = (
+      mounted &&
+      (container.clientWidth - leftCol.clientWidth - middleColBottomRow.clientWidth) < iconsBarWidth
+    );
+
+    let isTablet = (rect && rect.width) <= tabletWidth;
+
+    const searchElement = (showSearch) ? (
       <div className="oc-menu__search-container">
-        <MenuSearch { ...searchProps } />
+        <MenuSearch isMinimized={minimizeSearch} { ...searchProps } />
       </div>
     ) : null;
 
@@ -131,17 +140,20 @@ class Menu extends Component {
 
     return (
       <div
-        ref={ref => (this.containerRef = ref)}
+        ref={ref => (this.container = ref)}
         data-test="oc-menu"
         className={`
           oc-menu
           ${className}
           ${alwaysAtTop ? 'oc-menu--at-top' : ''}
-          ${containerScrolled ? 'oc-menu--scrolled' : ''}
+          ${isMinimized ? 'oc-menu--minimized' : ''}
           ${noMargin ? 'oc-menu--no-margin' : ''}
         `}
       >
-        <div className="oc-menu__left-col">
+        <div
+          className="oc-menu__left-col"
+          ref={ref => (this.leftCol = ref)}
+        >
           <MenuLogo
             logoSrc={logoSrc}
             logoTitle={logoTitle}
@@ -149,26 +161,36 @@ class Menu extends Component {
             labelText={labelText}
             labelLinkText={labelLinkText}
             labelLinkHref={labelLinkHref}
+            showLabel={!isMinimized}
           />
         </div>
         <div className="oc-menu__middle-col">
           <div className="oc-menu__middle-col-top-row">
             <h1
-              className="oc-menu__app-name"
+              className={`
+                oc-menu__app-name
+                ${isMinimized ? 'oc-menu__app-name--minimized' : ''}
+              `}
               data-test="oc-menu__app-name"
             >
               {appName}
             </h1>
           </div>
-          <div className="oc-menu__middle-col-bottom-row">
+          <div
+            className="oc-menu__middle-col-bottom-row"
+            ref={ref => (this.middleColBottomRow = ref)}
+          >
             {navigationBarElement}
           </div>
 
         </div>
         <div className="oc-menu__right-col">
-          <div className="oc-menu__icons-bar-container">
-            {searchElement}
+          <div
+            className="oc-menu__icons-bar-container"
+            ref={ref => (this.iconsBarContainer = ref)}
+          >
             <MenuIconsBar>
+              {searchElement}
               {Children.toArray(iconsBarItems)}
             </MenuIconsBar>
           </div>
