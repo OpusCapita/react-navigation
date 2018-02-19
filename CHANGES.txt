@@ -1,4 +1,18 @@
 
+Release 0.1.3 Mon Feb 19 2018 15:41:53 GMT+0300 (+03)
+=======================================================
+
+ - Merge branch 'master' of github.com:OpusCapita/react-navigation (7c4b16e e03fb3b, Kirill Volkovich <kirill.volkovich@opuscapita.com>)
+ - #11 Improve styles (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Mon Feb 19 15:30:38 2018 +0300)
+ - #11 Removed unnecessary animation. MenuIcon children fixed to right (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Mon Feb 19 15:04:24 2018 +0300)
+ - #11 Improve styles (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Mon Feb 19 13:48:06 2018 +0300)
+ - #11 Improve styles (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Mon Feb 19 13:29:19 2018 +0300)
+ - #11 Improve styles (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Mon Feb 19 10:30:42 2018 +0300)
+ - Updating to a version to  0.1.3 (Dmitriy Sanko <dsanko@scand.com>, Wed Feb 14 13:33:37 2018 +0300)
+ - Updating 'svg-icons' dependency version. (Dmitriy Sanko <dsanko@scand.com>, Wed Feb 14 13:29:33 2018 +0300)
+ - Removed i18n usage in components "*.SCOPE.react.js" files (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Thu Jan 18 12:18:28 2018 +0300)
+ - Updating to a version to  0.1.2 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Tue Dec 19 14:18:19 2017 +0300)
+
 Release 0.1.2 Wed Feb 14 2018 13:33:18 GMT+0300 (+03)
 =======================================================
 
