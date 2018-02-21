@@ -9,7 +9,7 @@
 
 > Work in progress
 
-Actual demo [here](https://opuscapita.github.io/react-navigation)
+Actual demo [here](https://opuscapita.github.io/react-navigation/?currentComponentName=Menu&maxContainerWidth=100%25)
 
 Top navigation menu for OpusCapita application.
 
