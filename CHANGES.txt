@@ -1,4 +1,16 @@
 
+Release 0.1.4 Wed Feb 21 2018 11:25:10 GMT+0300 (+03)
+=======================================================
+
+ - Decrease application name font-size (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Wed Feb 21 11:24:20 2018 +0300)
+ - Fix lint (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Wed Feb 21 11:14:27 2018 +0300)
+ - Updating README.md [skip ci] (Alexey Sergeev <asergeev-sc@users.noreply.github.com>, Wed Feb 21 09:46:41 2018 +0300)
+ - Update README.md (Alexey Sergeev <asergeev-sc@users.noreply.github.com>, Wed Feb 21 09:43:06 2018 +0300)
+ - Update README.md (Alexey Sergeev <asergeev-sc@users.noreply.github.com>, Wed Feb 21 09:40:31 2018 +0300)
+ - Create LICENSE (Alexey Sergeev <asergeev-sc@users.noreply.github.com>, Wed Feb 21 09:38:37 2018 +0300)
+ - Update README.md (Alexey Sergeev <asergeev-sc@users.noreply.github.com>, Wed Feb 21 09:37:31 2018 +0300)
+ - Updating to a version to  0.1.4 (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Mon Feb 19 15:43:32 2018 +0300)
+
 Release 0.1.3 Mon Feb 19 2018 15:41:53 GMT+0300 (+03)
 =======================================================
 
