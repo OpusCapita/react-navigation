@@ -13,6 +13,17 @@ Actual demo [here](https://opuscapita.github.io/react-navigation)
 
 Top navigation menu for OpusCapita application.
 
+
+## Installation
+
+`npm install @opuscapita/react-navigation`
+
+## Contributors
+
+| [<img src="https://avatars.githubusercontent.com/u/24652543?v=3" width="100px;"/>](https://github.com/kvolkovich-sc) | [**Kirill Volkovich**](https://github.com/kvolkovich-sc) |
+| :---: | :---: |
+
 ## License
 
-Apache-2
+Licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for the full license text.
+
