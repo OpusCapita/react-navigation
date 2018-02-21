@@ -15,7 +15,7 @@ mv .gh-pages-tmp/* . &&
 rm -rf .gh-pages-tmp &&
 git add . &&
 
-git config user.email "$GH_EMAIL" > /dev/null 2>&1 &&
+git config user.email "$GH_MAIL" > /dev/null 2>&1 &&
 git config user.name "$GH_NAME" > /dev/null 2>&1 &&
 
 git commit -m "Deploy to GitHub pages [ci skip]" &&
