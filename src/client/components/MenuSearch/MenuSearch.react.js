@@ -17,8 +17,6 @@ const defaultProps = {
   onFocus: () => {}
 };
 
-const springPreset = { stiffness: 300, damping: 28 };
-
 export default
 class MenuSearch extends Component {
   constructor(props) {
@@ -112,7 +110,7 @@ class MenuSearch extends Component {
       >
         <div
           className="oc-menu-search__container"
-       >
+        >
           <div
             className="oc-menu-search__search-icon"
             onClick={this.handleSearchIconClick}

@@ -52,7 +52,6 @@ const defaultProps = {
 };
 
 const menuHeight = 70;
-const tabletWidth = 1024;
 const iconsBarWidth = 640;
 
 export default
@@ -109,8 +108,7 @@ class Menu extends Component {
     } = this.props;
 
     const {
-      isMinimized,
-      rect
+      isMinimized
     } = this.state;
 
     let { container, iconsBarContainer, leftCol, middleColBottomRow } = this;
@@ -120,8 +118,6 @@ class Menu extends Component {
       mounted &&
       (container.clientWidth - leftCol.clientWidth - middleColBottomRow.clientWidth) < iconsBarWidth
     );
-
-    let isTablet = (rect && rect.width) <= tabletWidth;
 
     const searchElement = (showSearch) ? (
       <div className="oc-menu__search-container">

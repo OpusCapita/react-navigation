@@ -44,7 +44,7 @@ class MenuLogo extends Component {
             className="oc-menu-logo__image"
             title={logoTitle}
             src={logoSrc}
-            />
+          />
         </a>
         <div
           className={`
