@@ -3,7 +3,7 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/@opuscapita/react-navigation.svg)](https://npmjs.org/package/@opuscapita/react-navigation)
 ![badge-license](https://img.shields.io/github/license/OpusCapita/react-navigation.svg)
 
-# OpusCapita applicatino top header/navigation (in React)
+# OpusCapita applicatinon top header/navigation (in React)
 
 ## Synopsis
 
