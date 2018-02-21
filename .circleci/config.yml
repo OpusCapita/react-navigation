@@ -27,7 +27,7 @@ jobs:
       - save_cache:
           key: react-navigation-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
-              - ./node_mmodules
+              - ./node_modules
               - ./yarn.lock
 
       - run:
@@ -56,7 +56,7 @@ jobs:
       - save_cache:
           key: react-navigation-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
-              - ./node_mmodules
+              - ./node_modules
               - ./yarn.lock
 
       - run:
@@ -85,8 +85,8 @@ jobs:
       - save_cache:
           key: react-navigation-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
-              - /root/build/node_mmodules
-              - /root/build/yarn.lock
+              - ./node_modules
+              - ./yarn.lock
 
       - run:
           name: "Running lint."
