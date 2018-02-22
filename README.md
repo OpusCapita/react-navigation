@@ -20,6 +20,8 @@ Top navigation menu for OpusCapita application.
 
 ## Contributors
 
+[CONTRIBUTING.md](./.github/CONTRIBUTING.md)
+
 | [<img src="https://avatars.githubusercontent.com/u/24652543?v=3" width="100px;"/>](https://github.com/kvolkovich-sc) | [**Kirill Volkovich**](https://github.com/kvolkovich-sc) |
 | :---: | :---: |
 
