@@ -1,4 +1,16 @@
 
+Release 1.0.5 Thu Mar 15 2018 11:01:22 GMT+0000 (UTC)
+=======================================================
+
+- Fix https://github.com/OpusCapita/minsk-core-externals/issues/57 (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-15 13:56:58 +0300)
+- Add "CONTRIBUTING.md" file (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-02-22 14:01:10 +0300)
+- Set app name font-size to 18px (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-02-22 13:44:34 +0300)
+- Update README.md (GitHub kvolkovich-sc@users.noreply.github.com, 2018-02-21 16:36:10 +0300)
+- Updated build config. (Dmitry Shienok dshienok@scand.com, 2018-02-21 16:14:20 +0300)
+- Updated gh-pages-update.sh (Dmitry Shienok dshienok@scand.com, 2018-02-21 15:16:17 +0300)
+- Updated build config. (Dmitry Shienok dshienok@scand.com, 2018-02-21 14:50:39 +0300)
+- Updating to a version to  0.1.5 (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-02-21 11:25:27 +0300)
+
 Release 0.1.4 Wed Feb 21 2018 11:25:10 GMT+0300 (+03)
 =======================================================
 
