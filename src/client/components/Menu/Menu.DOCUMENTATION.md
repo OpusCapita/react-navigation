@@ -184,6 +184,7 @@ TopMenu is
     ),
     (
       <MenuIcon
+        ref={ref => (window.accountMenuIcon = ref)}
         onClick={() => console.log('click!')}
         title="Account settings"
         label="Alexey"
@@ -205,7 +206,7 @@ TopMenu is
             },
             {
               label: 'Settings',
-              onClick: () => console.log('Settings click')
+              onClick: () => console.log('Settings click') || window.accountMenuIcon.hideChildren()
             },
             {
               label: 'Help',
