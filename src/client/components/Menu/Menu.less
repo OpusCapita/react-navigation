@@ -46,12 +46,6 @@
   align-items: center;
 }
 
-.oc-menu__right-col {
-  justify-content: flex-end;
-  display: flex;
-  margin-left: auto;
-}
-
 .oc-menu__search-container {
   display: inline-flex;
   align-items: center;
@@ -67,6 +61,7 @@
   padding-left: 10px;
   position: relative;
   justify-content: flex-end;
+  flex: 1 0 auto;
 }
 
 .oc-menu__middle-col-top-row,
@@ -100,10 +95,11 @@
 }
 
 .oc-menu__icons-bar-container {
+  position: absolute;
+  right: 8px;
+  top: 0;
   margin-left: auto;
-  padding: 4px 24px;
-  padding-right: 8px;
+  padding-top: 4px;
   display: inline-flex;
   align-items: flex-start;
-  flex: 1 0 auto;
 }

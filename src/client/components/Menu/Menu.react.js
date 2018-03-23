@@ -53,6 +53,7 @@ const defaultProps = {
 
 const menuHeight = 70;
 const iconsBarWidth = 640;
+const tabletPortraitWidth = 768;
 
 export default
 class Menu extends Component {
@@ -114,7 +115,9 @@ class Menu extends Component {
     let { container, iconsBarContainer, leftCol, middleColBottomRow } = this;
     let mounted = !!(container && iconsBarContainer && leftCol && middleColBottomRow);
 
-    let minimizeSearch = (
+    let isTabletPortrait = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= tabletPortraitWidth;
+
+    let minimizeSearch = isTabletPortrait || (
       mounted &&
       (container.clientWidth - leftCol.clientWidth - middleColBottomRow.clientWidth) < iconsBarWidth
     );
@@ -142,7 +145,7 @@ class Menu extends Component {
           oc-menu
           ${className}
           ${alwaysAtTop ? 'oc-menu--at-top' : ''}
-          ${isMinimized ? 'oc-menu--minimized' : ''}
+          ${isMinimized && !isTabletPortrait ? 'oc-menu--minimized' : ''}
           ${noMargin ? 'oc-menu--no-margin' : ''}
         `}
       >
@@ -157,7 +160,7 @@ class Menu extends Component {
             labelText={labelText}
             labelLinkText={labelLinkText}
             labelLinkHref={labelLinkHref}
-            showLabel={!isMinimized}
+            showLabel={!isMinimized || isTabletPortrait}
           />
         </div>
         <div className="oc-menu__middle-col">
@@ -165,12 +168,21 @@ class Menu extends Component {
             <h1
               className={`
                 oc-menu__app-name
-                ${isMinimized ? 'oc-menu__app-name--minimized' : ''}
+                ${(isMinimized && !isTabletPortrait) ? 'oc-menu__app-name--minimized' : ''}
               `}
               data-test="oc-menu__app-name"
             >
               {appName}
             </h1>
+            <div
+              className="oc-menu__icons-bar-container"
+              ref={ref => (this.iconsBarContainer = ref)}
+              >
+              <MenuIconsBar>
+                {searchElement}
+                {Children.toArray(iconsBarItems)}
+              </MenuIconsBar>
+            </div>
           </div>
           <div
             className="oc-menu__middle-col-bottom-row"
@@ -179,17 +191,6 @@ class Menu extends Component {
             {navigationBarElement}
           </div>
 
-        </div>
-        <div className="oc-menu__right-col">
-          <div
-            className="oc-menu__icons-bar-container"
-            ref={ref => (this.iconsBarContainer = ref)}
-          >
-            <MenuIconsBar>
-              {searchElement}
-              {Children.toArray(iconsBarItems)}
-            </MenuIconsBar>
-          </div>
         </div>
       </div>
     );
