@@ -53,7 +53,7 @@ const defaultProps = {
 
 const menuHeight = 70;
 const iconsBarWidth = 640;
-const tabletPortraitWidth = 768;
+const tabletPortraitWidth = 1024;
 
 export default
 class Menu extends Component {
@@ -115,7 +115,9 @@ class Menu extends Component {
     let { container, iconsBarContainer, leftCol, middleColBottomRow } = this;
     let mounted = !!(container && iconsBarContainer && leftCol && middleColBottomRow);
 
-    let isTabletPortrait = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= tabletPortraitWidth;
+    let isTabletPortrait = Math.max(
+      document.documentElement.clientWidth, window.innerWidth || 0
+    ) < tabletPortraitWidth;
 
     let minimizeSearch = isTabletPortrait || (
       mounted &&
@@ -177,7 +179,7 @@ class Menu extends Component {
             <div
               className="oc-menu__icons-bar-container"
               ref={ref => (this.iconsBarContainer = ref)}
-              >
+            >
               <MenuIconsBar>
                 {searchElement}
                 {Children.toArray(iconsBarItems)}
