@@ -6,8 +6,6 @@
   display: inline-flex;
   position: relative;
   height: 32px;
-
-
 }
 
 .oc-menu-icon__overlay {
@@ -98,6 +96,13 @@
 .oc-menu-icon__sub-items-container--tablet-overlay-mode-left {
   left: 0;
   right: initial;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.oc-menu-icon__sub-items-container--tablet-overlay-mode-right {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .oc-menu-icon__sub-items-container--tablet-overlay-mode-right .oc-menu-icon__sub-items-container--tablet-overlay-header svg {
@@ -105,7 +110,7 @@
 }
 
 .oc-menu-icon__sub-items-container--tablet-overlay-header {
-  min-height: 48px;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -122,17 +127,6 @@
   z-index: 10;
 }
 
-// XXX Remove it if @opuscapita/react-buttons will be replaced or modified
-.oc-menu-icon__button--dark-overlay:hover:before,
-.oc-menu-icon_-button--dark-overlay:focus:before {
-  background-color: rgba(0, 0, 0, 0.04);
-}
-
-.oc-menu-icon__button--light-overlay:hover:before,
-.oc-menu-icon__button--ligth-overlay:focus:before {
-  background-color: rgba(255, 255, 255, 0.04);
-}
-
 .oc-menu-icon .oc-button:focus:after {
   display: none;
 }
@@ -145,7 +139,7 @@
 
 .oc-menu-icon__button .oc-button:hover:before {
   pointer-events: none;
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(192, 192, 192, 0.18);
 }
 
 .oc-menu-icon__button--with-dropdown .oc-button {

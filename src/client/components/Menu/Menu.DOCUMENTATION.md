@@ -143,7 +143,7 @@ TopMenu is
           <Notification
             svg={_scope.getIcon('info')}
             svgClassName="fill-info"
-            message={<span>Your password will expire in 14 days. <a href="#">Change it now</a></span>}
+            message={<span>Your password will expire in 14 days. <br /><a href="#">Change it now</a></span>}
             dateTime="20/02/2017"
           />
           <Notification

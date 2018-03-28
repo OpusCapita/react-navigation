@@ -128,10 +128,8 @@ class MenuIcon extends Component {
           oc-menu-icon__sub-items-container
           ${showDropdownArrow ? 'oc-menu-icon__sub-items-container--with-dropdown' : ''}
           ${tabletOverlayMode ? 'oc-menu-icon__sub-items-container--tablet-overlay-mode' : ''}
-          ${tabletOverlayModeLeft ?
-            'oc-menu-icon__sub-items-container--tablet-overlay-mode-left' :
-            'oc-menu-icon__sub-items-container--tablet-overlay-mode-right'
-          }
+          ${(tabletOverlayMode && tabletOverlayModeLeft) ? 'oc-menu-icon__sub-items-container--tablet-overlay-mode-left' : ''}
+          ${(tabletOverlayMode && !tabletOverlayModeLeft) ? 'oc-menu-icon__sub-items-container--tablet-overlay-mode-right' : ''}
         `}
         onClick={e => e.stopPropagation()}
       >
