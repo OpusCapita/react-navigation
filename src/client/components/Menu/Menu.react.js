@@ -54,6 +54,7 @@ const defaultProps = {
 const menuHeight = 70;
 const iconsBarWidth = 640;
 const tabletPortraitWidth = 1024;
+const mobilePortraitWidth = 768;
 
 export default
 class Menu extends Component {
@@ -86,7 +87,9 @@ class Menu extends Component {
   }
 
   handleContainerScroll = (e) => {
-    this.setState({ isMinimized: window.pageYOffset > menuHeight });
+    if (this.props.alwaysAtTop) {
+      this.setState({ isMinimized: window.pageYOffset > menuHeight });
+    }
   }
 
   render() {
@@ -115,16 +118,19 @@ class Menu extends Component {
     let { container, iconsBarContainer, leftCol, middleColBottomRow } = this;
     let mounted = !!(container && iconsBarContainer && leftCol && middleColBottomRow);
 
-    let isTabletPortrait = Math.max(
+    let width = Math.max(
       document.documentElement.clientWidth, window.innerWidth || 0
-    ) < tabletPortraitWidth;
+    );
+
+    let isTabletPortrait =  width < tabletPortraitWidth && width >= mobilePortraitWidth;
+    let isMobilePortrait =  width < mobilePortraitWidth;
 
     let minimizeSearch = isTabletPortrait || (
       mounted &&
       (container.clientWidth - leftCol.clientWidth - middleColBottomRow.clientWidth) < iconsBarWidth
     );
 
-    const searchElement = (showSearch) ? (
+    const searchElement = (showSearch && !isMobilePortrait) ? (
       <div className="oc-menu__search-container">
         <MenuSearch isMinimized={minimizeSearch} { ...searchProps } />
       </div>
@@ -137,6 +143,30 @@ class Menu extends Component {
           navigationItems={navigationItems}
         />
       </div>
+    );
+
+    const menuLogoElement = isMobilePortrait ? null : (
+      <MenuLogo
+        logoSrc={logoSrc}
+        logoTitle={logoTitle}
+        logoHref={logoHref}
+        labelText={labelText}
+        labelLinkText={labelLinkText}
+        labelLinkHref={labelLinkHref}
+        showLabel={!isMinimized || isTabletPortrait}
+      />
+    );
+
+    const appNameElement = isMobilePortrait ? null : (
+      <h1
+        className={`
+          oc-menu__app-name
+          ${(isMinimized && !isTabletPortrait) ? 'oc-menu__app-name--minimized' : ''}
+        `}
+        data-test="oc-menu__app-name"
+      >
+        {appName}
+      </h1>
     );
 
     return (
@@ -155,27 +185,11 @@ class Menu extends Component {
           className="oc-menu__left-col"
           ref={ref => (this.leftCol = ref)}
         >
-          <MenuLogo
-            logoSrc={logoSrc}
-            logoTitle={logoTitle}
-            logoHref={logoHref}
-            labelText={labelText}
-            labelLinkText={labelLinkText}
-            labelLinkHref={labelLinkHref}
-            showLabel={!isMinimized || isTabletPortrait}
-          />
+          {menuLogoElement}
         </div>
         <div className="oc-menu__middle-col">
           <div className="oc-menu__middle-col-top-row">
-            <h1
-              className={`
-                oc-menu__app-name
-                ${(isMinimized && !isTabletPortrait) ? 'oc-menu__app-name--minimized' : ''}
-              `}
-              data-test="oc-menu__app-name"
-            >
-              {appName}
-            </h1>
+            {appNameElement}
             <div
               className="oc-menu__icons-bar-container"
               ref={ref => (this.iconsBarContainer = ref)}

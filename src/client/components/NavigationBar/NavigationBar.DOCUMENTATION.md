@@ -12,9 +12,18 @@ NavigationBar is
 ### Code Example
 
 ```
-<div style={{ position: 'relative' }}>
+<div
+  style={{ 
+    position: 'relative', 
+    display: 'flex', 
+    backgroundColor: '#3b4a56',
+    boxShadow: '0 0 0 8px #0f0'
+  }}
+  className="oc-menu--opuscapita-dark-theme"
+>
 <NavigationBar
   activeItem={0}
+  vertical={true}
   navigationItems={[
     { children: 'Dashboard', href: 'http://google.com' },
     { children: 'Supplier Application', href: 'http://google.com' },

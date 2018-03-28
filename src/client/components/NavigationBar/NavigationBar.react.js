@@ -7,7 +7,6 @@ const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_d
 
 const propTypes = {
   activeItem: Types.number,
-  openedItem: Types.number,
   navigationItems: Types.arrayOf(Types.shape({
     children: Types.node,
     href: Types.string,
@@ -16,12 +15,13 @@ const propTypes = {
       href: Types.string,
       onClick: Types.func
     }))
-  }))
+  })),
+  vertical: Types.bool
 };
 const defaultProps = {
-  openedItem: null,
   activeItem: null,
-  navigationItems: []
+  navigationItems: [],
+  vertical: false
 };
 
 export default
@@ -85,8 +85,17 @@ class NavigationBar extends Component {
       ...restProps
     } = item;
 
+    let isOpened = this.state.openedItem === key;
+
+    const { vertical } = this.props;
+
     let dropdownIcon = item.subItems ? (
-      <div className="oc-navigation-bar__dropdown-icon">
+      <div
+        className={`
+          oc-navigation-bar__dropdown-icon
+          ${(vertical && isOpened) ? 'oc-navigation-bar__dropdown-icon--dropup' : ''}
+        `}
+      >
         <SVG
           svg={dropdownSVG}
         />
@@ -141,11 +150,15 @@ class NavigationBar extends Component {
 
     let subItems = null;
     let isOpened = this.state.openedItem === key;
+    let { vertical } = this.props;
 
     if (navigationItem.subItems && isOpened) {
       subItems = (
         <ul
-          className="oc-navigation-bar__sub-items-container"
+          className={`
+            oc-navigation-bar__sub-items-container
+            ${vertical ? 'oc-navigation-bar__sub-items-container--vertical' : ''}
+          `}
         >
           {navigationItem.subItems.map((subItem, i) => this.renderSubLevelItem(subItem, i))}
         </ul>
@@ -160,6 +173,7 @@ class NavigationBar extends Component {
           oc-navigation-bar__top-level-item
           ${isActive ? 'oc-navigation-bar__top-level-item--active' : ''}
           ${isOpened ? 'oc-navigation-bar__top-level-item--opened' : ''}
+          ${vertical ? 'oc-navigation-bar__top-level-item--vertical' : ''}
           ${'oc-navigation-bar__top-level-item--light-overlay'}
         `}
         onClick={() => this.handleTopLevelItemClick(key)}
@@ -167,6 +181,7 @@ class NavigationBar extends Component {
         <div
           className={`
             oc-navigation-bar__top-level-clickable-item
+            ${vertical ? 'oc-navigation-bar__top-level-clickable-item--vertical' : ''}
             ${isActive ? 'oc-navigation-bar__top-level-clickable-item--active' : '' }`
           }
         >
@@ -191,7 +206,8 @@ class NavigationBar extends Component {
 
   render() {
     let {
-      navigationItems
+      navigationItems,
+      vertical
     } = this.props;
 
     const navigationItemsElement = navigationItems.map(
@@ -201,7 +217,7 @@ class NavigationBar extends Component {
     return (
       <ul
         ref={ref => (this.containerRef = ref)}
-        className="oc-navigation-bar"
+        className={`oc-navigation-bar ${vertical ? 'oc-navigation-bar--vertical' : ''}`}
         data-test="oc-navigation-bar"
       >
         {navigationItemsElement}
