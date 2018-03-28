@@ -5,6 +5,7 @@
   position: relative;
   z-index: 999;
   margin-bottom: 20px;
+  min-width: 320px;
   transition: all 180ms ease-in;
 
   &:after {
@@ -39,6 +40,13 @@
 
 .oc-menu--at-top.oc-menu--minimized {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+}
+
+.oc-menu__hamburger-button {
+  padding-top: 4px;
+  position: absolute;
+  top: 0;
+  left: 8px;
 }
 
 .oc-menu__left-col {
@@ -101,5 +109,5 @@
   margin-left: auto;
   padding-top: 4px;
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
 }

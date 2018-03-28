@@ -5,7 +5,9 @@ import MenuLogo from '../MenuLogo';
 import NavigationBar from '../NavigationBar';
 import MenuIconsBar from '../MenuIconsBar';
 import MenuSearch from '../MenuSearch';
+import MenuIcon from '../MenuIcon';
 import '../theme/opuscapita-dark.less';
+const hamburgerSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/menu.svg');
 
 const propTypes = {
   appName: Types.string,
@@ -136,14 +138,34 @@ class Menu extends Component {
       </div>
     ) : null;
 
-    const navigationBarElement = (
+    const navigationBarElement = isMobilePortrait ? null : (
       <div className="oc-menu__navigation-bar">
         <NavigationBar
+          vertical={false}
           activeItem={activeItem}
           navigationItems={navigationItems}
         />
       </div>
     );
+
+    const verticalNavigationBarElement = isMobilePortrait ? (
+      <div className="oc-menu__hamburger-button">
+        <MenuIcon
+          onClick={() => console.log('click!')}
+          svg={hamburgerSVG}
+          title="Applications"
+          hideDropdownArrow={true}
+        >
+          <div className="oc-menu__navigation-bar">
+            <NavigationBar
+              vertical={true}
+              activeItem={activeItem}
+              navigationItems={navigationItems}
+            />
+          </div>
+        </MenuIcon>
+      </div>
+    ) : null;
 
     const menuLogoElement = isMobilePortrait ? null : (
       <MenuLogo
@@ -177,7 +199,7 @@ class Menu extends Component {
           oc-menu
           ${className}
           ${alwaysAtTop ? 'oc-menu--at-top' : ''}
-          ${isMinimized && !isTabletPortrait ? 'oc-menu--minimized' : ''}
+          ${(isMinimized && !isTabletPortrait) || isMobilePortrait ? 'oc-menu--minimized' : ''}
           ${noMargin ? 'oc-menu--no-margin' : ''}
         `}
       >
@@ -190,12 +212,13 @@ class Menu extends Component {
         <div className="oc-menu__middle-col">
           <div className="oc-menu__middle-col-top-row">
             {appNameElement}
+            {verticalNavigationBarElement}
             <div
               className="oc-menu__icons-bar-container"
               ref={ref => (this.iconsBarContainer = ref)}
             >
-              <MenuIconsBar>
-                {searchElement}
+              {searchElement}
+              <MenuIconsBar tabletOverlayMode={(isMobilePortrait || isTabletPortrait)}>
                 {Children.toArray(iconsBarItems)}
               </MenuIconsBar>
             </div>

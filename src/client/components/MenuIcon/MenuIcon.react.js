@@ -10,6 +10,7 @@ const propTypes = {
   svg: Types.string,
   supTitle: Types.string,
   title: Types.string,
+  tabletOverlayMode: Types.bool,
   label: Types.string,
   hideDropdownArrow: Types.bool,
   onClick: Types.func
@@ -19,6 +20,7 @@ const defaultProps = {
   supTitle: '',
   label: '',
   title: '',
+  tabletOverlayMode: false,
   hideDropdownArrow: false,
   onClick: () => {}
 };
@@ -92,6 +94,7 @@ class MenuIcon extends Component {
       svg,
       supTitle,
       title,
+      tabletOverlayMode,
       label,
       hideDropdownArrow,
       onClick, // eslint-disable-line no-unused-vars
