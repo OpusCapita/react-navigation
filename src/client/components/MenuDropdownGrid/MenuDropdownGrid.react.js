@@ -57,7 +57,8 @@ class MenuDropdownGrid extends Component {
           <div
             className={`
               oc-menu-dropdown-grid__item
-              ${activeItem === i ? 'oc-menu-dropdown-grid__item--active' : ''}
+              ${href ? 'oc-menu-dropdown-grid__item--enabled' : 'oc-menu-dropdown-grid__item--disabled'}
+              ${(activeItem === i) && href ? 'oc-menu-dropdown-grid__item--active' : ''}
             `}
           >
             <div className="oc-menu-dropdown-grid__item-image">

@@ -112,21 +112,21 @@ TopMenu is
         <MenuDropdownGrid
           activeItem={0}
           items={[
-            { label: 'Analytics', svg: _scope.getIcon('app_analytics') },
-            { label: 'Business Network Portal', svg: _scope.getIcon('app_business_network_portal') },
+            { label: 'Analytics', svg: _scope.getIcon('app_analytics'), href: 'https://opuscapita.com' },
+            { label: 'Business Network Portal', svg: _scope.getIcon('app_business_network_portal'), href: 'https://opuscapita.com' },
             { label: 'Catalog Portal', svg: _scope.getIcon('app_catalog_portal') },
             { label: 'Contracts', svg: _scope.getIcon('app_contracts') },
             { label: 'Document Portal', svg: _scope.getIcon('app_document_portal') },
             { label: 'Inventory', svg: _scope.getIcon('app_inventory') },
-            { label: 'Invoice', svg: _scope.getIcon('app_invoice') },
-            { label: 'Liquidity', svg: _scope.getIcon('app_liquidity') },
-            { label: 'Order', svg: _scope.getIcon('app_order') },
+            { label: 'Invoice', svg: _scope.getIcon('app_invoice'), href: 'https://opuscapita.com' },
+            { label: 'Liquidity', svg: _scope.getIcon('app_liquidity'), href: 'https://opuscapita.com' },
+            { label: 'Order', svg: _scope.getIcon('app_order'), href: 'https://opuscapita.com' },
             { label: 'Payments', svg: _scope.getIcon('app_payments') },
-            { label: 'Product Information', svg: _scope.getIcon('app_product_information') },
-            { label: 'Receivables Collection', svg: _scope.getIcon('app_receivables_collection') },
-            { label: 'RFQ', svg: _scope.getIcon('app_rfq') },
-            { label: 'Shop', svg: _scope.getIcon('app_shop') },
-            { label: 'Supplier Information', svg: _scope.getIcon('app_supplier_information') }
+            { label: 'Product Information', svg: _scope.getIcon('app_product_information'), href: 'https://opuscapita.com' },
+            { label: 'Receivables Collection', svg: _scope.getIcon('app_receivables_collection'), href: 'https://opuscapita.com' },
+            { label: 'RFQ', svg: _scope.getIcon('app_rfq'), href: 'https://opuscapita.com' },
+            { label: 'Shop', svg: _scope.getIcon('app_shop'), href: 'https://opuscapita.com' },
+            { label: 'Supplier Information', svg: _scope.getIcon('app_supplier_information'), href: 'https://opuscapita.com' }
           ]}
         />
       </MenuIcon>
