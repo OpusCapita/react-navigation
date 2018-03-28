@@ -37,7 +37,7 @@
 
 .oc-navigation-bar--vertical {
   flex-direction: column;
-  flex: 1;
+  width: 100%;
 }
 
 .oc-navigation-bar__top-level-item {
@@ -69,6 +69,7 @@
 .oc-navigation-bar__top-level-item--vertical {
   flex-direction: column;
   overflow: hidden;
+  border-bottom: none;
 }
 
 .oc-navigation-bar__top-level-item--dark-overlay:hover {
@@ -87,10 +88,6 @@
 .oc-navigation-bar__top-level-item--light-overlay.oc-navigation-bar__top-level-item--opened {
   .oc-navigation-bar-overlay;
   .oc-navigation-bar-overlay--light;
-}
-
-.oc-navigation-bar__top-level-item--active {
-
 }
 
 .oc-navigation-bar__dropdown-icon {
@@ -129,6 +126,10 @@
   .badge {
     margin-left: 3px;
   }
+}
+
+.oc-navigation-bar__top-level-item--vertical .oc-navigation-bar__clickable-element {
+  padding: 12px;
 }
 
 .oc-navigation-bar__clickable-element--with-dropdown {

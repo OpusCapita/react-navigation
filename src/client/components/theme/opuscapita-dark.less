@@ -3,6 +3,7 @@
 @navigation-notification-text-color: #fff;
 @navigation-notification-bg-color: #ec6608;
 @navigation-item-active-border-color: #ec6608;
+@navigation-item-vertical-active-bg-color: @navigation-item-active-border-color;
 
 @color-warning: #ec6608;
 @color-success: #3aa57b;
@@ -12,6 +13,14 @@
 .oc-menu--opuscapita-dark-theme {
   background-color: @navigation-bg;
   color: @navigation-text-color;
+
+  & .oc-menu-icon__sub-items-container--tablet-overlay-mode-left {
+    background-color: @navigation-bg;
+  }
+
+  & .oc-navigation-bar__top-level-clickable-item--vertical.oc-navigation-bar__top-level-clickable-item--active {
+    background-color: @navigation-item-vertical-active-bg-color;
+  }
 
   & .oc-navigation-bar__dropdown-icon {
     fill: @navigation-text-color;

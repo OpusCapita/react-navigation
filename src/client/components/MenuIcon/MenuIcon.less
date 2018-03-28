@@ -6,6 +6,19 @@
   display: inline-flex;
   position: relative;
   height: 32px;
+
+
+}
+
+.oc-menu-icon__overlay {
+    height: 100vh;
+    background: rgba(0,0,0,0.28);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
 }
 
 .oc-menu-icon__children-arrow {
@@ -54,7 +67,6 @@
 
 .oc-menu-icon__sub-items-container {
   border-radius: 2px;
-  color: #333;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -68,6 +80,36 @@
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.15);
   z-index: 10;
   width: 360px;
+}
+
+.oc-menu-icon__sub-items-container--tablet-overlay-mode {
+  position: fixed;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  transform: initial;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 480px;
+}
+
+.oc-menu-icon__sub-items-container--tablet-overlay-mode-left {
+  left: 0;
+  right: initial;
+}
+
+.oc-menu-icon__sub-items-container--tablet-overlay-mode-right .oc-menu-icon__sub-items-container--tablet-overlay-header svg {
+  fill: #333;
+}
+
+.oc-menu-icon__sub-items-container--tablet-overlay-header {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 12px;
 }
 
 .oc-menu-icon__sub-items-container--with-dropdown {

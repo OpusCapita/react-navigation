@@ -3,17 +3,19 @@ import PropTypes from 'prop-types';
 import './MenuIconsBar.less';
 
 const propTypes = {
-  tabletOverlayMode: PropTypes.bool
+  tabletOverlayMode: PropTypes.bool,
+  tabletOverlayModeLeft: PropTypes.bool
 };
 
 const defaultProps = {
-  tabletOverlayMode: false
+  tabletOverlayMode: false,
+  tabletOverlayModeLeft: false
 };
 
 export default
 class MenuIconsBar extends Component {
   render() {
-    const { children, tabletOverlayMode } = this.props;
+    const { children, tabletOverlayMode, tabletOverlayModeLeft } = this.props;
 
     const childrenElement = Children.toArray(children).map((child, i) => console.log(child) || (
       <div
@@ -21,7 +23,7 @@ class MenuIconsBar extends Component {
         className="oc-menu-icons-bar__child"
         data-test="oc-menu-icons-bar__child"
       >
-        {({ ...child, props: { ...child.props, tabletOverlayMode } })}
+        {({ ...child, props: { ...child.props, tabletOverlayMode, tabletOverlayModeLeft } })}
       </div>
     ));
 

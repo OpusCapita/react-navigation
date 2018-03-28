@@ -5,12 +5,14 @@ import './MenuIcon.less';
 import { TitledButton } from '@opuscapita/react-buttons';
 import { SVG } from '@opuscapita/react-svg';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
+const closeSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/close.svg');
 
 const propTypes = {
   svg: Types.string,
   supTitle: Types.string,
   title: Types.string,
   tabletOverlayMode: Types.bool,
+  tabletOverlayModeLeft: Types.bool,
   label: Types.string,
   hideDropdownArrow: Types.bool,
   onClick: Types.func
@@ -21,6 +23,7 @@ const defaultProps = {
   label: '',
   title: '',
   tabletOverlayMode: false,
+  tabletOverlayModeLeft: false,
   hideDropdownArrow: false,
   onClick: () => {}
 };
@@ -95,6 +98,7 @@ class MenuIcon extends Component {
       supTitle,
       title,
       tabletOverlayMode,
+      tabletOverlayModeLeft,
       label,
       hideDropdownArrow,
       onClick, // eslint-disable-line no-unused-vars
@@ -123,14 +127,24 @@ class MenuIcon extends Component {
         className={`
           oc-menu-icon__sub-items-container
           ${showDropdownArrow ? 'oc-menu-icon__sub-items-container--with-dropdown' : ''}
+          ${tabletOverlayMode ? 'oc-menu-icon__sub-items-container--tablet-overlay-mode' : ''}
+          ${tabletOverlayModeLeft ?
+            'oc-menu-icon__sub-items-container--tablet-overlay-mode-left' :
+            'oc-menu-icon__sub-items-container--tablet-overlay-mode-right'
+          }
         `}
         onClick={e => e.stopPropagation()}
       >
+        {tabletOverlayMode && (
+          <div className="oc-menu-icon__sub-items-container--tablet-overlay-header">
+            <MenuIcon svg={closeSVG} onClick={this.hideChildren} />
+          </div>
+        )}
         {children}
       </div>
     ) : null;
 
-    let childrenArrowElement = (children && isOpened) ? (
+    let childrenArrowElement = (children && isOpened && !tabletOverlayMode) ? (
       <div
         className="oc-menu-icon__children-arrow"
       >
@@ -144,7 +158,7 @@ class MenuIcon extends Component {
         onClick={this.handleClick}
         {...restProps}
       >
-        <div className="oc-menu-icon__container">
+        <div className={`oc-menu-icon__container`}>
           <TitledButton
             className={`
               oc-menu-icon__button
@@ -162,6 +176,9 @@ class MenuIcon extends Component {
           {childrenArrowElement}
         </div>
         {childrenElement}
+        {(children && isOpened && tabletOverlayMode) && (
+          <div className="oc-menu-icon__overlay"></div>
+        )}
       </div>
     );
   }

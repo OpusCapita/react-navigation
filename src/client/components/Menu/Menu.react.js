@@ -55,8 +55,7 @@ const defaultProps = {
 
 const menuHeight = 70;
 const iconsBarWidth = 640;
-const tabletPortraitWidth = 1024;
-const mobilePortraitWidth = 768;
+const mobileWidth = 992;
 
 export default
 class Menu extends Component {
@@ -124,21 +123,20 @@ class Menu extends Component {
       document.documentElement.clientWidth, window.innerWidth || 0
     );
 
-    let isTabletPortrait =  width < tabletPortraitWidth && width >= mobilePortraitWidth;
-    let isMobilePortrait =  width < mobilePortraitWidth;
+    let isMobile =  width < mobileWidth;
 
-    let minimizeSearch = isTabletPortrait || (
+    let minimizeSearch = (
       mounted &&
       (container.clientWidth - leftCol.clientWidth - middleColBottomRow.clientWidth) < iconsBarWidth
     );
 
-    const searchElement = (showSearch && !isMobilePortrait) ? (
+    const searchElement = (showSearch && !isMobile) ? (
       <div className="oc-menu__search-container">
         <MenuSearch isMinimized={minimizeSearch} { ...searchProps } />
       </div>
     ) : null;
 
-    const navigationBarElement = isMobilePortrait ? null : (
+    const navigationBarElement = isMobile ? null : (
       <div className="oc-menu__navigation-bar">
         <NavigationBar
           vertical={false}
@@ -148,13 +146,15 @@ class Menu extends Component {
       </div>
     );
 
-    const verticalNavigationBarElement = isMobilePortrait ? (
+    const verticalNavigationBarElement = isMobile ? (
       <div className="oc-menu__hamburger-button">
         <MenuIcon
           onClick={() => console.log('click!')}
           svg={hamburgerSVG}
           title="Applications"
           hideDropdownArrow={true}
+          tabletOverlayMode={(isMobile)}
+          tabletOverlayModeLeft={true}
         >
           <div className="oc-menu__navigation-bar">
             <NavigationBar
@@ -167,7 +167,7 @@ class Menu extends Component {
       </div>
     ) : null;
 
-    const menuLogoElement = isMobilePortrait ? null : (
+    const menuLogoElement = isMobile ? null : (
       <MenuLogo
         logoSrc={logoSrc}
         logoTitle={logoTitle}
@@ -175,15 +175,15 @@ class Menu extends Component {
         labelText={labelText}
         labelLinkText={labelLinkText}
         labelLinkHref={labelLinkHref}
-        showLabel={!isMinimized || isTabletPortrait}
+        showLabel={!isMinimized}
       />
     );
 
-    const appNameElement = isMobilePortrait ? null : (
+    const appNameElement = isMobile ? null : (
       <h1
         className={`
           oc-menu__app-name
-          ${(isMinimized && !isTabletPortrait) ? 'oc-menu__app-name--minimized' : ''}
+          ${(isMinimized) ? 'oc-menu__app-name--minimized' : ''}
         `}
         data-test="oc-menu__app-name"
       >
@@ -199,7 +199,7 @@ class Menu extends Component {
           oc-menu
           ${className}
           ${alwaysAtTop ? 'oc-menu--at-top' : ''}
-          ${(isMinimized && !isTabletPortrait) || isMobilePortrait ? 'oc-menu--minimized' : ''}
+          ${(isMinimized) || isMobile ? 'oc-menu--minimized' : ''}
           ${noMargin ? 'oc-menu--no-margin' : ''}
         `}
       >
@@ -218,7 +218,10 @@ class Menu extends Component {
               ref={ref => (this.iconsBarContainer = ref)}
             >
               {searchElement}
-              <MenuIconsBar tabletOverlayMode={(isMobilePortrait || isTabletPortrait)}>
+              <MenuIconsBar
+                tabletOverlayMode={(isMobile)}
+                tabletOverlayModeLeft={false}
+              >
                 {Children.toArray(iconsBarItems)}
               </MenuIconsBar>
             </div>
