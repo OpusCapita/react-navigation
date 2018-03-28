@@ -123,7 +123,7 @@ class Menu extends Component {
       document.documentElement.clientWidth, window.innerWidth || 0
     );
 
-    let isMobile =  width < mobileWidth;
+    let isMobile = width < mobileWidth;
 
     let minimizeSearch = (
       mounted &&

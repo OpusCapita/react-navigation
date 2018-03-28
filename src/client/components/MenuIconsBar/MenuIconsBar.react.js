@@ -37,3 +37,6 @@ class MenuIconsBar extends Component {
     );
   }
 }
+
+MenuIconsBar.propTypes = propTypes;
+MenuIconsBar.defaultProps = defaultProps;
