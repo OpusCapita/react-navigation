@@ -1,7 +1,5 @@
 .oc-navigation-bar-overlay {
-  & {
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   &:after {
     content: '';
@@ -25,7 +23,8 @@
 
 .oc-navigation-bar--vertical {
   flex-direction: column;
-  width: 100%;
+  width: 320px;
+  max-width: 100vw;
 }
 
 .oc-navigation-bar__top-level-item {
@@ -34,10 +33,6 @@
   border-bottom: 4px solid transparent;
   position: relative;
   font-weight: normal;
-
-  &:hover {
-    .oc-navigation-bar-overlay;
-  }
 }
 
 .oc-navigation-bar__top-level-clickable-item {
@@ -72,6 +67,11 @@
 
 .oc-navigation-bar__clickable-element-container {
   display: flex;
+  position: relative;
+
+  &:hover {
+    .oc-navigation-bar-overlay;
+  }
 }
 
 .oc-navigation-bar__clickable-element {
@@ -137,8 +137,4 @@
 .oc-navigation-bar__sub-item {
   position: relative;
   font-weight: normal;
-
-  &:hover {
-    .oc-navigation-bar-overlay;
-  }
 }

@@ -4,8 +4,9 @@ import React, { Component } from 'react';
 import Types from 'prop-types';
 import './MenuDropdownGrid.less';
 import { SVG } from '@opuscapita/react-svg';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import 'react-perfect-scrollbar/dist/css/styles.css';
+
+const ITEM_SIZE = 110;
+const ITEMS_PER_ROW = 3;
 
 const propTypes = {
   activeItem: Types.number,
@@ -47,6 +48,10 @@ class MenuDropdownGrid extends Component {
           className={`oc-menu-dropdown-grid__item-container`}
           data-test={`oc-menu-dropdown-grid__item-container`}
           href={href || 'javascript: void(0)'}
+          style={{
+            width: `${ITEM_SIZE}px`,
+            height: `${ITEM_SIZE}px`
+          }}
           {...restProps}
         >
           <div
@@ -72,11 +77,14 @@ class MenuDropdownGrid extends Component {
       <div
         className="oc-menu-dropdown-grid"
       >
-        <PerfectScrollbar>
-          <div className="oc-menu-dropdown-grid__items">
-            {itemsElement}
-          </div>
-        </PerfectScrollbar>
+        <div
+          className="oc-menu-dropdown-grid__items"
+          style={{
+            width: `${ITEMS_PER_ROW * ITEM_SIZE}px`
+          }}
+        >
+          {itemsElement}
+        </div>
       </div>
     );
   }
