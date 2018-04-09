@@ -2,6 +2,8 @@
 /* eslint-disable no-script-url */
 import React, { Component } from 'react';
 import Types from 'prop-types';
+import chunk from 'lodash/chunk';
+import flatten from 'lodash/flatten';
 import './MenuDropdownGrid.less';
 import { SVG } from '@opuscapita/react-svg';
 
@@ -29,7 +31,12 @@ class MenuDropdownGrid extends Component {
       items
     } = this.props;
 
-    const itemsElement = items.map((item, i) => {
+    // Hide row if all items in the row are disabled
+    const filteredItems = flatten(
+      chunk(items, ITEMS_PER_ROW).filter((itemsChunk) => itemsChunk.some(item => item.href))
+    );
+
+    const itemsElement = filteredItems.map((item, i) => {
       if (!item) {
         return (
           <div
