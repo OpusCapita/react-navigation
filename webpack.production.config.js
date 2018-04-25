@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-let config = require('./webpack.development.config.js');
+const config = require('./webpack.development.config.js');
 config.entry = path.resolve(path.join(__dirname, 'src', 'client', 'index.js'));
 config.externals = [
   nodeExternals({
