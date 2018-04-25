@@ -1,4 +1,27 @@
 
+Release 1.0.12 Wed Apr 25 2018 12:15:20 GMT+0000 (UTC)
+=======================================================
+
+- Merge pull request [#18](https://github.com/OpusCapita/react-navigation/issues/18) from OpusCapita/issue-15 (GitHub 31243790+estambakio-sc@users.noreply.github.com, 2018-04-25 14:43:13 +0300)
+- Updated react-buttons version to 4.0.4 (Egor Stambakio stambakio@scand.com, 2018-04-25 14:14:51 +0300)
+- Externalized prod build dependencies [ci skip] (Egor Stambakio stambakio@scand.com, 2018-04-25 11:20:47 +0300)
+- Hide row if all items in the row are disabled (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-04-09 17:14:12 +0300)
+- Add scroll for MenuIcon children in "tablet-overlay-mode" (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-30 15:04:26 +0300)
+- Clean up unused code (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-30 10:35:02 +0300)
+- Add missing "MenuIcon" hover/focus fix (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-30 10:25:19 +0300)
+- Cleanup styles (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-30 10:20:35 +0300)
+- Remove debug console.log (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-29 14:44:26 +0300)
+- Fix several IE 11 css issues (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-28 22:23:22 +0300)
+- Improve items layout in applications menu (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-28 21:30:14 +0300)
+- Add possibility to disable items in applications menu (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-28 21:25:25 +0300)
+- Fix lint (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-28 21:12:38 +0300)
+- Improve display MenuIcon children in tablet or mobile view (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-28 21:09:27 +0300)
+- Cleanup styles (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-28 20:04:58 +0300)
+- Merge branch 'master' of github.com:OpusCapita/react-navigation (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-28 19:41:43 +0300)
+- Improve display MenuIcon children in tablet or mobile view (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-28 19:41:05 +0300)
+- Add burger (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-28 17:43:40 +0300)
+- Add "vertical" prop for NavigationBar (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-03-28 16:42:05 +0300)
+
 Release 1.0.11 Fri Mar 23 2018 09:49:27 GMT+0000 (UTC)
 =======================================================
 
