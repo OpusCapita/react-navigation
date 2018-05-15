@@ -12,7 +12,7 @@ const defaultProps = {
   initials: '',
   avatarSrc: '',
   onClick: () => {},
-  style: Types.object
+  style: {}
 };
 
 export default

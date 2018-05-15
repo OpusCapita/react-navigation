@@ -9,7 +9,7 @@ const propTypes = {
   className: Types.string
 };
 const defaultProps = {
-  className: Types.string
+  className: ''
 };
 
 export default
@@ -18,7 +18,7 @@ class MenuSelect extends Component {
     const { className, ...restProps } = this.props;
 
     return (
-      <div className={`oc-menu-select ${className || ''}`}>
+      <div className={`oc-menu-select ${className}`}>
         <div className="oc-menu-select__dropdown-icon">
           <SVG
             svg={dropdownSVG}

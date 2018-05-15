@@ -19,11 +19,6 @@ module.exports = {
   watch: true,
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.HOST': JSON.stringify(host),
-      'process.env.PORT': JSON.stringify(port),
-      'process.env.NODE_ENV': '"production"'
-    }),
   ],
   externals: {
     react: {

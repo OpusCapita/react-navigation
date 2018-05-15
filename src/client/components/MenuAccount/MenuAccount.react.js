@@ -11,7 +11,7 @@ const propTypes = {
   initials: Types.string,
   avatarSrc: Types.string,
   onAvatarClick: Types.func,
-  actions: Types.oneOf([
+  actions: Types.oneOfType([
     Types.arrayOf(Types.shape({
       label: Types.string,
       svg: Types.string,
