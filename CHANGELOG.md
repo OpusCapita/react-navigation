@@ -1,4 +1,10 @@
 
+Release 1.0.13 Tue May 15 2018 16:11:25 GMT+0300 (MSK)
+=======================================================
+
+- Fixed prop-types definitions, removed uglify from webpack (Egor Stambakio stambakio@scand.com, 2018-05-15 16:07:13 +0300)
+- Adding an issue template file [ci skip] (Egor Stambakio egor.stambakio@opuscapita.com, 2018-05-02 12:26:53 +0300)
+
 Release 1.0.12 Wed Apr 25 2018 12:15:20 GMT+0000 (UTC)
 =======================================================
 
