@@ -112,7 +112,9 @@ class NavigationBar extends Component {
         <a
           href={href}
           onClick={() => {
-            onClick || (() => {});
+            if (onClick) {
+              onClick();
+            }
 
             if (navigatable) {
               onNavigation();
@@ -132,7 +134,9 @@ class NavigationBar extends Component {
         <div
           href={href}
           onClick={() => {
-            onClick || (() => {});
+            if (onClick) {
+              onClick();
+            }
 
             if (navigatable) {
               onNavigation();
