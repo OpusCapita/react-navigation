@@ -58,7 +58,8 @@ TopMenu is
       subItems: [
         {
           children: 'Supplier Responsibility Editor',
-          href: 'http://opuscapita.com'
+          onClick: () => console.log('hello'),
+          navigatable: true
         },
         {
           children: 'Classification Group Responsibility Editor',

@@ -149,18 +149,19 @@ class Menu extends Component {
     const verticalNavigationBarElement = isMobile ? (
       <div className="oc-menu__hamburger-button">
         <MenuIcon
-          onClick={() => console.log('click!')}
           svg={hamburgerSVG}
           title="Applications"
           hideDropdownArrow={true}
           tabletOverlayMode={(isMobile)}
           tabletOverlayModeLeft={true}
+          ref={ref => (this.hamburgerButton = ref)}
         >
           <div className="oc-menu__navigation-bar">
             <NavigationBar
               vertical={true}
               activeItem={activeItem}
               navigationItems={navigationItems}
+              onNavigation={() => this.hamburgerButton.hideChildren()}
             />
           </div>
         </MenuIcon>

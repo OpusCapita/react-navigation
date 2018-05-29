@@ -16,12 +16,14 @@ const propTypes = {
       onClick: Types.func
     }))
   })),
-  vertical: Types.bool
+  vertical: Types.bool,
+  onNavigation: Types.func
 };
 const defaultProps = {
   activeItem: null,
   navigationItems: [],
-  vertical: false
+  vertical: false,
+  onNavigation: () => {}
 };
 
 export default
@@ -81,13 +83,14 @@ class NavigationBar extends Component {
       href,
       children,
       subItems, // eslint-disable-line no-unused-vars
+      navigatable,
       onClick,
       ...restProps
     } = item;
 
     let isOpened = this.state.openedItem === key;
 
-    const { vertical } = this.props;
+    const { vertical, onNavigation } = this.props;
 
     let dropdownIcon = item.subItems ? (
       <div
@@ -108,7 +111,13 @@ class NavigationBar extends Component {
       clickableElement = (
         <a
           href={href}
-          onClick={onClick || (() => {})}
+          onClick={() => {
+            onClick || (() => {});
+
+            if (navigatable) {
+              onNavigation();
+            }
+          }}
           className={`
             oc-navigation-bar__clickable-element
             ${dropdownIcon ? 'oc-navigation-bar__clickable-element--with-dropdown' : ''}
@@ -122,7 +131,13 @@ class NavigationBar extends Component {
       clickableElement = (
         <div
           href={href}
-          onClick={onClick || (() => {})}
+          onClick={() => {
+            onClick || (() => {});
+
+            if (navigatable) {
+              onNavigation();
+            }
+          }}
           className={`
             oc-navigation-bar__clickable-element
             ${dropdownIcon ? 'oc-navigation-bar__clickable-element--with-dropdown' : ''}
