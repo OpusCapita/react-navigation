@@ -1,4 +1,10 @@
 
+Release 1.1.2 Tue May 29 2018 12:46:38 GMT+0300 (MSK)
+=======================================================
+
+- Merge branch 'master' of github.com:OpusCapita/react-navigation (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-05-29 12:45:00 +0300)
+- Fix lint (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-05-29 11:45:40 +0300)
+
 Release 1.1.1 Tue May 29 2018 11:50:22 GMT+0300 (MSK)
 =======================================================
 
