@@ -1,4 +1,9 @@
 
+Release 1.1.0 Tue May 29 2018 11:45:26 GMT+0300 (MSK)
+=======================================================
+
+- Introduce "navigatable" property for menu children (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-05-29 11:42:48 +0300)
+
 Release 1.0.13 Tue May 15 2018 16:11:25 GMT+0300 (MSK)
 =======================================================
 
