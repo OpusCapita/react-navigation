@@ -32,7 +32,7 @@ class MenuDropdownGrid extends Component {
 
     // Hide row if all items in the row are disabled
     const filteredItems = flatten(
-      chunk(items, ITEMS_PER_ROW).filter((itemsChunk) => itemsChunk.some(item => item.href))
+      chunk(items, ITEMS_PER_ROW).filter((itemsChunk) => itemsChunk.some(item => !item.disabled))
     );
 
     const itemsElement = filteredItems.map((item, i) => {
