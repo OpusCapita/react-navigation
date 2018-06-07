@@ -14,8 +14,7 @@ const propTypes = {
   activeItem: Types.number,
   items: Types.arrayOf(Types.shape({
     svg: Types.string,
-    label: Types.string,
-    href: Types.string
+    label: Types.string
   }))
 };
 const defaultProps = {
@@ -47,38 +46,46 @@ class MenuDropdownGrid extends Component {
         );
       }
 
-      let { svg, label, href, ...restProps } = item;
+      let { svg, label, disabled, href, onClick, ...restProps } = item;
 
-      return (
-        <a
-          key={i}
-          className={`oc-menu-dropdown-grid__item-container`}
-          data-test={`oc-menu-dropdown-grid__item-container`}
-          href={href || 'javascript: void(0)'}
-          style={{
-            width: `${ITEM_SIZE}px`,
-            height: `${ITEM_SIZE}px`
-          }}
-          {...restProps}
+      let itemElementChildren = (
+        <div
+          className={`
+            oc-menu-dropdown-grid__item
+            ${disabled ? 'oc-menu-dropdown-grid__item--disabled' : 'oc-menu-dropdown-grid__item--enabled' }
+            ${(activeItem === i) && !disabled ? 'oc-menu-dropdown-grid__item--active' : ''}
+          `}
         >
-          <div
-            className={`
-              oc-menu-dropdown-grid__item
-              ${href ? 'oc-menu-dropdown-grid__item--enabled' : 'oc-menu-dropdown-grid__item--disabled'}
-              ${(activeItem === i) && href ? 'oc-menu-dropdown-grid__item--active' : ''}
-            `}
-          >
-            <div className="oc-menu-dropdown-grid__item-image">
-              <SVG
-                svg={svg || ''}
-              />
-            </div>
-            <div className="oc-menu-dropdown-grid__item-label">
-              {label || ''}
-            </div>
+          <div className="oc-menu-dropdown-grid__item-image">
+            <SVG
+              svg={svg || ''}
+            />
           </div>
-        </a>
+          <div className="oc-menu-dropdown-grid__item-label">
+            {label || ''}
+          </div>
+        </div>
       );
+
+      let itemContainerProps = {
+        key: i,
+        className: `oc-menu-dropdown-grid__item-container`,
+        "data-test": `oc-menu-dropdown-grid__item-container`,
+        style: {
+          width: `${ITEM_SIZE}px`,
+          height: `${ITEM_SIZE}px`
+        },
+        children: itemElementChildren,
+        ...((href && !disabled) ? { href } : {}),
+        ...((onClick && !disabled) ? { onClick } : {}),
+        ...restProps
+      };
+
+      let itemElement = (href && !disabled) ?
+        React.createElement('a', itemContainerProps) :
+        React.createElement('div', itemContainerProps);
+
+      return itemElement;
     });
 
     return (
