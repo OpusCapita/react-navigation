@@ -1,4 +1,10 @@
 
+[Release 2.0.2](https://github.com/OpusCapita/react-navigation/releases/tag/v2.0.2) Thu Jun 07 2018 17:20:00 GMT+0300 (MSK)
+=======================================================
+
+- Merge branch 'master' of github.com:OpusCapita/react-navigation (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-06-07 17:18:29 +0300)
+- Fixed weird empty slots in applications menu (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-06-07 17:17:44 +0300)
+
 [Release 2.0.1](https://github.com/OpusCapita/react-navigation/releases/tag/v2.0.1) Thu Jun 07 2018 16:27:39 GMT+0300 (MSK)
 =======================================================
 
