@@ -126,7 +126,8 @@ TopMenu is
             { label: 'Product Information', svg: _scope.getIcon('app_product_information'), href: 'https://opuscapita.com' },
             { label: 'Receivables Collection', svg: _scope.getIcon('app_receivables_collection'), href: 'https://opuscapita.com' },
             { label: 'RFQ', svg: _scope.getIcon('app_rfq'), href: 'https://opuscapita.com' },
-            { label: 'Shop', svg: _scope.getIcon('app_shop'), href: 'https://opuscapita.com' },
+            { label: 'Shop', svg: _scope.getIcon('app_shop'), href: 'https://opuscapita.com', disabled: true },
+            null,
             { label: 'Supplier Information', svg: _scope.getIcon('app_supplier_information'), href: 'https://opuscapita.com' }
           ]}
         />

@@ -32,15 +32,21 @@ class MenuDropdownGrid extends Component {
 
     // Hide row if all items in the row are disabled
     const filteredItems = flatten(
-      chunk(items, ITEMS_PER_ROW).filter((itemsChunk) => itemsChunk.some(item => !item.disabled))
+      chunk(items, ITEMS_PER_ROW).filter((itemsChunk) => itemsChunk.some(item => item && !item.disabled))
     );
 
     const itemsElement = filteredItems.map((item, i) => {
+      let itemContainerStyle = {
+        width: `${ITEM_SIZE}px`,
+        height: `${ITEM_SIZE}px`
+      };
+
       if (!item) {
         return (
           <div
             key={i}
             className={`oc-menu-dropdown-grid__item-container`}
+            style={itemContainerStyle}
           >
           </div>
         );
@@ -71,10 +77,7 @@ class MenuDropdownGrid extends Component {
         key: i,
         className: `oc-menu-dropdown-grid__item-container`,
         "data-test": `oc-menu-dropdown-grid__item-container`,
-        style: {
-          width: `${ITEM_SIZE}px`,
-          height: `${ITEM_SIZE}px`
-        },
+        style: itemContainerStyle,
         children: itemElementChildren,
         ...((href && !disabled) ? { href } : {}),
         ...((onClick && !disabled) ? { onClick } : {}),
