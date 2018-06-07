@@ -1,4 +1,10 @@
 
+[Release 2.0.1](https://github.com/OpusCapita/react-navigation/releases/tag/v2.0.1) Thu Jun 07 2018 16:27:39 GMT+0300 (MSK)
+=======================================================
+
+- Merge branch 'master' of github.com:OpusCapita/react-navigation (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-06-07 16:25:40 +0300)
+-  [#19](https://github.com/OpusCapita/react-navigation/issues/19) Don't rely on "href" for disable/enable MenuDropdownGrid (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-06-07 16:25:26 +0300)
+
 [Release 2.0.0](https://github.com/OpusCapita/react-navigation/releases/tag/v2.0.0) Thu Jun 07 2018 15:30:17 GMT+0300 (MSK)
 =======================================================
 
