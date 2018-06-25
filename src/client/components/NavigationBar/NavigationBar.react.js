@@ -79,6 +79,7 @@ class NavigationBar extends Component {
   renderClickableElement = (item, key, className) => {
     const {
       href,
+      active,
       children,
       subItems, // eslint-disable-line no-unused-vars
       navigatable,
