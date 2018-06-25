@@ -1,4 +1,8 @@
 
+[Release 3.0.1](https://github.com/OpusCapita/react-navigation/releases/tag/v3.0.1) Mon Jun 25 2018 12:39:50 GMT+0300 (MSK)
+=======================================================
+
+
 [Release 3.0.0](https://github.com/OpusCapita/react-navigation/releases/tag/v3.0.0) Mon Jun 25 2018 12:30:17 GMT+0300 (MSK)
 =======================================================
 
