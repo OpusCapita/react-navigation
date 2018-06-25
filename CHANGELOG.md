@@ -1,4 +1,13 @@
 
+[Release 3.0.1](https://github.com/OpusCapita/react-navigation/releases/tag/v3.0.1) Mon Jun 25 2018 12:39:50 GMT+0300 (MSK)
+=======================================================
+
+
+[Release 3.0.0](https://github.com/OpusCapita/react-navigation/releases/tag/v3.0.0) Mon Jun 25 2018 12:30:17 GMT+0300 (MSK)
+=======================================================
+
+- (Issue [#20](https://github.com/OpusCapita/react-navigation/issues/20), PR [#21](https://github.com/OpusCapita/react-navigation/issues/21)) "activeItem" prop replaced by "active" property for item (Kirill Volkovich kvolkovich-sc@users.noreply.github.com, 2018-06-25 12:24:27 +0300)
+
 [Release 2.0.2](https://github.com/OpusCapita/react-navigation/releases/tag/v2.0.2) Thu Jun 07 2018 17:20:00 GMT+0300 (MSK)
 =======================================================
 
