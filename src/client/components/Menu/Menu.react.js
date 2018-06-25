@@ -11,7 +11,6 @@ const hamburgerSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/menu.svg');
 
 const propTypes = {
   appName: Types.string,
-  activeItem: Types.number,
   alwaysAtTop: Types.bool,
   className: Types.string,
   logoSrc: Types.string,
@@ -36,7 +35,6 @@ const propTypes = {
 const defaultProps = {
   appName: '',
   alwaysAtTop: false,
-  activeItem: null,
   className: 'oc-menu--opuscapita-dark-theme',
   logoSrc: '',
   logoTitle: '',
@@ -96,7 +94,6 @@ class Menu extends Component {
   render() {
     const {
       appName,
-      activeItem,
       alwaysAtTop,
       className,
       logoSrc,
@@ -140,7 +137,6 @@ class Menu extends Component {
       <div className="oc-menu__navigation-bar">
         <NavigationBar
           vertical={false}
-          activeItem={activeItem}
           navigationItems={navigationItems}
         />
       </div>
@@ -159,7 +155,6 @@ class Menu extends Component {
           <div className="oc-menu__navigation-bar">
             <NavigationBar
               vertical={true}
-              activeItem={activeItem}
               navigationItems={navigationItems}
               onNavigation={() => this.hamburgerButton.hideChildren()}
             />

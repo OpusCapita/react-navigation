@@ -11,14 +11,12 @@ const ITEM_SIZE = 110;
 const ITEMS_PER_ROW = 3;
 
 const propTypes = {
-  activeItem: Types.number,
   items: Types.arrayOf(Types.shape({
     svg: Types.string,
     label: Types.string
   }))
 };
 const defaultProps = {
-  activeItem: null,
   items: []
 };
 
@@ -26,7 +24,6 @@ export default
 class MenuDropdownGrid extends Component {
   render() {
     const {
-      activeItem,
       items
     } = this.props;
 
@@ -52,14 +49,14 @@ class MenuDropdownGrid extends Component {
         );
       }
 
-      let { svg, label, disabled, href, onClick, ...restProps } = item;
+      let { svg, label, active, disabled, href, onClick, ...restProps } = item;
 
       let itemElementChildren = (
         <div
           className={`
             oc-menu-dropdown-grid__item
             ${disabled ? 'oc-menu-dropdown-grid__item--disabled' : 'oc-menu-dropdown-grid__item--enabled' }
-            ${(activeItem === i) && !disabled ? 'oc-menu-dropdown-grid__item--active' : ''}
+            ${active && !disabled ? 'oc-menu-dropdown-grid__item--active' : ''}
           `}
         >
           <div className="oc-menu-dropdown-grid__item-image">
