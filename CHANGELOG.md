@@ -1,4 +1,10 @@
 
+[Release 3.0.3](https://github.com/OpusCapita/react-navigation/releases/tag/v3.0.3) Mon Jun 25 2018 12:45:35 GMT+0300 (MSK)
+=======================================================
+
+- Merge branch 'master' of github.com:OpusCapita/react-navigation (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-06-25 12:44:24 +0300)
+- (Issue [#20](https://github.com/OpusCapita/react-navigation/issues/20)) Fix lint (Kirill Volkovich kirill.volkovich@opuscapita.com, 2018-06-25 12:43:58 +0300)
+
 [Release 3.0.2](https://github.com/OpusCapita/react-navigation/releases/tag/v3.0.2) Mon Jun 25 2018 12:42:30 GMT+0300 (MSK)
 =======================================================
 
