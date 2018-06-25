@@ -13,15 +13,16 @@ MenuDropdownGrid is
 
 ```
 <MenuDropdownGrid 
-  activeItem={0}
   items={[
     { 
       label: 'Shop', 
-      svg: _scope.getIcon('local_mall') 
+      svg: _scope.getIcon('local_mall'),
+      active: true
     },
     { 
       label: 'Quote', 
-      svg: _scope.getIcon('monetization_on') 
+      svg: _scope.getIcon('monetization_on'),
+      disabled: true
     },
     {
       label: 'Request', 

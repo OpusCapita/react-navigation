@@ -14,7 +14,6 @@ TopMenu is
 ```
 <Menu
   appName="Supplier Information Manager"
-  activeItem={0}
   alwaysAtTop={true}
   className="oc-menu--opuscapita-dark-theme"
   logoSrc={_scope.state.logos.dark}
@@ -51,7 +50,7 @@ TopMenu is
     )
   }}
   navigationItems={[
-    { children: 'Dashboard', href: 'http://opuscapita.com', target: '_blank', id: 'nav-item-1' },
+    { children: 'Dashboard', href: 'http://opuscapita.com', target: '_blank', id: 'nav-item-1', active: true },
     { children: <div>Supplier Application<span className="badge btn-primary-bg">3</span></div>, href: 'http://opuscapita.com' },
     {
       children: 'Responsibilities',
@@ -111,9 +110,8 @@ TopMenu is
         hideDropdownArrow={true}
       >
         <MenuDropdownGrid
-          activeItem={0}
           items={[
-            { label: 'Analytics', svg: _scope.getIcon('app_analytics'), onClick: () => console.log('analytics click') },
+            { label: 'Analytics', svg: _scope.getIcon('app_analytics'), onClick: () => console.log('analytics click'), active: true },
             { label: 'Business Network Portal', svg: _scope.getIcon('app_business_network_portal'), href: 'https://opuscapita.com' },
             { label: 'Catalog Portal', svg: _scope.getIcon('app_catalog_portal'), disabled: true },
             { label: 'Contracts', svg: _scope.getIcon('app_contracts') },

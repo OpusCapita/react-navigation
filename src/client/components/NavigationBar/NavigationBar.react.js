@@ -6,7 +6,6 @@ import { SVG } from '@opuscapita/react-svg';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 
 const propTypes = {
-  activeItem: Types.number,
   navigationItems: Types.arrayOf(Types.shape({
     children: Types.node,
     href: Types.string,
@@ -20,7 +19,6 @@ const propTypes = {
   onNavigation: Types.func
 };
 const defaultProps = {
-  activeItem: null,
   navigationItems: [],
   vertical: false,
   onNavigation: () => {}
@@ -165,7 +163,7 @@ class NavigationBar extends Component {
 
   renderTopLevelItem = (navigationItem, key) => {
     const clickableItem = this.renderClickableElement(navigationItem, key);
-    const isActive = this.props.activeItem === key;
+    const isActive = !!navigationItem.active;
 
     let subItems = null;
     let isOpened = this.state.openedItem === key;

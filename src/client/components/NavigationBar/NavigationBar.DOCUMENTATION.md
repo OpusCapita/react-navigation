@@ -22,7 +22,6 @@ NavigationBar is
   className="oc-menu--opuscapita-dark-theme"
 >
 <NavigationBar
-  activeItem={0}
   vertical={true}
   navigationItems={[
     { children: 'Dashboard', href: 'http://google.com' },
