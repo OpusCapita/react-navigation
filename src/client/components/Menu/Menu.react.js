@@ -16,9 +16,6 @@ const propTypes = {
   logoSrc: Types.string,
   logoHref: Types.string,
   logoTitle: Types.string,
-  labelText: Types.string,
-  labelLinkText: Types.string,
-  labelLinkHref: Types.string,
   noMargin: Types.bool,
   showSearch: Types.bool,
   searchProps: Types.object,
@@ -39,9 +36,6 @@ const defaultProps = {
   logoSrc: '',
   logoTitle: '',
   logoHref: '#',
-  labelText: '',
-  labelLinkText: '',
-  labelLinkHref: '#',
   noMargin: false,
   navigationItems: [],
   showSearch: true,
@@ -99,9 +93,6 @@ class Menu extends Component {
       logoSrc,
       logoTitle,
       logoHref,
-      labelText,
-      labelLinkText,
-      labelLinkHref,
       noMargin,
       navigationItems,
       showSearch,
@@ -168,10 +159,6 @@ class Menu extends Component {
         logoSrc={logoSrc}
         logoTitle={logoTitle}
         logoHref={logoHref}
-        labelText={labelText}
-        labelLinkText={labelLinkText}
-        labelLinkHref={labelLinkHref}
-        showLabel={!isMinimized}
       />
     );
 

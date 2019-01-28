@@ -16,9 +16,6 @@ MenuLogo is
   logoSrc="http://test.jcatalog.com/oc-logo-rgb.svg"
   logoTitle="OpusCapita"
   logoHref="http://opuscapita.com"
-  labelText="powered by "
-  labelLinkText="OpusCapita"
-  labelLinkHref="http://opuscapita.com"
 />
 ```
 

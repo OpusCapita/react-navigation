@@ -5,20 +5,12 @@ import './MenuLogo.less';
 const propTypes = {
   logoSrc: Types.string,
   logoHref: Types.string,
-  logoTitle: Types.string,
-  labelText: Types.string,
-  labelLinkText: Types.string,
-  labelLinkHref: Types.string,
-  showLabel: Types.bool
+  logoTitle: Types.string
 };
 const defaultProps = {
   logoSrc: '',
   logoTitle: '',
-  logoHref: '#',
-  labelText: '',
-  labelLinkText: '',
-  labelLinkHref: '#',
-  showLabel: true
+  logoHref: '#'
 };
 
 export default
@@ -27,11 +19,7 @@ class MenuLogo extends Component {
     const {
       logoSrc,
       logoHref,
-      logoTitle,
-      labelText,
-      labelLinkText,
-      labelLinkHref,
-      showLabel
+      logoTitle
     } = this.props;
 
     return (
@@ -46,22 +34,6 @@ class MenuLogo extends Component {
             src={logoSrc}
           />
         </a>
-        <div
-          className={`
-            oc-menu-logo__label
-            ${showLabel ? '' : 'oc-menu-logo__label--hidden' }
-          `}
-        >
-          <span className="oc-menu-logo__label-text">
-            {labelText}
-          </span>
-          <a
-            className="oc-menu-logo__label-link"
-            href={labelLinkHref}
-          >
-            {labelLinkText}
-          </a>
-        </div>
       </div>
     );
   }
