@@ -1,6 +1,6 @@
 {
   "name": "@opuscapita/react-navigation",
-  "version": "3.0.4.issue.24",
+  "version": "3.0.4-issue-24",
   "description": "Start write new project with no effort.",
   "scripts": {
     "link-mode": "webpack --watch --config ./webpack.link.config.js",
