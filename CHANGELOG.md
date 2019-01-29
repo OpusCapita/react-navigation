@@ -1,4 +1,10 @@
 
+[Release 4.0.0](https://github.com/OpusCapita/react-navigation/releases/tag/v4.0.0) Tue Jan 29 2019 11:08:13 GMT+0300 (MSK)
+=======================================================
+
+- ([#24](https://github.com/OpusCapita/react-navigation/issues/24)) Removed text "powered by OpusCapita" below the customer logo. (GitHub dsanko-sc@users.noreply.github.com, 2019-01-29 11:01:56 +0300)
+- Using docker image opuscapita/minsk-core-ci tag grails-2.4.4-jdk-8u131-nodejs-6.9.4-maven-3.3.9 [ci skip] (Alexey Sergeev alexey.sergeev@opuscapita.com, 2018-09-07 09:09:05 +0300)
+
 [Release 3.0.3](https://github.com/OpusCapita/react-navigation/releases/tag/v3.0.3) Mon Jun 25 2018 12:45:35 GMT+0300 (MSK)
 =======================================================
 
