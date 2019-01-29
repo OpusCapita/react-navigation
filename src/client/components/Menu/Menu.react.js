@@ -133,7 +133,7 @@ class Menu extends Component {
       </div>
     );
 
-    const verticalNavigationBarElement = isMobile ? (
+    const verticalNavigationBarElement = (isMobile && navigationItems.length) ? (
       <div className="oc-menu__hamburger-button">
         <MenuIcon
           svg={hamburgerSVG}
