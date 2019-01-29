@@ -1,4 +1,9 @@
 
+[Release 4.0.1](https://github.com/OpusCapita/react-navigation/releases/tag/v4.0.1) Tue Jan 29 2019 11:54:45 GMT+0300 (MSK)
+=======================================================
+
+-  [#26](https://github.com/OpusCapita/react-navigation/issues/26) Hide burger menu by default if navigation items list is empty ([#27](https://github.com/OpusCapita/react-navigation/issues/27)) (GitHub kvolkovich-sc@users.noreply.github.com, 2019-01-29 11:52:59 +0300)
+
 [Release 4.0.0](https://github.com/OpusCapita/react-navigation/releases/tag/v4.0.0) Tue Jan 29 2019 11:08:13 GMT+0300 (MSK)
 =======================================================
 
