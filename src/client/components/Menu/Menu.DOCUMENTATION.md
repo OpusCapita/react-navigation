@@ -19,9 +19,6 @@ TopMenu is
   logoSrc={_scope.state.logos.dark}
   logoTitle="OpusCapita"
   logoHref="http://opuscapita.com"
-  labelText="powered by "
-  labelLinkText="OpusCapita"
-  labelLinkHref="http://opuscapita.com"
   showSearch={true}
   searchProps={{
     placeholder: 'Search items',
