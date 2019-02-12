@@ -42,7 +42,6 @@ jobs:
           command: /bin/env_inject.sh
 
       - checkout
-
       - restore_cache:
           keys:
             - react-navigation-{{ .Branch }}-{{ checksum "package.json" }}
@@ -60,8 +59,12 @@ jobs:
               - ./yarn.lock
 
       - run:
+          name: build-gh-pages
+          command: ./scripts/gh-pages/build.sh
+
+      - run:
           name: deploy-gh-pages
-          command: npm run gh-pages-deploy
+          command: ./scripts/gh-pages/deploy.sh .gh-pages-tmp
 
   build_release:
     <<: *defaults
@@ -129,8 +132,9 @@ workflows:
             - build
           filters:
             branches:
-              only:
-                - master
+              ignore:
+                - gh-pages
+                - release
       - build_release:
           filters:
             tags:
