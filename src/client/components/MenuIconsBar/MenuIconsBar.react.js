@@ -17,7 +17,9 @@ class MenuIconsBar extends Component {
   render() {
     const { children, tabletOverlayMode, tabletOverlayModeLeft } = this.props;
 
-    const childrenElement = Children.toArray(children).map(child => ({ ...child, props: { ...child.props, tabletOverlayMode, tabletOverlayModeLeft } }));
+    const childrenElement = Children.toArray(children).map(child =>
+      ({ ...child, props: { ...child.props, tabletOverlayMode, tabletOverlayModeLeft } })
+    );
 
     return (
       <div

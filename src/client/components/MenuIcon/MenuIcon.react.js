@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-pascal-case */
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Types from "prop-types";
-import {TitledButton} from "@opuscapita/react-buttons";
-import {SVG} from "@opuscapita/react-svg";
+import { TitledButton } from "@opuscapita/react-buttons";
+import { SVG } from "@opuscapita/react-svg";
 import "./MenuIcon.less";
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 const closeSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/close.svg');
@@ -93,7 +93,7 @@ class MenuIcon extends Component {
 
     this.props.onClick();
   }
-  
+
   setIsHidden = (isHidden = false) => {
     this.setState({ isHidden })
   }
@@ -129,7 +129,7 @@ class MenuIcon extends Component {
     ) : null;
 
     const childrenWithModifiedProps = React.Children.map(children, child =>
-      React.cloneElement(child, {...child.props, setIsHidden: this.setIsHidden})
+      React.cloneElement(child, { ...child.props, setIsHidden: this.setIsHidden })
     );
     let childrenElement = (childrenWithModifiedProps && isOpened) ? (
       <div
