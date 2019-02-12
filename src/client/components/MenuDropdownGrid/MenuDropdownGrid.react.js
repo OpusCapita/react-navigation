@@ -2,8 +2,6 @@
 /* eslint-disable no-script-url */
 import React, { Component } from 'react';
 import Types from 'prop-types';
-import chunk from 'lodash/chunk';
-import flatten from 'lodash/flatten';
 import './MenuDropdownGrid.less';
 import { SVG } from '@opuscapita/react-svg';
 
@@ -14,49 +12,41 @@ const propTypes = {
   items: Types.arrayOf(Types.shape({
     svg: Types.string,
     label: Types.string
-  }))
+  })),
+  setIsHidden: Types.func
 };
 const defaultProps = {
-  items: []
+  items: [],
+  setIsHidden: () => {}
 };
 
 export default
 class MenuDropdownGrid extends Component {
+
+  componentDidMount() {
+    if (this.filterItems().length <= 1) {
+      this.props.setIsHidden(true)
+    }
+  }
+
+  filterItems = () => {
+    return this.props.items.filter(item => item && !item.disabled && (item.href || item.onClick))
+  }
+
   render() {
-    const {
-      items
-    } = this.props;
-
-    // Hide row if all items in the row are disabled
-    const filteredItems = flatten(
-      chunk(items, ITEMS_PER_ROW).filter((itemsChunk) => itemsChunk.some(item => item && !item.disabled))
-    );
-
-    const itemsElement = filteredItems.map((item, i) => {
+    const itemsElement = this.filterItems().map((item, i) => {
       let itemContainerStyle = {
         width: `${ITEM_SIZE}px`,
         height: `${ITEM_SIZE}px`
       };
 
-      if (!item) {
-        return (
-          <div
-            key={i}
-            className={`oc-menu-dropdown-grid__item-container`}
-            style={itemContainerStyle}
-          >
-          </div>
-        );
-      }
-
-      let { svg, label, active, disabled, href, onClick, ...restProps } = item;
+      let { svg, label, active, href, onClick, ...restProps } = item;
 
       let itemElementChildren = (
         <div
           className={`
-            oc-menu-dropdown-grid__item
-            ${disabled ? 'oc-menu-dropdown-grid__item--disabled' : 'oc-menu-dropdown-grid__item--enabled' }
-            ${active && !disabled ? 'oc-menu-dropdown-grid__item--active' : ''}
+            oc-menu-dropdown-grid__item oc-menu-dropdown-grid__item--enabled
+            ${active ? 'oc-menu-dropdown-grid__item--active' : ''}
           `}
         >
           <div className="oc-menu-dropdown-grid__item-image">
@@ -76,19 +66,15 @@ class MenuDropdownGrid extends Component {
         "data-test": `oc-menu-dropdown-grid__item-container`,
         style: itemContainerStyle,
         children: itemElementChildren,
-        ...((href && !disabled) ? { href } : {}),
-        ...((onClick && !disabled) ? { onClick } : {}),
+        ...((href) ? { href } : {}),
+        ...((onClick) ? { onClick } : {}),
         ...restProps
       };
 
-      let itemElement = (href && !disabled) ?
-        React.createElement('a', itemContainerProps) :
-        React.createElement('div', itemContainerProps);
-
-      return itemElement;
+      return React.createElement('a', itemContainerProps);
     });
 
-    return (
+    return itemsElement.length > 1 ? (
       <div
         className="oc-menu-dropdown-grid"
       >
@@ -101,7 +87,7 @@ class MenuDropdownGrid extends Component {
           {itemsElement}
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 
