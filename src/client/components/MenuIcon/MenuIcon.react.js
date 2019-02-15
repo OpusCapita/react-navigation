@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
 import Types from 'prop-types';
+import './MenuIcon.less';
 import { TitledButton } from '@opuscapita/react-buttons';
 import { SVG } from '@opuscapita/react-svg';
-import './MenuIcon.less';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 const closeSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/close.svg');
 
@@ -61,7 +61,7 @@ class MenuIcon extends Component {
   }
 
   handleBodyClick(event) {
-    let clickedOutside = this.containerRef && !this.containerRef.contains(event.target);
+    let clickedOutside = !this.containerRef.contains(event.target);
 
     if (clickedOutside) {
       this.hideChildren();

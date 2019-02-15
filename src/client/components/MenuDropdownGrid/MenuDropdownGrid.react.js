@@ -26,7 +26,13 @@ class MenuDropdownGrid extends Component {
   }
 
   render() {
-    const itemsElement = this.filterItems().map((item, i) => {
+    const {
+      items
+    } = this.props;
+
+    const filteredItems = items.filter(item => item && !item.disabled && (item.href || item.onClick));
+
+    const itemsElement = filteredItems.map((item, i) => {
       let itemContainerStyle = {
         width: `${ITEM_SIZE}px`,
         height: `${ITEM_SIZE}px`
@@ -64,8 +70,8 @@ class MenuDropdownGrid extends Component {
       };
 
       let itemElement = href ?
-      React.createElement('a', itemContainerProps) :
-      React.createElement('div', itemContainerProps);
+        React.createElement('a', itemContainerProps) :
+        React.createElement('div', itemContainerProps);
 
       return itemElement;
     });
