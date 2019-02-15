@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-pascal-case */
-import React, { Component } from "react";
-import Types from "prop-types";
-import { TitledButton } from "@opuscapita/react-buttons";
-import { SVG } from "@opuscapita/react-svg";
-import "./MenuIcon.less";
+import React, { Component } from 'react';
+import Types from 'prop-types';
+import { TitledButton } from '@opuscapita/react-buttons';
+import { SVG } from '@opuscapita/react-svg';
+import './MenuIcon.less';
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 const closeSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/close.svg');
 
@@ -33,8 +33,7 @@ class MenuIcon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpened: false,
-      isHidden: false
+      isOpened: false
     };
     this.handleBodyClick = this.handleBodyClick.bind(this);
     this.handleBodyKeyDown = this.handleBodyKeyDown.bind(this);
@@ -52,8 +51,7 @@ class MenuIcon extends Component {
       this.props.title !== nextProps.title ||
       this.props.label !== nextProps.label ||
       this.props.hideDropdownArrow !== nextProps.hideDropdownArrow ||
-      this.state.isOpened !== nextState.isOpened ||
-      this.state.isHidden !== nextState.isHidden
+      this.state.isOpened !== nextState.isOpened
     );
   }
 
@@ -94,10 +92,6 @@ class MenuIcon extends Component {
     this.props.onClick();
   }
 
-  setIsHidden = (isHidden = false) => {
-    this.setState({ isHidden })
-  }
-
   render() {
     const {
       svg,
@@ -112,7 +106,7 @@ class MenuIcon extends Component {
       ...restProps
     } = this.props;
 
-    const { isOpened, isHidden } = this.state;
+    const { isOpened } = this.state;
     const supTitleElement = supTitle ? (
       <div
         className="oc-menu-icon__sup-title"
@@ -128,10 +122,7 @@ class MenuIcon extends Component {
       </div>
     ) : null;
 
-    const childrenWithModifiedProps = React.Children.map(children, child =>
-      React.cloneElement(child, { ...child.props, setIsHidden: this.setIsHidden })
-    );
-    let childrenElement = (childrenWithModifiedProps && isOpened) ? (
+    let childrenElement = (children && isOpened) ? (
       <div
         className={`
           oc-menu-icon__sub-items-container
@@ -153,52 +144,47 @@ class MenuIcon extends Component {
             <MenuIcon svg={closeSVG} onClick={this.hideChildren} />
           </div>
         )}
-        {childrenWithModifiedProps}
+        {children}
       </div>
     ) : null;
 
-    let childrenArrowElement = (childrenWithModifiedProps && isOpened && !tabletOverlayMode) ? (
+    let childrenArrowElement = (children && isOpened && !tabletOverlayMode) ? (
       <div
         className="oc-menu-icon__children-arrow"
       >
       </div>
     ) : null;
 
-    return !isHidden ? (
+    return (
       <div
-        className="oc-menu-icon__wrapper"
-        data-test="oc-menu-icon__wrapper"
+        ref={ref => (this.containerRef = ref)}
+        className="oc-menu-icon"
+        onClick={this.handleClick}
+        {...restProps}
       >
-        <div
-          ref={ref => (this.containerRef = ref)}
-          className="oc-menu-icon"
-          onClick={this.handleClick}
-          {...restProps}
-        >
-          <div className={`oc-menu-icon__container`}>
-            <TitledButton
-              className={`
-                oc-menu-icon__button
-                ${showDropdownArrow ? 'oc-menu-icon__button--with-dropdown' : ''}
-                ${supTitle ? 'oc-menu-icon__button--with-suptitle' : ''}
-                ${'oc-menu-icon__button--light-overlay'}
-              `}
-              svg={svg}
-              title={isOpened ? '' : title}
-              label={label}
-              contentPosition="before"
-            />
-            {supTitleElement}
-            {dropdownArrowElement}
-            {childrenArrowElement}
-          </div>
-          {childrenElement}
-          {(childrenWithModifiedProps && isOpened && tabletOverlayMode) && (
-            <div className="oc-menu-icon__overlay"></div>
-          )}
+        <div className={`oc-menu-icon__container`}>
+          <TitledButton
+            className={`
+              oc-menu-icon__button
+              ${showDropdownArrow ? 'oc-menu-icon__button--with-dropdown' : ''}
+              ${supTitle ? 'oc-menu-icon__button--with-suptitle' : ''}
+              ${'oc-menu-icon__button--light-overlay'}
+            `}
+            svg={svg}
+            title={isOpened ? '' : title}
+            label={label}
+            contentPosition="before"
+          />
+          {supTitleElement}
+          {dropdownArrowElement}
+          {childrenArrowElement}
         </div>
+        {childrenElement}
+        {(children && isOpened && tabletOverlayMode) && (
+          <div className="oc-menu-icon__overlay"></div>
+        )}
       </div>
-    ) : null;
+    );
   }
 }
 

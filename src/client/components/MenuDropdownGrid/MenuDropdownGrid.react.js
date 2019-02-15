@@ -12,22 +12,14 @@ const propTypes = {
   items: Types.arrayOf(Types.shape({
     svg: Types.string,
     label: Types.string
-  })),
-  setIsHidden: Types.func
+  }))
 };
 const defaultProps = {
-  items: [],
-  setIsHidden: () => {}
+  items: []
 };
 
 export default
 class MenuDropdownGrid extends Component {
-
-  componentDidMount() {
-    if (this.filterItems().length <= 1) {
-      this.props.setIsHidden(true)
-    }
-  }
 
   filterItems = () => {
     return this.props.items.filter(item => item && !item.disabled && (item.href || item.onClick))
@@ -71,10 +63,14 @@ class MenuDropdownGrid extends Component {
         ...restProps
       };
 
-      return React.createElement('a', itemContainerProps);
+      let itemElement = href ?
+      React.createElement('a', itemContainerProps) :
+      React.createElement('div', itemContainerProps);
+
+      return itemElement;
     });
 
-    return itemsElement.length > 1 ? (
+    return (
       <div
         className="oc-menu-dropdown-grid"
       >
@@ -87,7 +83,7 @@ class MenuDropdownGrid extends Component {
           {itemsElement}
         </div>
       </div>
-    ) : null;
+    );
   }
 }
 
