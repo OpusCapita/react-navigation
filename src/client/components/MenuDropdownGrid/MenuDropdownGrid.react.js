@@ -20,11 +20,6 @@ const defaultProps = {
 
 export default
 class MenuDropdownGrid extends Component {
-
-  filterItems = () => {
-    return this.props.items.filter(item => item && !item.disabled && (item.href || item.onClick))
-  }
-
   render() {
     const {
       items
