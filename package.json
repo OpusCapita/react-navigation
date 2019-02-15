@@ -6,7 +6,6 @@
     "link-mode": "webpack --watch --config ./webpack.link.config.js",
     "lint": "eslint src/client",
     "start": "showroom-scan src && node www/index",
-    "gh-pages-deploy": "showroom-scan src && sh ./gh-pages-update.sh",
     "test": "mocha --compilers js:babel-core/register --require ignore-styles --require ./test/setup.js --recursive src/**/*.spec.js",
     "npm-build": "rimraf lib && webpack --config webpack.production.config.js",
     "npm-publish": "npm run npm-build && npm publish",
