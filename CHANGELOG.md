@@ -1,4 +1,11 @@
 
+[Release 4.0.2](https://github.com/OpusCapita/react-navigation/releases/tag/v4.0.2) Fri Feb 22 2019 09:25:10 GMT+0300 (MSK)
+=======================================================
+
+- # 28 Enhanced application picker behaviour ([#29](https://github.com/OpusCapita/react-navigation/issues/29)) (Alexey Sergeev dsanko-sc@users.noreply.github.com, 2019-02-22 09:24:22 +0300)
+- Fix deploy demo to GitHub pages (Kirill Volkovich kirill.volkovich@opuscapita.com, 2019-02-13 12:29:35 +0300)
+- Fix deploy demo to GitHub pages (Kirill Volkovich kirill.volkovich@opuscapita.com, 2019-02-12 19:02:38 +0300)
+
 [Release 4.0.1](https://github.com/OpusCapita/react-navigation/releases/tag/v4.0.1) Tue Jan 29 2019 11:54:45 GMT+0300 (MSK)
 =======================================================
 
