@@ -4,7 +4,7 @@ import Types from 'prop-types';
 import './MenuIcon.less';
 import { TitledButton } from '@opuscapita/react-buttons';
 import { SVG } from '@opuscapita/react-svg';
-import { menuHeight, iconsBarWidth, mobileWidth } from "../constants";
+import { mobileWidth } from "../constants";
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 const closeSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/close.svg');
 const defaultSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/help.svg');
@@ -36,7 +36,7 @@ class MenuIcon extends Component {
     super(props);
     this.state = {
       isOpened: false,
-      isMobile: false
+      isMobile: this.getIsMobile()
     };
     this.handleBodyClick = this.handleBodyClick.bind(this);
     this.handleBodyKeyDown = this.handleBodyKeyDown.bind(this);
@@ -46,7 +46,6 @@ class MenuIcon extends Component {
     document.body.addEventListener('click', this.handleBodyClick);
     document.body.addEventListener('keydown', this.handleBodyKeyDown);
     window.addEventListener('resize', this.handleWindowResize);
-    this.setState({ isMobile: this.getIsMobile() });
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -188,7 +187,7 @@ class MenuIcon extends Component {
               ${supTitle ? 'oc-menu-icon__button--with-suptitle' : ''}
               ${'oc-menu-icon__button--light-overlay'}
             `}
-            svg={(isMobile || !label) ? svg :  ''}
+            svg={(isMobile || !label) ? svg : ''}
             title={isOpened ? '' : title}
             label={isMobile ? '' : label}
             contentPosition="before"
