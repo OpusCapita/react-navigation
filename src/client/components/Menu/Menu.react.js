@@ -7,6 +7,7 @@ import MenuIconsBar from '../MenuIconsBar';
 import MenuSearch from '../MenuSearch';
 import MenuIcon from '../MenuIcon';
 import '../theme/opuscapita-dark.less';
+import { menuHeight, iconsBarWidth, mobileWidth } from "../constants";
 const hamburgerSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/menu.svg');
 
 const propTypes = {
@@ -44,10 +45,6 @@ const defaultProps = {
   },
   iconsBarItems: []
 };
-
-const menuHeight = 70;
-const iconsBarWidth = 640;
-const mobileWidth = 992;
 
 export default
 class Menu extends Component {

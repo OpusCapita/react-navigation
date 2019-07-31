@@ -19,16 +19,16 @@ TopMenu is
   logoSrc={_scope.state.logos.dark}
   logoTitle="OpusCapita"
   logoHref="http://opuscapita.com"
-  showSearch={true}
+  showSearch={false}
   searchProps={{
     placeholder: 'Search items',
     onFocus: () => console.log('Search focus'),
     onBlur: () => console.log('Search blur'),
     children: (
-      <div 
-        style={{ 
-          position: 'absolute', 
-          bottom: '-4px', 
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '-4px',
           right: '0',
           width: '300px',
           background: '#fff',
@@ -38,7 +38,7 @@ TopMenu is
           transform: 'translate(0, 100%)',
           zIndex: '100',
           boxShadow: '0 2px 16px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.15)'
-        }} 
+        }}
       >
         <div style={{ padding: '12px 24px' }}>Item 1</div>
         <div style={{ padding: '12px 24px' }}>Item 1</div>
@@ -86,6 +86,24 @@ TopMenu is
     }
   ]}
   iconsBarItems={[
+    (
+      <MenuIcon
+        onClick={() => console.log('click!')}
+        id="my-orders-icon"
+      >
+      </MenuIcon>
+    ),
+    (
+      <MenuIcon
+        onClick={() => console.log('click!')}
+        title="My Lists"
+        label="My Lists"
+        svg={_scope.getIcon('playlist_add_check')}
+        id="my-lists-icon"
+      >
+        <div style={{ padding: '8px', width: '100px', color: '#333' }}>Hello</div>
+      </MenuIcon>
+    ),
     (
       <MenuIcon
         onClick={() => console.log('click!')}
@@ -183,6 +201,7 @@ TopMenu is
         onClick={() => console.log('click!')}
         title="Account settings"
         label="Alexey"
+        svg={_scope.getIcon('person')}
         id="menu-account-icon"
       >
         <MenuAccount
