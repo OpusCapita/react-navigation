@@ -1,14 +1,4 @@
-@navigation-bg: #3b4a56;
-@navigation-text-color: #fff;
-@navigation-notification-text-color: #fff;
-@navigation-notification-bg-color: #ec6608;
-@navigation-item-active-border-color: #ec6608;
-@navigation-item-vertical-active-bg-color: @navigation-item-active-border-color;
-
-@color-warning: #ec6608;
-@color-success: #3aa57b;
-@color-info: #67707c;
-@color-error: #dd2515;
+@import "./variables.less";
 
 .oc-menu--opuscapita-dark-theme {
   background-color: @navigation-bg;
@@ -46,17 +36,17 @@
 }
 
 .fill-warning {
-  fill: @color-warning;
+  fill: @navigation-color-warning;
 }
 
 .fill-success {
-  fill: @color-success;
+  fill: @navigation-color-success;
 }
 
 .fill-info {
-  fill: @color-info;
+  fill: @navigation-color-info;
 }
 
 .fill-error {
-  fill: @color-error;
+  fill: @navigation-color-error;
 }
