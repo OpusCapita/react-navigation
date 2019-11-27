@@ -2,7 +2,6 @@
 /* eslint-disable no-script-url */
 import React, { Component } from 'react';
 import Types from 'prop-types';
-import './MenuDropdownGrid.less';
 import { SVG } from '@opuscapita/react-svg';
 
 const ITEM_SIZE = 110;

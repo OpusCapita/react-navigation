@@ -80,6 +80,7 @@
     "@opuscapita/opuscapita-ui": "^1.0.2-beta.4",
     "@opuscapita/react-buttons": "4.0.4",
     "@opuscapita/react-svg": "4.0.0",
+    "@opuscapita/styles": "2.0.12",
     "@opuscapita/svg-icons": "1.1.2",
     "prop-types": "15.5.10",
     "react-perfect-scrollbar": "^1.0.0"

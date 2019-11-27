@@ -1,6 +1,5 @@
 import React, { Component, Children } from 'react';
 import Types from 'prop-types';
-import './MenuDropdownList.less';
 
 const propTypes = {
   items: Types.arrayOf(Types.node)

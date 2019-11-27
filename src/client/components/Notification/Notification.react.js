@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
 import Types from 'prop-types';
-import './Notification.less';
 import { SVG } from '@opuscapita/react-svg';
 
 const propTypes = {

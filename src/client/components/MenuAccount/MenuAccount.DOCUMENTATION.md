@@ -12,28 +12,34 @@ MenuAccount is
 ### Code Example
 
 ```
-<MenuAccount 
-  firstName="Alexey"
-  lastName="Sergeev"
-  userName="sab"
-  initials="SA"
-  avatarSrc="/static/avatar.jpg"
-  onClick={() => console.log('click')}
-  actions={[
-    {
-      label: 'My services', 
-      onClick: () => console.log('My services click')
-    },
-    {
-      label: 'Settings', 
-      onClick: () => console.log('Settings click')
-    },
-    {
-      label: 'Help', 
-      onClick: () => console.log('Help click')
-    }
-  ]}
-/>
+<div
+  style={{
+    width: '320px'
+  }}
+>
+  <MenuAccount
+    firstName="Alexey"
+    lastName="Sergeev"
+    userName="sab"
+    initials="SA"
+    avatarSrc="/static/avatar.jpg"
+    onClick={() => console.log('click')}
+    actions={[
+      {
+        label: 'My services',
+        onClick: () => console.log('My services click')
+      },
+      {
+        label: 'Settings',
+        onClick: () => console.log('Settings click')
+      },
+      {
+        label: 'Help',
+        onClick: () => console.log('Help click')
+      }
+    ]}
+  />
+</div>
 ```
 
 ### Component Name

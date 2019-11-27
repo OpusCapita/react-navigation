@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
-import './MenuLogo.less';
 
 const propTypes = {
   logoSrc: Types.string,

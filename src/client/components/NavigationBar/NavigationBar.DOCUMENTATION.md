@@ -15,8 +15,7 @@ NavigationBar is
 <div
   style={{ 
     position: 'relative', 
-    display: 'flex', 
-    backgroundColor: '#3b4a56',
+    display: 'flex',
     boxShadow: '0 0 0 8px #0f0'
   }}
   className="oc-menu--opuscapita-dark-theme"
