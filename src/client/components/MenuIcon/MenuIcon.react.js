@@ -73,29 +73,29 @@ class MenuIcon extends Component {
     let clickedOutside = !this.containerRef.contains(event.target);
 
     if (clickedOutside) {
-      this.hideChildren();
+      this.handleHideChildren();
     }
   }
 
   handleBodyKeyDown(event) {
     if (event.which === 9 || event.which === 27) { // TAB or ESC key
-      this.hideChildren();
+      this.handleHideChildren();
     }
   }
 
-  showChildren = () => {
+  handleShowChildren = () => {
     this.setState({ isOpened: true });
   }
 
-  hideChildren = () => {
+  handleHideChildren = () => {
     this.setState({ isOpened: false });
   }
 
   handleClick = () => {
     if (this.state.isOpened) {
-      this.hideChildren();
+      this.handleHideChildren();
     } else {
-      this.showChildren();
+      this.handleShowChildren();
     }
 
     this.props.onClick();
@@ -157,7 +157,7 @@ class MenuIcon extends Component {
       >
         {tabletOverlayMode && (
           <div className="oc-menu-icon__sub-items-container--tablet-overlay-header">
-            <MenuIcon svg={closeSVG} onClick={this.hideChildren} />
+            <MenuIcon svg={closeSVG} onClick={this.handleHideChildren} />
           </div>
         )}
         {children}
