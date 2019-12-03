@@ -174,7 +174,7 @@ class MenuIcon extends Component {
     return (
       <div
         ref={ref => (this.containerRef = ref)}
-        className="oc-menu-icon"
+        className={"oc-menu-icon " + (isOpened ? "oc-menu-icon--opened" : "")}
         onClick={this.handleClick}
         {...restProps}
       >

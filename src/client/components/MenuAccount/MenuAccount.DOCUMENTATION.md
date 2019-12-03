@@ -22,7 +22,7 @@ MenuAccount is
     lastName="Sergeev"
     userName="sab"
     initials="SA"
-    avatarSrc="/static/avatar.jpg"
+    avatarSrc="./static/avatar.jpg"
     onClick={() => console.log('click')}
     actions={[
       {
