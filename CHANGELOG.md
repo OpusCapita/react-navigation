@@ -1,4 +1,13 @@
 
+[Release 4.1.0](https://github.com/OpusCapita/react-navigation/releases/tag/v4.1.0) Wed Dec 04 2019 15:53:01 GMT+0300 (MSK)
+=======================================================
+
+- ([#30](https://github.com/OpusCapita/react-navigation/issues/30)) Moving navigation components to external styles [skip ci] (Dmitry Divin divin@scand.com, 2019-12-04 15:48:32 +0300)
+- Adapt menu icons to small screens (kvolkovich-sc volkovich@scand.com, 2019-07-31 20:18:51 +0300)
+- Adapt menu icons to small screens (kvolkovich-sc volkovich@scand.com, 2019-07-31 20:16:06 +0300)
+- Fix wrong menu icon popup position (kvolkovich-sc kirill.volkovich@opuscapita.com, 2019-06-10 17:05:33 +0300)
+- Update package.json (GitHub asergeev-sc@users.noreply.github.com, 2019-02-22 10:19:09 +0300)
+
 [Release 4.0.2](https://github.com/OpusCapita/react-navigation/releases/tag/v4.0.2) Fri Feb 22 2019 09:25:10 GMT+0300 (MSK)
 =======================================================
 
