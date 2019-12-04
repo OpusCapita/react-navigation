@@ -52,6 +52,7 @@ class MenuIcon extends Component {
       this.props.title !== nextProps.title ||
       this.props.label !== nextProps.label ||
       this.props.hideDropdownArrow !== nextProps.hideDropdownArrow ||
+      this.props.tabletOverlayMode !== nextProps.tabletOverlayMode ||
       this.state.isOpened !== nextState.isOpened
     );
   }
