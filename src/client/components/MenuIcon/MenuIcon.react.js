@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Types from 'prop-types';
 import { TitledButton } from '@opuscapita/react-buttons';
 import { SVG } from '@opuscapita/react-svg';
-import { mobileWidth } from "../constants";
 const dropdownSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/arrow_drop_down.svg');
 const closeSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/close.svg');
 const defaultSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/help.svg');
@@ -34,8 +33,7 @@ class MenuIcon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpened: false,
-      isMobile: this.getIsMobile()
+      isOpened: false
     };
     this.handleBodyClick = this.handleBodyClick.bind(this);
     this.handleBodyKeyDown = this.handleBodyKeyDown.bind(this);
@@ -54,19 +52,13 @@ class MenuIcon extends Component {
       this.props.title !== nextProps.title ||
       this.props.label !== nextProps.label ||
       this.props.hideDropdownArrow !== nextProps.hideDropdownArrow ||
-      this.state.isOpened !== nextState.isOpened ||
-      this.state.isMobile !== nextState.isMobile
+      this.state.isOpened !== nextState.isOpened
     );
   }
 
   componentWillUnmount() {
     document.body.removeEventListener('click', this.handleBodyClick);
     document.body.removeEventListener('keydown', this.handleBodyKeyDown);
-    window.removeEventListener('resize', this.handleWindowResize);
-  }
-
-  handleWindowResize = () => {
-    this.setState({ isMobile: this.getIsMobile() });
   }
 
   handleBodyClick(event) {
@@ -85,11 +77,11 @@ class MenuIcon extends Component {
 
   handleShowChildren = () => {
     this.setState({ isOpened: true });
-  }
+  };
 
   handleHideChildren = () => {
     this.setState({ isOpened: false });
-  }
+  };
 
   handleClick = () => {
     if (this.state.isOpened) {
@@ -99,12 +91,7 @@ class MenuIcon extends Component {
     }
 
     this.props.onClick();
-  }
-
-  getIsMobile = () => {
-    let width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    return width < mobileWidth;
-  }
+  };
 
   render() {
     const {
@@ -120,7 +107,7 @@ class MenuIcon extends Component {
       ...restProps
     } = this.props;
 
-    const { isOpened, isMobile } = this.state;
+    const { isOpened } = this.state;
 
     const supTitleElement = supTitle ? (
       <div
@@ -131,7 +118,7 @@ class MenuIcon extends Component {
     ) : null;
 
 
-    const showDropdownArrow = !isMobile && (children && !hideDropdownArrow);
+    const showDropdownArrow = !tabletOverlayMode && (children && !hideDropdownArrow);
     const dropdownArrowElement = showDropdownArrow ? (
       <div className="oc-menu-icon__dropdown-icon">
         <SVG svg={dropdownSVG} />
@@ -186,9 +173,9 @@ class MenuIcon extends Component {
               ${supTitle ? 'oc-menu-icon__button--with-suptitle' : ''}
               ${'oc-menu-icon__button--light-overlay'}
             `}
-            svg={(isMobile || !label) ? svg : ''}
+            svg={(tabletOverlayMode || !label) ? svg : ''}
             title={isOpened ? '' : title}
-            label={isMobile ? '' : label}
+            label={tabletOverlayMode ? '' : label}
             contentPosition="before"
           />
           {supTitleElement}
