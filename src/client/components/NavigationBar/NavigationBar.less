@@ -21,10 +21,12 @@
   user-select: none;
 }
 
-.oc-navigation-bar--vertical {
-  flex-direction: column;
-  width: 320px;
-  max-width: 100vw;
+@media (max-width: @screen-sm-max) {
+  .oc-navigation-bar--vertical {
+    flex-direction: column;
+    width: 320px;
+    max-width: 100vw;
+  }
 }
 
 .oc-navigation-bar__top-level-item {
@@ -44,15 +46,17 @@
   opacity: 1;
 }
 
-.oc-navigation-bar__top-level-item--opened .oc-navigation-bar__top-level-clickable-item--vertical {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.15);
-  z-index: 1;
-}
+@media (max-width: @screen-sm-max) {
+  .oc-navigation-bar__top-level-item--opened .oc-navigation-bar__top-level-clickable-item--vertical {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
 
-.oc-navigation-bar__top-level-item--vertical {
-  flex-direction: column;
-  overflow: hidden;
-  border-bottom: none;
+  .oc-navigation-bar__top-level-item--vertical {
+    flex-direction: column;
+    overflow: hidden;
+    border-bottom: none;
+  }
 }
 
 .oc-navigation-bar__dropdown-icon {
@@ -61,8 +65,11 @@
   align-items: center;
 }
 
-.oc-navigation-bar__dropdown-icon--dropup {
-  transform: scale(1, -1);
+@media (max-width: @screen-sm-max) {
+  .oc-navigation-bar__top-level-item--opened .oc-navigation-bar__dropdown-icon,
+  .oc-navigation-bar__dropdown-icon--dropup {
+    transform: scale(1, -1);
+  }
 }
 
 .oc-navigation-bar__clickable-element-container {
@@ -98,8 +105,10 @@
   }
 }
 
-.oc-navigation-bar__top-level-item--vertical .oc-navigation-bar__clickable-element {
-  padding: 12px;
+@media (max-width: @screen-sm-max) {
+  .oc-navigation-bar__top-level-item--vertical .oc-navigation-bar__clickable-element {
+    padding: 12px;
+  }
 }
 
 .oc-navigation-bar__clickable-element--with-dropdown {
@@ -125,13 +134,15 @@
   z-index: 10;
 }
 
-.oc-navigation-bar__sub-items-container--vertical {
-  box-shadow: none;
-  transform: none;
-  position: static;
-  bottom: auto;
-  left: auto;
-  z-index: 0;
+@media (max-width: @screen-sm-max) {
+  .oc-navigation-bar__sub-items-container--vertical {
+    box-shadow: none;
+    transform: none;
+    position: static;
+    bottom: auto;
+    left: auto;
+    z-index: 0;
+  }
 }
 
 .oc-navigation-bar__sub-item {

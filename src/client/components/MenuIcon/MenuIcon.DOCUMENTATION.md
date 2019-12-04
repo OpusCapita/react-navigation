@@ -12,7 +12,8 @@ MenuIcon is
 ### Code Example
 
 ```
-<div 
+<div
+  className="oc-menu--opuscapita-dark-theme"
   style={{
     width: '180px', 
     display: 'flex', 

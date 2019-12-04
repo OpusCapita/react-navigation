@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Types from 'prop-types';
-import './MenuAccount.less';
 import MenuAccountIcon from '../MenuAccountIcon';
 import { Button } from '@opuscapita/react-buttons';
 

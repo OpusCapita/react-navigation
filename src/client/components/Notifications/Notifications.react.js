@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Notifications.less';
 
 export default
 class Notifications extends Component {

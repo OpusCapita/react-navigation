@@ -13,10 +13,10 @@ MenuSearch is
 
 ```
 <div
+  className="oc-menu--opuscapita-dark-theme"
   style={{ 
     display: 'flex', 
-    justifyContent: 'flex-end', 
-    backgroundColor: '#3b4a56',
+    justifyContent: 'flex-end',
     padding: '12px'
   }}
 >

@@ -1,12 +1,10 @@
 import React, { Component, Children } from 'react';
 import Types from 'prop-types';
-import './Menu.less';
 import MenuLogo from '../MenuLogo';
 import NavigationBar from '../NavigationBar';
 import MenuIconsBar from '../MenuIconsBar';
 import MenuSearch from '../MenuSearch';
 import MenuIcon from '../MenuIcon';
-import '../theme/opuscapita-dark.less';
 import { menuHeight, iconsBarWidth, mobileWidth } from "../constants";
 const hamburgerSVG = require('!!raw-loader!@opuscapita/svg-icons/lib/menu.svg');
 

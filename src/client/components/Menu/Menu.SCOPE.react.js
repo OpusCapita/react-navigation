@@ -2,7 +2,7 @@
    What is a SCOPE file. See documentation here:
    https://github.com/OpusCapita/react-showroom-client/blob/master/docs/scope-component.md
 */
-
+// import '@opuscapita/styles/dist/npm/index.css';
 import React, { Component } from 'react';
 import { showroomScopeDecorator } from '@opuscapita/react-showroom-client';
 import MenuIcon from '../MenuIcon';

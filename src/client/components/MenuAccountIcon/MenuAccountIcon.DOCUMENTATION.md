@@ -14,7 +14,7 @@ MenuAccountIcon is
 ```
 <MenuAccountIcon 
   initials="SA"
-  avatarSrc="/static/avatar.jpg"
+  avatarSrc="./static/avatar.jpg"
   onClick={() => console.log('click')}
   size={96}
 />

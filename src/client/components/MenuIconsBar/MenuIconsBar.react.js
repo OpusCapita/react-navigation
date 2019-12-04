@@ -1,6 +1,5 @@
 import React, { Component, Children } from 'react';
 import PropTypes from 'prop-types';
-import './MenuIconsBar.less';
 
 const propTypes = {
   tabletOverlayMode: PropTypes.bool,

@@ -17,27 +17,34 @@ MenuDropdownGrid is
     { 
       label: 'Shop', 
       svg: _scope.getIcon('local_mall'),
-      active: true
+      active: true,
+      onClick: function() {}
     },
     { 
       label: 'Quote', 
       svg: _scope.getIcon('monetization_on'),
-      disabled: true
+      disabled: true,
+      onClick: function() {}
     },
     {
       label: 'Request', 
-      svg: _scope.getIcon('room_service') 
+      svg: _scope.getIcon('room_service'),
+      onClick: function() {}
     },
     {
       label: 'Order', 
-      svg: _scope.getIcon('insert_drive_file') 
+      svg: _scope.getIcon('insert_drive_file'),
+      onClick: function() {}
     },
     {
       label: 'Invoices', 
-      svg: _scope.getIcon('receipt') },
+      svg: _scope.getIcon('receipt'),
+      onClick: function() {}
+    },
     { 
       label: 'Analyze', 
-      svg: _scope.getIcon('trending_up') 
+      svg: _scope.getIcon('trending_up'),
+      onClick: function() {}
     }
   ]}
 />

@@ -19,7 +19,7 @@
     z-index: 50;
 }
 
-.oc-menu-icon__children-arrow {
+.oc-menu-icon--opened .oc-menu-icon__children-arrow {
   position: absolute;
   width: 12px;
   height: 12px;
@@ -79,41 +79,50 @@
   z-index: 10;
 }
 
-.oc-menu-icon__sub-items-container--tablet-overlay-mode {
-  position: fixed;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.15);
-  z-index: 999;
-  transform: none;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  overflow: auto;
+@media (max-width: @screen-sm-max) {
+  .oc-menu .oc-menu-icon__sub-items-container--tablet-overlay-mode {
+    position: fixed;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    transform: none;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .oc-menu .oc-menu-icon__sub-items-container--tablet-overlay-mode-left {
+    left: 0;
+    right: auto;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .oc-menu .oc-menu-icon__sub-items-container--tablet-overlay-mode-right {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .oc-menu-icon__sub-items-container--tablet-overlay-mode-right .oc-menu-icon__sub-items-container--tablet-overlay-header svg {
+    fill: #333;
+  }
+
+  .oc-menu-icon__sub-items-container--tablet-overlay-header {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
 }
 
-.oc-menu-icon__sub-items-container--tablet-overlay-mode-left {
-  left: 0;
-  right: auto;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
+@media (min-width: @screen-md-min){
+  .oc-menu-icon__sub-items-container--tablet-overlay-header {
+    display: none;
+  }
 
-.oc-menu-icon__sub-items-container--tablet-overlay-mode-right {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.oc-menu-icon__sub-items-container--tablet-overlay-mode-right .oc-menu-icon__sub-items-container--tablet-overlay-header svg {
-  fill: #333;
-}
-
-.oc-menu-icon__sub-items-container--tablet-overlay-header {
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 4px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .oc-menu-icon__sub-items-container--with-dropdown {
